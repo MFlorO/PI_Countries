@@ -11,11 +11,12 @@ const router = Router();
 
 
 
+
+
 router.get("/", async function (req, res) {
 
     const { name } = req.query;
 
-    try {
 
         try {
             if (name) {
@@ -34,33 +35,14 @@ router.get("/", async function (req, res) {
                     }
                 })
 
-                
-                if (country) {
+               if(country.length > 0){
 
+                res.json(country)
 
-                    res.json(country)
+               }else{
 
-
-                } else {
-
-                    let countryApi = await axios.get(` https://restcountries.com/v3/name/${name}`)
-                    let countryAPIFull = countryApi.data.map(({ id, name, flags, continents, capital, subregion, area, population }) => {
-                        return {
-                            id: id,
-                            name: name.official,
-                            imageFlag: flags[0],
-                            continent: continents,
-                            capital: capital ? countryApi.capital : ["Not have capital"],
-                            subregion: subregion ? countryApi.subregion : "",
-                            area: area,
-                            population: population
-                        }
-                    })
-
-                    res.json(countryAPIFull)
-                }
-
-
+                res.send("No existe nada con ese nombre")
+               }
 
 
             } else {
@@ -102,17 +84,7 @@ router.get("/", async function (req, res) {
             res.status(404).send("Not recived name")
         }
 
-
-    } catch (error) {
-        res.status(404).send("Failed to create country")
-    }
 })
-
-
-
-
-
-
 
 
 module.exports = router;

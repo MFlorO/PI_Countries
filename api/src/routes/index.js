@@ -4,7 +4,8 @@ const { Router } = require('express');
 const getCountry = require("./getCountry.js")
 const activityPost = require("./activityPost")
 const countryId = require("./countryId")
-
+const activityId = require("./activityId")
+const getActivities = require("./getActivities")
 
 const activityUpdate = require("./activityUpdate")
 const activityDelete = require("./activityDelete")
@@ -15,12 +16,20 @@ const router = Router();
 
 
 
+
 // Obtener por ID
 router.use("/countries", countryId);
 
+// Obtener por ID
+router.use("/activities", activityId);
 
-//Traigo todos los videojuegos, ya sea de la api o mi bd
+
+// Traigo todos los videojuegos, ya sea de la api o mi bd
 router.use("/countries", getCountry);
+
+
+// Me traigo todas las actividades
+router.use("/activities", getActivities);
 
 
 // Creo la actividad  en la db
