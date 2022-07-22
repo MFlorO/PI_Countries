@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,500;1,700&display=swap');
+
+
+.navBar {
+    width: 100%;
+    max-height: 10%;
+    background-color: #191947;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.navBar div {
+    width: 20%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.navBar h3 {
+    text-decoration: none;
+    width: 55%;
+    height: 80%;
+    color: rgba(255, 255, 255, 255);
+    font-family: 'Ubuntu', sans-serif;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+
+.flexboxitems {
+    text-align: center;
+    padding: 1%;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.a {
+    color: white;
+}
+
+.a:active {
+    cursor: pointer;
+}

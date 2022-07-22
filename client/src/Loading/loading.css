@@ -1,0 +1,16 @@
+
+
+.loading{
+    display: flex;
+    height: 100%;
+    right: 100%;
+}
+
+.loading img{
+    align-content: center;
+    position: inherit;
+    top:50%;
+    right: 47%;
+    height: 150px;
+    width: 150px;
+}

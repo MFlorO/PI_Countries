@@ -1,10 +1,46 @@
-import './App.css';
+import React from "react";
+import { Route } from "react-router-dom";
+
+import Landing from "./componentes/Landing/Landing.jsx";
+import NavBar from './componentes/NavBar/NavBar.jsx';
+import Home from "./componentes/Home/Home.jsx"
+import About from "./componentes/About/About.jsx"
+// import Create from "./Create/Create.jsx"
+import MyList from "./componentes/MyList/MyList.jsx";
+import CountriesDetail from "./componentes/CountriesDetail/CountriesDetail.jsx"
+import Activity from "./componentes/Activity/Activity.jsx"
+
+// import './App.css';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>Henry Countries</h1>
-    </div>
+    <React.Fragment>
+      <Route exact path="/" component={Landing} />
+
+
+      <Route path="/home" component={NavBar} />
+      <Route exact path="/home" component={Home} /> 
+
+      {/* <Route path="/create" component={NavBar} />
+      <Route path="/create" component={Create} /> */}
+
+      <Route path="/about" component={NavBar} />
+      <Route path="/about" component={About} />
+
+      <Route path="/myList" component={NavBar} />
+      <Route path="/myList" component={MyList}/>
+
+
+      <Route exact path="/detail/:id" component={NavBar} />
+      <Route path="/detail/:id" component={CountriesDetail} />
+
+      <Route exact path="/activity/:id" component={NavBar} />
+      <Route path="/activity/:id" component={Activity} />
+
+
+    </React.Fragment>
   );
 }
 
