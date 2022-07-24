@@ -35,20 +35,20 @@ export default function CountriesDetail() {
         <div>
           <img src={countriesDetail.imageFlag[1]} alt="Imagen del videojuego" />
           <h3>{countriesDetail.name}</h3>
-          <p>{countriesDetail.id}</p>
+          <p>Code: {countriesDetail.id}</p>
 
           {/* <h2>{typeof countriesDetail.genres === "object"?  videogameDetail.genres.name : videogameDetail.genres}</h2>  */}
 
-          <p>{countriesDetail.continent}</p>
-          <p>{countriesDetail.capital}</p>
-          <p>{countriesDetail.subregion}</p>
-          <p>{countriesDetail.area}Km2</p>
-          <p>{countriesDetail.population}</p>
+          <p>Continent: {countriesDetail.continent}</p>
+          <p>Capital: {countriesDetail.capital}</p>
+          <p>Subregion: {countriesDetail.subregion}</p>
+          <p>Area: {countriesDetail.area}Km2</p>
+          <p>Population: {countriesDetail.population}</p>
 
 
-            
+          
 
-          <h3>ACTIVIDADES:</h3>
+          <h3>ACTIVITIES:</h3>
           {countriesDetail.activities.map((a) => (
             <div key={a.id}>
               <ActivityCard
@@ -60,15 +60,7 @@ export default function CountriesDetail() {
             </div>
           ))}
 
-          {/* <div>
-          {countriesDetail.activities.map( a => (
-            <div key={a.id}>
-                <h3>{a.name}</h3>
-                <p>{a.difficulty}</p>
-                <p>{a.continent}</p>
-            </div>
-          ))}
-          </div> */}
+     
 
         </div>
       ) : (

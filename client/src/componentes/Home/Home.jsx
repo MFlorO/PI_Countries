@@ -14,9 +14,9 @@ import Loading from "../../Loading/Loading.jsx";
 
 export default function Home() {
 
-    const [pagina, setPagina] = useState(0);
+    const [pagina, setPagina] = useState(1);
 
-    const [porpagina, setPorpagina] = useState(10);
+    const [porpagina, setPorpagina] = useState(9);
 
   const countries = useSelector((state) => state.filterCountries);
   const dispatch = useDispatch();
@@ -31,6 +31,7 @@ export default function Home() {
     dispatch(getAllCountries());
   }, []);
 
+  console.log(countries)
 
   return (
     <div className="home">
@@ -39,13 +40,13 @@ export default function Home() {
         <div >
           <Filter />
           
-         <Paginas pagina={pagina} setPagina={setPagina} porpagina={porpagina} setPorpagina={setPorpagina} maximo={maximo} /> 
+         <Paginas pagina={pagina} setPagina={setPagina} maximo={maximo} /> 
           
-          <div className="home-videogames"> <Countries pagina={pagina} /></div>
+          <div className="home-countries"> <Countries pagina={pagina} porpagina={porpagina}/></div>
 
         </div>
-      ) : (
-        <Loading />
+      ) : ( countries.msg ?  <h3>{countries.msg}</h3> : <Loading />
+            //Si hay un error en la busqueda de nombres mostralo sino que aparezca loading
       )}
     </div>
   );

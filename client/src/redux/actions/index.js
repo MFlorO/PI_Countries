@@ -188,6 +188,31 @@ export function createActivities(body) {
 
 
 
+
+
+// export const createActivities = (payload) => {
+//   return dispatch => {
+//       try {
+//           return fetch(`http://localhost:3001/activities/`, {
+//               method: 'POST',
+//               headers: {
+//                   'Accept': 'application/json',
+//                   'Content-Type': 'application/json'
+//               },
+//               body: JSON.stringify(payload)
+//           })
+//               .then((response) => {
+//                   dispatch({
+//                       type: create_Activities
+//                   })
+//               })
+//       } catch (e) {
+//           console.log("postActivity " + e)
+//       }
+//   }
+// }
+
+
 export function getActivitiesDetail(id) {
   return async function (dispatch) {
     try {
@@ -230,13 +255,8 @@ export function deleteActivitiesDetail(id) {
 // }
 
 
-// export function orderGenres(genre) {
-//   return {
-//     type: orderGenre,
-//     payload:genre
 
-//   };
-// }
+
 
 
 
@@ -260,25 +280,12 @@ export const add_Countries_Favorites = "ADD_COUNTRIES_FAVORITE";
 export const remove_Countries_Favrites = "REMOVE_COUNTRIES_FAVORITE";
 export const get_All_Countries = "GET_ALL_COUNTRIES"
 export const get_Countries_Name = "GET_COUNTRIES_NAME";
-export const get_Countries_Detail = "GET_VIDEOGAME_DETAIL";
-export const delete_Countries_Detail = "DELETE_VIDEOGAME_DETAIL";
+export const get_Countries_Detail = "GET_COUNTRIES_DETAIL";
+export const delete_Countries_Detail = "DELETE_COUNTRIES_DETAIL";
 export const get_Activities_Detail = "GET_ACTIVITIES_DETAIL";
 export const delete_Activities_Detail = "DELETE_ACTIVITIES_DETAIL";
 export const create_Activities = "CREATE_ACTIVITIES"
 export const get_activities = "GET_ACTIVITIES";
 
-
-
-
-
-
-
-// export const videogameFilter = "VIDEOGAME_FILTER";
-
-
-// export const pagina = "PAGINA";
-// export const Sort = "ORDER";
-
-// export const orderGenre = "ORDER_GENRE"
 
 

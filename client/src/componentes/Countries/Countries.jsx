@@ -4,16 +4,26 @@ import CountriesCard from "../CountriesCard/CountriesCard.jsx";
 
 
 
-export default function Countries({pagina}) {
+export default function Countries({pagina, porpagina}) {
 
   const countries = useSelector((state) => state.filterCountries);
 
   // console.log(countries)
   
-  function filterCountriesPagina() {
-    return countries.slice(pagina, pagina === 0 ? pagina + 9 : pagina + 10); 
-  } //Si pagina es igual a 0 mostrame solo 9 countries por pagina, sino 10
 
+
+  function filterCountriesPagina() {
+  if(pagina === 1){
+    return countries.slice((pagina - 1 )* porpagina,(pagina - 1)*porpagina  + porpagina)
+  }else{
+    return countries.slice((pagina - 1 )* porpagina,(pagina - 1)*porpagina + porpagina + 1 )
+  }
+  
+} 
+
+
+  console.log(countries)
+  console.log(filterCountriesPagina())
 
   
   return (

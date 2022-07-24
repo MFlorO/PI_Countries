@@ -34,6 +34,7 @@ export default function Search() {
 
   return (
     <div className="search">
+     
 
       <form className="form" onSubmit={handleSubmit}>
       <input
@@ -45,7 +46,7 @@ export default function Search() {
       <button type="submit">BUSCAR</button>
       <button onClick={onClickReset}>RESET</button>
       </form>
-
+      
 
     </div>
   );

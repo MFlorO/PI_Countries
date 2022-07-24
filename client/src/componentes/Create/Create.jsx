@@ -66,7 +66,7 @@ export default function Create() {
 
     
 
-   const randomSession = ["Summer","Autunm","Winter","Spring"]
+   const randomSeassion = ["Summer","Autunm","Winter","Spring"]
         
 
 
@@ -75,10 +75,10 @@ export default function Create() {
   
    function handleChange(event) {
    
-   if(event.target.name === "countries" || event.target.name === "seassion"){ 
-      //agrego el evento para genres y/o platform
+   if(event.target.name === "countries" ){ 
+      //agrego el evento para countries
   
-      if(input.countries.includes(event.target.value)  === true|| input.seassion.includes(event.target.value) === true){
+      if(input.countries.includes(event.target.value)  === true){
       //Si ya marque esa opcion no la agrego dos veces
 
          setInput({
@@ -109,6 +109,7 @@ export default function Create() {
       ...input,
       [event.target.name]:event.target.value
      }));
+     
   }
 
 
@@ -131,17 +132,17 @@ export default function Create() {
       dispatch(createActivities(input));
 
 
-      !errores && (alert("FORMULARIO ENVIADO"))
+      (alert("FORMULARIO ENVIADO"))
       
        reset()
       }
 
 
-      const removeCountry = (e) =>{
-        setInput( input.filter(c => c !== e.target.name)
-        )
-        console.log(countries)
-    }
+    //   const removeCountry = (e) =>{
+    //     setInput( input.filter(c => c !== e.target.name)
+    //     )
+    //     console.log(countries)
+    // }
 
 
   
@@ -177,12 +178,12 @@ export default function Create() {
 
 
           
-          <div className="session">
-          <p>Session: </p>
-          {randomSession.map (session => {
-            return <div key={session}>
-              <input type="checkbox" name="session" value={session} onChange={handleChange}/>
-              <label htmlFor="session">{session}</label>
+          <div className="seassion">
+          <p>Seassion: </p>
+          {randomSeassion.map (seassion => {
+            return <div key={seassion}>
+              <input type="checkbox" name="seassion" value={seassion} onChange={handleChange}/>
+              <label htmlFor="seassion">{seassion}</label>
             </div>
           })}
           </div>
@@ -190,21 +191,21 @@ export default function Create() {
 
          
 
-
           <p className="countries">Countries: </p>
-          <select name="select">
+          <select name="countries" onChange={handleChange}>
           <option hidden>COUNTRIES</option>
           {countries.map (countries => {
             return ( 
-               <option key={countries.id} id="countries" name="countries" value={countries.name} onChange={handleChange}>{countries.name}</option>
+               <option key={countries.id} id="countries" name="countries" value={countries.id}>{countries.name}</option>
             )
           })}
 
           </select>
 
   
-          <button className="crear" type="submit" disabled={!errores}>CREATE</button>
+          <button className="crear" type="submit" >CREATE</button>
        
+          {/* disabled={!errores} */}
             
         </form>
   
