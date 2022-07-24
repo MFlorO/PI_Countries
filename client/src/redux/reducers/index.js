@@ -1,7 +1,7 @@
 // import { ASCENDENTE } from "../../constantes/sort.js";
 
 
-import { add_Countries_Favorites, remove_Countries_Favrites, get_All_Countries, get_Countries_Name, get_Countries_Detail, delete_Countries_Detail, get_Activities_Detail, delete_Activities_Detail, create_Countries, get_activities } from "../actions/index.js"
+import { add_Countries_Favorites, remove_Countries_Favrites, get_All_Countries, get_Countries_Name, get_Countries_Detail, delete_Countries_Detail, get_Activities_Detail, delete_Activities_Detail, create_Activities, get_activities } from "../actions/index.js"
 
 
 const initialState = {
@@ -9,7 +9,7 @@ const initialState = {
     countriesAll: [],
     countriesDetail: [],
     activitiesDetail: [],
-    createCountries: null,
+    createActivities: null,
     activities: [],
     filterCountries: [],
 };
@@ -74,10 +74,10 @@ export default function rootReducer(state = initialState, action) {
                 activitiesDetail: []
             }
 
-        case create_Countries:
+        case create_Activities:
             return {
                 ...state,
-                createCountries: action.payload
+                createActivities: action.payload
             }
 
         case get_activities:

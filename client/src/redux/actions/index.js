@@ -19,34 +19,75 @@ export function removeCountriesFavrites(id) {
 }
 
 
+//CON ASYNC 
+// export function getAllCountries() {
+//   return async function (dispatch) {
+//     try {
+//       let response = await axios.get(`http://localhost:3001/countries/`)
+
+//       return dispatch({
+//         type: get_All_Countries,
+//         payload: response.data
+//       });
+
+//     } catch (error) {
+//       console.log("getAllCountries", error)
+//     }
+
+//   };
+// }
+
+// CON AXIOS.
+
 export function getAllCountries() {
-  return async function (dispatch) {
-    try {
-      let response = await axios.get(`http://www.localhost:3001/countries/`)
-
-      return dispatch({
-        type: get_All_Countries,
-        payload: response.data
-      });
-
-    } catch (error) {
-      console.log("getAllCountries", error)
-    }
-
+  return function (dispatch) {
+    axios.get(`http://localhost:3001/countries/`)
+      .then(response => {
+        dispatch({
+          type: get_All_Countries,
+          payload: response.data
+        });
+      })
   };
 }
 
 
 
+// export function getAllCountries() {
+//   return function(dispatch) { //LLAMADA ASINCRONICA --> NO SE CUANDO VA A SUCEDER
+//     return fetch(`http://localhost:3001/countries`)
+//       .then(response => response.json())
+//       .then(json => {
+//         dispatch({ 
+//             type: get_All_Countries,
+//             payload: json, //Objeto que recibo en mi request
+//           });
+//       });
+//   };
+// }
+
+// export function getCountriesName(name) {
+//   return function(dispatch) { //LLAMADA ASINCRONICA --> NO SE CUANDO VA A SUCEDER
+//     return fetch(`http://localhost:3001/countries?name=${name}`)
+//       .then(response => response.json())
+//       .then(json => {
+//         dispatch({ 
+//             type: get_Countries_Name,
+//             payload: json, //Objeto que recibo en mi request
+//           });
+//       });
+//   };
+// }
 
 
+//CON ASYNC
 export function getCountriesName(name) {
   return async function (dispatch) {
     try {
-      let response = await axios.get(`http://www.localhost:3001/countries?name=${name}`)
+      let response = await axios.get(`http://localhost:3001/countries?name=${name}`)
 
       return dispatch({
-        type: "GET_COUNTRIES_NAME",
+        type: get_Countries_Name,
         payload: response.data
       });
 
@@ -57,11 +98,27 @@ export function getCountriesName(name) {
 }
 
 
+//CON AXIOS
+
+// export function getCountriesName(name) {
+//   return function (dispatch) {
+//     axios.get(`http://localhost:3001/countries?name=${name}`)
+//       .then(response => {
+//         dispatch({
+//           type: get_Countries_Name,
+//           payload: response.data
+//         });
+//       })
+//   };
+// }
+
+
+
 
 // export function getCountriesDetail(id) {
 //   return function (dispatch) {
 //     try{
-//       axios.get(`http://www.localhost:3001/countries/${id}`)
+//       axios.get(`http://localhost:3001/countries/${id}`)
 //       .then(response => {
 //         dispatch({
 //           type: get_Countries_Detail ,
@@ -69,7 +126,7 @@ export function getCountriesName(name) {
 //         });
 //       })
 //     }catch(error){
-//       console.log(getCountriesDetail,error)
+//       console.log("getCountriesDetail",error)
 //     }
 //   };
 // }
@@ -90,12 +147,46 @@ export function getCountriesDetail(id) {
 }
 
 
+
+
+// export function getCountriesDetail(id) {
+//   return function (dispatch) {
+//     axios.get(`http://localhost:3001/countries/${id}`)
+//       .then(response => {
+//         dispatch({
+//           type: get_Countries_Detail,
+//           payload: response.data
+//         });
+//       })
+//   };
+// }
+
+
 export function deleteCountriesDetail(id) {
   return {
     type: delete_Countries_Detail,
     payload: id
   };
+  
 }
+
+
+
+
+export function createActivities(body) {
+  return async function (dispatch) {
+    try {
+      await axios.post("http://localhost:3001/activities/", body);
+      return dispatch({
+        type: create_Activities
+      })
+    } catch (error) {
+      console.log("createActivities", error)
+    }
+  }
+}
+
+
 
 export function getActivitiesDetail(id) {
   return async function (dispatch) {
@@ -120,34 +211,23 @@ export function deleteActivitiesDetail(id) {
 }
 
 
-export function createCountries(body) {
-  return async function (dispatch) {
-    try {
-      await axios.post("http://localhost:3001/activities/", body);
-      return dispatch({
-        type: create_Countries
-      })
-    } catch (error) {
-      console.log("createCountries", error)
-    }
-  }
-}
 
 
 
-export function getActivities() {
-  return async function (dispatch) {
-    try {
-      let response = await axios.get(`http://localhost:3001/activities`)
-      return dispatch({
-        type: get_activities,
-        payload: response.data,
-      })
-    } catch (error) {
-      console.log("getActivities", error)
-    }
-  }
-}
+
+// export function getActivities() {
+//   return async function (dispatch) {
+//     try {
+//       let response = await axios.get(`http://localhost:3001/activities`)
+//       return dispatch({
+//         type: get_activities,
+//         payload: response.data,
+//       })
+//     } catch (error) {
+//       console.log("getActivities", error)
+//     }
+//   }
+// }
 
 
 // export function orderGenres(genre) {
@@ -184,8 +264,14 @@ export const get_Countries_Detail = "GET_VIDEOGAME_DETAIL";
 export const delete_Countries_Detail = "DELETE_VIDEOGAME_DETAIL";
 export const get_Activities_Detail = "GET_ACTIVITIES_DETAIL";
 export const delete_Activities_Detail = "DELETE_ACTIVITIES_DETAIL";
-export const create_Countries = "CREATE_VIDEOGAME"
+export const create_Activities = "CREATE_ACTIVITIES"
 export const get_activities = "GET_ACTIVITIES";
+
+
+
+
+
+
 
 // export const videogameFilter = "VIDEOGAME_FILTER";
 

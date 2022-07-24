@@ -10,13 +10,13 @@ import "./countriesCard.css"
 
 
 
-export default function CountriesCard({ id, name, image, continent, capital, subregion, area, population }) {
+export default function CountriesCard({ id, name, image, continent}) {
 
   const dispatch = useDispatch();
 
   function onChangeClick(){
     dispatch(addCountriesFavorites({name: name, id: id, image:image}))
-    alert("ADDED COUNTRY")
+    alert(`ADDED "${name.toUpperCase()}" A MY LIST`)
   }
 
   return (
