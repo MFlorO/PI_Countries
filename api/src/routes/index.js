@@ -10,6 +10,7 @@ const activityId = require("./activityId")
 const activityUpdate = require("./activityUpdate")
 const activityDelete = require("./activityDelete")
 
+const getActivity = require("./getActivity")
 
 const router = Router();
 
@@ -26,6 +27,9 @@ router.use("/countries", countryId);
 
 // Traigo todos los videojuegos, ya sea de la api o mi bd
 router.use("/countries", getCountry);
+
+
+router.use("/activities", getActivity);
 
 
 
