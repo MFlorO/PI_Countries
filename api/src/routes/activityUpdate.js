@@ -42,7 +42,7 @@ try {
             // await activity.setCountrys([countryFind])
 
             await activity.addCountry([countryFind]) //Me agrega los country pero no me setea si ya hay uno antes
-
+                    
         })
 
 

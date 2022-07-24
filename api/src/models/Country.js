@@ -14,7 +14,7 @@ module.exports = (sequelize) => {
     },
     imageFlag: {
       type: DataTypes.ARRAY(DataTypes.STRING),
-      allowNull: false,
+      // allowNull: false,
     },
     continent: {
       type: DataTypes.ARRAY(DataTypes.STRING),

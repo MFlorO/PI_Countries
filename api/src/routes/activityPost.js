@@ -7,32 +7,39 @@ const router = Router();
 
 
 
+
 router.post("/", async function (req, res) {
 
+    const { id, name, difficulty, duration, seassion } = req.body
+
+
+    const newActivity = await Activity.create({
+        name: name.toLowerCase(), //El toLowerCase() Lo uso por si el usuario escribe "en mayuscula" o "minuscula"
+        difficulty,
+        duration,
+        seassion
+    })
+
     try {
-        const { id, name, difficulty, duration, seassion } = req.body
 
-
-        const newActivity = await Activity.create({
-            name: name.toLowerCase(), //El toLowerCase() Lo uso por si el usuario escribe "en mayuscula" o "minuscula"
-            difficulty,
-            duration,
-            seassion
-        })
-
-         id.map( async i => { //El id lo mapeo porque puedo agregar varios "country" a una misma "activity"
-
-        
-            const countryFind =  await Country.findByPk(i.toUpperCase()) //El toUpperCase() Lo uso por si escribo "CFK" o "cfk"
-
-            await countryFind.addActivity(newActivity) //Aca uno 
+        id.map(async i => { //El id lo mapeo porque puedo agregar varios "country" a una misma "activity"
             
+            const countryFind = await Country.findOne({
+                where:{
+                    id:i.toUpperCase() //El toUpperCase() Lo uso por si escribo "CFK" o "cfk"
+                   } 
+                }) 
+
+            console.log(countryFind)
+            
+            if (countryFind) {
+                
+                countryFind.addActivity(newActivity) //Aca uno 
+
+            }
         })
 
-
-        res.send("Activity created with exit")
-
-        // res.json(newActivity)
+        res.json({ msg: "Activity created with exit" })
 
     } catch (error) {
         res.status(400).send(error)
@@ -42,6 +49,7 @@ router.post("/", async function (req, res) {
 
 
 
-
 module.exports = router;
+
+
 

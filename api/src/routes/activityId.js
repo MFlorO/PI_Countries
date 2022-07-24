@@ -1,7 +1,7 @@
 
 const { Router } = require('express');
 
-const { Activity } = require("../db.js")
+const { Activity, Country } = require("../db.js")
 
 
 
@@ -15,12 +15,18 @@ router.get("/:id", async function (req, res) {
     try {
 
 
-        const countryBD = await Activity.findByPk(id)
+        const activitiesBD = await Activity.findOne({
+            where: { id: id}, 
+            include: {
+                model: Country, 
+                attributes: ["name"],
+                through: { attributes: [] }
+            }
+        })
+        console.log(activitiesBD)
         
-
-        res.json(countryBD)
-
-
+        res.json(activitiesBD)
+        
 
     } catch (error) {
         res.status(404).send("Not recived id")

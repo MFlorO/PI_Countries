@@ -25,10 +25,11 @@ router.delete("/:id", async function (req, res) {
             res.json(Activity);
 
         } else {
-            res.status(404).send("Not recived id")
+            res.status(404).json({msg:"Not recived id"})
         }
     } catch (error) {
-    res.send("The data cannot be deleted");
+        console.log(error)
+    res.send({msg:"The data cannot be deleted"});
  }
 
 })

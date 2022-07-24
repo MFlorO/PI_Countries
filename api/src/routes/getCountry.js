@@ -8,7 +8,28 @@ const router = Router();
 
 
 
+async function crearRegistro() {
 
+    const allCountries = await axios.get(`https://restcountries.com/v3/all`)
+
+
+    const countriesMap = await allCountries.data.map(c => {
+        return {
+            id: c.cca3,
+            name: c.name.official,
+            imageFlag: c.flags,
+            continent: c.continents,
+            capital: c.capital ? c.capital : ["Not have capital"],
+            subregion: c.subregion ? c.subregion : "",
+            area: c.area,
+            population: c.population
+        }
+    })
+
+
+    return countriesMap
+
+}
 
 
 
@@ -16,73 +37,65 @@ const router = Router();
 router.get("/", async function (req, res) {
 
     const { name } = req.query;
+    const dbLength = await Country.count();  //".count()" --> ME dice si hay datos en esa tabla "Country"
+
+    if (!dbLength) {  
+
+        const countries = await crearRegistro() //LLamo a la funcion
+        // console.log(countries)
+        await Country.bulkCreate(countries); // ACA CREO POR PRIMERA VEZ MI BD con la llamda en la api
+
+      
+    }
 
 
-        try {
-            if (name) {
+    try {
+        if (name) {
 
-                
-                const country = await Country.findAll({
-                    include: {
-                        model: Activity,
-                        attributes: ['id', "name", "difficulty", "duration", "seassion"],
-                        through: { attributes: [] }
-                    },
-                    where: {
-                        name: {
-                            [Op.iLike]: `%${name}%`
-                        }
+
+            const country = await Country.findAll({
+                include: {
+                    model: Activity,
+                    attributes: ['id', "name", "difficulty", "duration", "seassion"],
+                    through: { attributes: [] }
+                },
+                where: {
+                    name: {
+                        [Op.iLike]: `%${name}%`
                     }
-                })
+                }
+            })
 
-               if(country.length > 0){
+            if (country.length > 0) {
 
                 res.json(country)
 
-               }else{
-
-                res.send("No existe nada con ese nombre")
-               }
-
-
             } else {
 
-
-                //Me traigo de la app externa los datos de country
-                let countryApi = await axios.get(`https://restcountries.com/v3/all`)
-
-                //Al usar axios. El resultado se guarda en data y despues en mi json los datos estan adentro de un array 
-                //Recorro este array. 
-                //Busco en mi propia db, y si no hay lo creo, el nombre del genero que estoy recorriendo. 
-
-                countryApi.data.map(countryApi => {
-                    return Country.findOrCreate({
-                        where: {
-                            id: countryApi.cca3,
-                            name: countryApi.name.official,
-                            imageFlag: countryApi.flags.map(i => {
-                                return i
-                            }),
-                            continent: countryApi.continents,
-                            capital: countryApi.capital ? countryApi.capital : ["Not have capital"],
-                            subregion: countryApi.subregion ? countryApi.subregion : "",
-                            area: countryApi.area,
-                            population: countryApi.population
-                        }
-                    })
-                })
-
-                const countryDB = await Country.findAll()
-                //Recorro mi base de datos con los country que cree que me traje de la api externa
-
-                res.json(countryDB)
+                res.json({ msg: "No existe pais con ese nombre" })
             }
 
 
-        } catch (error) {
+        } else {
 
-            res.status(404).send("Not recived name")
+            const countryDB = await Country.findAll({
+                include: {
+                    model: Activity,
+                    attributes: ['id', "name", "difficulty", "duration", "seassion"],
+                    through: { attributes: [] }
+                }
+            })
+
+            //Recorro mi base de datos con los country que cree que me traje de la api externa
+
+            res.json(countryDB)
+
         }
+
+    } catch (error) {
+
+        res.status(404).json(error)
+    }
 
 })
 
