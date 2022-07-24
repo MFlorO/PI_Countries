@@ -24,7 +24,7 @@ export default function Home() {
 
   const maximo = countries.length / porpagina
 
-  // console.log(maximo)
+  console.log("maximoPagina",maximo)
 
 
   useEffect(() => {
