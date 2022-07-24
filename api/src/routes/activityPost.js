@@ -34,7 +34,7 @@ router.post("/", async function (req, res) {
             
             if (countryFind) {
                 
-                countryFind.addActivity(newActivity) //Aca uno 
+                countryFind.addActivity([newActivity]) //Aca uno 
 
             }
         })
