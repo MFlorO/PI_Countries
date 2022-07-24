@@ -204,7 +204,6 @@ export function createActivities(body) {
 }
 
 
-
 // export const createActivities = (payload) => {
 //   return dispatch => {
 //       try {

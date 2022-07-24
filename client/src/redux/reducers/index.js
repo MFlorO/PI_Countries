@@ -5,13 +5,12 @@ import { add_Countries_Favorites, remove_Countries_Favrites, get_All_Countries, 
 
 
 const initialState = {
-    countriesFavourites: [],
     countriesAll: [],
-    countriesDetail: [],
-    activitiesDetail: [],
-    createActivities: {},
-    activities: [],
     filterCountries: [],
+    countriesDetail: [],
+    createActivities: [],
+    activities: [],
+    countriesFavourites: [],
 };
 
 
@@ -20,6 +19,13 @@ const initialState = {
 export default function rootReducer(state = initialState, action) {
 
     switch (action.type) {
+
+        case create_Activities:
+            return {
+                ...state,
+                createActivities: action.payload
+            }
+
         case add_Countries_Favorites:
             return {
                 ...state,
@@ -62,11 +68,6 @@ export default function rootReducer(state = initialState, action) {
                 countriesDetail: []
             }
 
-        case create_Activities:
-            return {
-                ...state,
-                createActivities: action.payload
-            }
 
         case get_activities:
             return {

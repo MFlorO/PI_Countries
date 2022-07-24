@@ -52,7 +52,6 @@ export default function Form({countries}) {
    
 
 
-    
 
    const randomSeassion = ["Summer","Autunm","Winter","Spring"]
         
@@ -101,7 +100,6 @@ export default function Form({countries}) {
   }
 
 
-
      function reset(){  
       setInput({
         name: "",
@@ -120,23 +118,19 @@ export default function Form({countries}) {
       dispatch(createActivities(input));
 
 
-       if(!errores) {
-        (alert("FORMULARIO ENVIADO"))
-        reset()
-       }
+    //    if(!errores) {
+    //     (alert("FORMULARIO ENVIADO"))
+    //     reset()
+    //    }
       
-       
       }
 
-
-    //   const removeCountry = (e) =>{
-    //     setInput( input.filter(c => c !== e.target.name)
-    //     )
-    //     console.log(countries)
-    // }
-
-
+ 
   
+
+
+
+
     return (
 
 
@@ -201,26 +195,30 @@ export default function Form({countries}) {
             
         </form>
   
+
+
   
         {/* COUNTRIES LIST */}
 
-        {/* <div className="countriesList">
-            <ul>
+        <div className="countriesList">
+            <ul>     
             {
-                countries?.map((el) => {
+                input.countries?.map((inputCountry) => {
             
-                    let name = countries?.map((e) =>  e.id === el? e.name : null  )
+                    let name = countries?.map((country) =>{
+                       return country.id === inputCountry ? country.name : null
+                    }) 
+                    
                     return ( 
-                        <div>
-                    <span key={el.id} className="lista">{name}</span>
-                    <button name={el}className="closeButton" onClick={(e) => { removeCountry(e) }}>❌</button>
+                    <div key={inputCountry}>
+                    <li>{name}</li>
                     </div>
                 )
     
                 })
             }
             </ul>
-        </div> */}
+        </div> 
     
 
 
