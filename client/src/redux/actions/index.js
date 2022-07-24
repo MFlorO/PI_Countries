@@ -173,20 +173,35 @@ export function deleteCountriesDetail(id) {
 
 
 
+// export function createActivities(body) {
+//   return async function (dispatch) {
+//     try {
+//       await axios.post("http://localhost:3001/activities/", body);
+//       return dispatch({
+//         type: create_Activities
+//       })
+//     } catch (error) {
+//       console.log("createActivities", error)
+//     }
+//   }
+// }
+
+
 export function createActivities(body) {
   return async function (dispatch) {
-    try {
-      await axios.post("http://localhost:3001/activities/", body);
+    try{
+      const newActivity = await axios.post("http://localhost:3001/activities/", body);
+      console.log(newActivity);
       return dispatch({
-        type: create_Activities
-      })
-    } catch (error) {
-      console.log("createActivities", error)
+        type:create_Activities,
+      }
+      )
+
+    }catch(error){
+      console.log(error)
     }
-  }
 }
-
-
+}
 
 
 
@@ -213,46 +228,24 @@ export function createActivities(body) {
 // }
 
 
-export function getActivitiesDetail(id) {
+
+
+
+
+
+export function getActivities() {
   return async function (dispatch) {
     try {
-      let response = await axios.get(`http://localhost:3001/activities/${id}`)
+      let response = await axios.get(`http://localhost:3001/activities/`)
       return dispatch({
-        type: get_Activities_Detail,
-        payload: response.data
+        type: get_activities,
+        payload: response.data,
       })
     } catch (error) {
-      console.log("getActivitiesDetail", error)
+      console.log("getActivities", error)
     }
   }
 }
-
-
-export function deleteActivitiesDetail(id) {
-  return {
-    type: delete_Activities_Detail,
-    payload: id
-  };
-}
-
-
-
-
-
-
-// export function getActivities() {
-//   return async function (dispatch) {
-//     try {
-//       let response = await axios.get(`http://localhost:3001/activities`)
-//       return dispatch({
-//         type: get_activities,
-//         payload: response.data,
-//       })
-//     } catch (error) {
-//       console.log("getActivities", error)
-//     }
-//   }
-// }
 
 
 
@@ -282,8 +275,6 @@ export const get_All_Countries = "GET_ALL_COUNTRIES"
 export const get_Countries_Name = "GET_COUNTRIES_NAME";
 export const get_Countries_Detail = "GET_COUNTRIES_DETAIL";
 export const delete_Countries_Detail = "DELETE_COUNTRIES_DETAIL";
-export const get_Activities_Detail = "GET_ACTIVITIES_DETAIL";
-export const delete_Activities_Detail = "DELETE_ACTIVITIES_DETAIL";
 export const create_Activities = "CREATE_ACTIVITIES"
 export const get_activities = "GET_ACTIVITIES";
 
