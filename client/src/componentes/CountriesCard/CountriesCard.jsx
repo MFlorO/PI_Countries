@@ -21,11 +21,11 @@ export default function CountriesCard({ id, name, image, continent}) {
 
   return (
     
-  <div>
-      <button onClick={() => onChangeClick()  }> ♥ </button>
+  <div className="countries-card">
+      <button className="boton-fav" onClick={() => onChangeClick()  }> ♥ </button>
 
       <h3>{name}</h3>
-      <Link to={`/detail/${id}`}><img src={image} alt="" /></Link>
+      <Link to={`/detail/${id}`}><img className="bandera"src={image} alt="" /></Link>
       <p>{continent}</p>
 
   </div>

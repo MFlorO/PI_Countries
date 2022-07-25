@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import CountriesCard from "../CountriesCard/CountriesCard.jsx";
+import "./countries.css"
 
 
 
@@ -28,7 +29,7 @@ export default function Countries({pagina, porpagina}) {
   
   return (
     
-    <div >
+    <div className="home-countries" >
     
         {filterCountriesPagina().map((country) => (
           <div  key={country.id}>

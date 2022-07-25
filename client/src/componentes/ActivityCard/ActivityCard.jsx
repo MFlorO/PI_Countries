@@ -12,7 +12,7 @@ export default function Activity({ id, name, difficulty, seassion, duration }) {
       </Link>
       <p>Difficulty: {difficulty}</p>
       <p>Seassion: {seassion}</p>
-      <p>Duration: {duration}</p>
+      <p>Duration: {duration}Hs.</p>
      </section>
     </div>
   );
