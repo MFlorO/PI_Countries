@@ -19,15 +19,15 @@ module.exports = (sequelize) => {
             min: 1,
             max: 5
         },
+        allowNull: true
     },
     duration:{
-        type:DataTypes.TIME,
-        get() {
-          return this.getDataValue('duration') + ' Hs.';
-        },
+        type:DataTypes.STRING,
+        allowNull: true
     },
     seassion:{
-        type: DataTypes.ENUM('Summer', "Autunm" , 'Winter', 'Spring')
+        type: DataTypes.ENUM('Summer', 'Autunm' , 'Winter', 'Spring'),
+        allowNull: true
     }
 
   },{
