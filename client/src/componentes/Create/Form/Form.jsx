@@ -2,30 +2,13 @@ import React,{useState} from "react";
 import { useDispatch} from "react-redux";
 
 import {createActivities} from "../../../redux/actions/index.js"
+import validate from "./validate.js"
+import "./form.css"
 
 
 
-   //VALIDACION DEL FORMULARIO
-   function validate(input){
 
-    let errores = {};
-  
-    if(!input.name){
-      errores.name = "No hay informacion del nombre"
-    }
-
-    if(!input.difficulty){
-      errores.difficulty = "No hay informacion del difficulty"
-    }else if(!typeof input.rating === "number"){   
-    errores.difficulty = "El campo difficulty no es un numero"
-    }else if (input.difficulty > 5 || input.difficulty < 0){
-      errores.difficulty = "El campo difficulty no esta dentro del rango aceptable"
-    }
-
-    return errores
-  }
-
-
+ 
 
 
 
@@ -53,7 +36,7 @@ export default function Form({countries}) {
 
 
 
-   const randomSeassion = ["Summer","Autunm","Winter","Spring"]
+   const randomSeassion = ['Summer', "Autunm" , 'Winter', 'Spring']
         
 
 
@@ -100,29 +83,20 @@ export default function Form({countries}) {
   }
 
 
-     function reset(){  
-      setInput({
-        name: "",
-        difficulty: 0,
-        duration: "",
-        seassion: "",
-        countries: [],
-      });
-     }
-      
+
+
     
 
       function handleSubmit(evento) {
       evento.preventDefault();
 
+      console.log(input)
       dispatch(createActivities(input));
 
-
-    //    if(!errores) {
-    //     (alert("FORMULARIO ENVIADO"))
-    //     reset()
-    //    }
-      
+       if(!errores) {
+        (alert("FORMULARIO ENVIADO"))
+        evento.target.reset();
+       }      
       }
 
  
@@ -131,14 +105,15 @@ export default function Form({countries}) {
 
 
 
+
+
     return (
 
 
       
-    <div className="create">
+    <div className="form">
          
-    
-        
+           
         
         <h1>CREATE A TOURIST ACTIVITY</h1>
   
@@ -168,11 +143,14 @@ export default function Form({countries}) {
           <option hidden>SEASSION</option>
           {randomSeassion.map ((seassion, key) => {
             return ( 
-               <option key={key} id="countries" name="countries" value={seassion}>{seassion}</option>
+               <option key={key} id="countries" name="countries" value={seassion} defaultValue={""} >{seassion}</option>
             )
           })}
 
           </select>
+
+
+          
 
 
          

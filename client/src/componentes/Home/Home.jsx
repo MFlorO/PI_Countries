@@ -7,6 +7,7 @@ import "./home.css";
 
 import { getAllCountries} from "../../redux/actions/index.js";
 import Loading from "../../Loading/Loading.jsx";
+import imagenDeFondo from "./imagenes/mundo.jpg"
 
 
 
@@ -16,24 +17,39 @@ export default function Home() {
 
     const [pagina, setPagina] = useState(1);
 
+
     const [porpagina, setPorpagina] = useState(9);
 
+
+
+    
   const countries = useSelector((state) => state.filterCountries);
+
+  console.log(countries)
+
+
   const dispatch = useDispatch();
 
 
   const maximo = countries.length / porpagina
 
-  console.log("maximoPagina",maximo)
+
 
 
   useEffect(() => {
     dispatch(getAllCountries());
   }, []);
 
-  console.log(countries)
+
+
+
 
   return (
+   <>
+    <div id="background"> 
+    <img src={imagenDeFondo} className="imagen" alt="" />  
+   </div>
+
     <div className="home">
       
       {countries.length > 0 ? (
@@ -42,12 +58,13 @@ export default function Home() {
           
          <Paginas pagina={pagina} setPagina={setPagina} maximo={maximo} /> 
           
-          <div className="home-countries"> <Countries pagina={pagina} porpagina={porpagina}/></div>
+          <div className="home-countries"> <Countries pagina={pagina} porpagina={porpagina} countries={countries}/></div>
 
         </div>
       ) : ( countries.msg ?  <h3>{countries.msg}</h3> : <Loading />
             //Si hay un error en la busqueda de nombres mostralo sino que aparezca loading
       )}
     </div>
+    </>
   );
 }

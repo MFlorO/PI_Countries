@@ -5,6 +5,8 @@ import { useParams } from "react-router-dom";
 import Loading from "../../Loading/Loading.jsx";
 import ActivityCard from "../ActivityCard/ActivityCard.jsx";
 
+import "./countriesDetail.css"
+
 
 
 
@@ -30,7 +32,7 @@ export default function CountriesDetail() {
   }, [id]);
 
   return (
-    <div>
+    <div className="countries-details">
       {countriesDetail.imageFlag ? (
         <div>
           <img src={countriesDetail.imageFlag[1]} alt="Imagen del videojuego" />

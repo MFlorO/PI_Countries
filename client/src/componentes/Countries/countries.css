@@ -1,0 +1,14 @@
+
+.home-countries{
+
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 30px;
+        grid-row-gap: 100px;
+        justify-items: center;
+
+      
+    
+}

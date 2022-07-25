@@ -1,10 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Karla&family=Roboto:wght@100&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 .slider{
     width: 100%;
@@ -53,9 +48,8 @@
 
 .title {
     height: 50%;
-    font-family: 'Karla', sans-serif;
-    font-family: 'Roboto', sans-serif;
-    font-size: 8rem;
+    font-family: sans-serif;
+    font-size: 5rem;
     color: #f9f3f4;
     text-shadow: 2px 2px #d6d6d6;
     position: absolute;
@@ -72,17 +66,16 @@
     position: absolute;
     top:65%;
     left: 45%;
-    height: 150px;
-    width: 200px;
+    height: 100px;
+    width: 165px;
     border-radius:20px;
     background:none;
     border: solid 5px #f9f3f4;
-    font-family: 'Karla', sans-serif;
-    font-family: 'Roboto', sans-serif;
+    font-family: sans-serif;
     color: #f9f3f4;
     font-weight: 1000;
-    font-size: 35px;
-    text-shadow: 2px 2px #d6d6d6;
+    font-size: 25px;
+    text-shadow: 1px 1px 1px #d6d6d6;
 }
 
 

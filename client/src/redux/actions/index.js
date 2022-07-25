@@ -191,17 +191,21 @@ export function createActivities(body) {
   return async function (dispatch) {
     try{
       const newActivity = await axios.post("http://localhost:3001/activities/", body);
-      console.log(newActivity);
+      console.log("crateAcctivities",newActivity);
       return dispatch({
         type:create_Activities,
       }
       )
 
     }catch(error){
-      console.log(error)
+      console.log("crateAcctivities",error)
     }
 }
 }
+
+
+
+
 
 
 // export const createActivities = (payload) => {
@@ -254,13 +258,29 @@ export function getActivities() {
 
 
 
-// export function Order(order) {
-//   return {
-//     type: Sort,
-//     payload: order,
-//     //El playload va a ser el videojeugo a eliminar 
-//   };
-// }
+export function orderContinent(payload) {
+  return {
+    type: OrderCont,
+    payload: payload
+  };
+}
+
+
+export function AscDes(payload) {
+  return {
+    type: asc_des,
+    payload: payload
+  };
+}
+
+
+export function orderPoblation(payload) {
+  return {
+    type: order_Poblation,
+    payload: payload
+  };
+}
+
 
 
 
@@ -276,6 +296,10 @@ export const get_Countries_Detail = "GET_COUNTRIES_DETAIL";
 export const delete_Countries_Detail = "DELETE_COUNTRIES_DETAIL";
 export const create_Activities = "CREATE_ACTIVITIES"
 export const get_activities = "GET_ACTIVITIES";
+
+export const order_Poblation = "ORDER_POBLATION"
+export const asc_des = "ASC_DES"
+export const OrderCont = "ORDER_CONT"
 
 
 

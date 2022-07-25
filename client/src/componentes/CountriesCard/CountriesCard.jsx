@@ -10,7 +10,7 @@ import "./countriesCard.css"
 
 
 
-export default function CountriesCard({ id, name, image, continent}) {
+export default function CountriesCard({ id, name, image, continent, population}) {
 
   const dispatch = useDispatch();
 
@@ -26,7 +26,8 @@ export default function CountriesCard({ id, name, image, continent}) {
 
       <h3>{name}</h3>
       <Link to={`/detail/${id}`}><img className="bandera"src={image} alt="" /></Link>
-      <p>{continent}</p>
+      <h4>{continent}</h4>
+      <p>{population}</p>
 
   </div>
   );

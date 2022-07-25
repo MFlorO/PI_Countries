@@ -1,7 +1,7 @@
-// import { ASCENDENTE } from "../../constantes/sort.js";
+import { ASCENDENTE, DESCENDENTE } from "../../componentes/Filter/constantes.js";
 
 
-import { add_Countries_Favorites, remove_Countries_Favrites, get_All_Countries, get_Countries_Name, get_Countries_Detail, delete_Countries_Detail, create_Activities, get_activities } from "../actions/index.js"
+import { add_Countries_Favorites, remove_Countries_Favrites, OrderCont, get_All_Countries, get_Countries_Name, get_Countries_Detail, delete_Countries_Detail, create_Activities, get_activities, asc_des, order_Poblation } from "../actions/index.js"
 
 
 const initialState = {
@@ -76,31 +76,60 @@ export default function rootReducer(state = initialState, action) {
             };
 
 
-        // case orderGenre:
-        //         return {
-        //             ...state,
-        //             VideogamesAll: state.VideogamesAll.filter(videogame => videogame.genres !== action.payload)
+        
+        case OrderCont:
+        const continetFilter = action.payload === "Default" ? state.countriesAll : state.countriesAll.filter(el => el.continent[0] === action.payload)
+        return{
+          ...state,
+         filterCountries: continetFilter    
+        }
+               
 
-        //         };
 
 
-        // case Sort:
-        //     let videogamesOrder = [...state.VideogamesAll]
+        case asc_des:
 
-        //     videogamesOrder.sort((a,b) =>{
-        //         if(a.name < b.name){
-        //             return action.payload === ASCENDENTE ? -1 : 1
-        //         }
-        //         if(a.name > b.name){
-        //             return action.payload === ASCENDENTE ? 1 : -1
-        //         }
-        //         return 0;
-        //     })
+            let continetOrder = [...state.countriesAll]
 
-        //     return {
-        //         ...state,
-        //         filterCountries: videogamesOrder
-        //     }
+            let continetOrder2 = action.payload === "Default" ? continetOrder :
+
+            continetOrder.sort((a,b) =>{
+                if(a.name < b.name){
+                    return action.payload === DESCENDENTE ? 1 : -1
+                }
+                if(a.name > b.name){
+                    return action.payload === DESCENDENTE ? -1 : 1
+                }
+                return 0;
+            })
+
+            return {
+                ...state,
+                filterCountries: continetOrder2
+            }
+
+
+
+            case order_Poblation:
+                let poblationOrder =  [...state.countriesAll]
+
+                let poblationOrder2 =  action.payload === "Default" ? poblationOrder :
+    
+                poblationOrder.sort((a,b) =>{
+
+                    if(a.population < b.population){
+                        return action.payload === DESCENDENTE ? -1 : 1
+                    }
+                    if(a.population > b.population){
+                        return action.payload === DESCENDENTE ? 1 : -1
+                    }
+                    return 0;
+                })
+    
+                return {
+                    ...state,
+                    filterCountries: poblationOrder2
+                }
 
 
         default:

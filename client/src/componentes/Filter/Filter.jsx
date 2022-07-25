@@ -1,16 +1,20 @@
 import React from "react";
-// import FilterAscDesc from "../FilterAscDesc/FilterAscDesc";
-// import FilterGeneroVideogame from "../FilterGeneroVideogame/FilterGeneroVideogame.jsx"
-// import FilterVideogames from "../FilterVideogames/FilterVideogames";
+import FilterAscDesc from "./FilterAscDesc/FilterAscDesc";
+import FilterContinent from "./FilterContinent/FilterContinent.jsx";
+import FilterPoblation from "./FilterPoblation/FilterPoblation.jsx";
+import FilterActivity from "./FilterActivity/FilterActivity.jsx";
+
 
 
 
 export default function Filter() {
     return (
         <div>
-            {/* <FilterAscDesc />
-            <FilterGeneroVideogame />
-            <FilterVideogames /> */}
+            
+            <FilterAscDesc />
+            <FilterContinent />
+            <FilterPoblation />
+            <FilterActivity />
 
         </div>
     );
