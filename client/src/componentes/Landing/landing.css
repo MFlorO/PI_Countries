@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&family=Roboto:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.slider{
+    width: 100%;
+    height: 59.4rem;
+    overflow: hidden;
+    opacity: 1;
+}
+
+.slider ul{
+    display: flex;
+    animation: cambiar 30s infinite linear;
+    width: 400%;
+} 
+
+.slider li{
+    width: 100%;
+    list-style: none;
+}
+.slider li img{
+    width: 100%;
+    height: 100%; 
+} 
+
+
+
+
+
+@keyframes cambiar {
+    0%{margin-left: 0%;}
+
+    20%{margin-left: 0%;}
+
+    25%{margin-left: -100%;}
+
+    45%{margin-left:  -100%;}
+
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+
+    75%{margin-left: -300%;}
+    100%{margin-left: -300%;}
+} 
+
+
+
+
+.title {
+    height: 50%;
+    font-family: 'Karla', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-size: 8rem;
+    color: #f9f3f4;
+    text-shadow: 2px 2px #d6d6d6;
+    position: absolute;
+    align-items: center;
+    align-content: center;
+    top: 30%;
+    right: 18%;
+} 
+
+
+
+
+.boton{
+    position: absolute;
+    top:65%;
+    left: 45%;
+    height: 150px;
+    width: 200px;
+    border-radius:20px;
+    background:none;
+    border: solid 5px #f9f3f4;
+    font-family: 'Karla', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    color: #f9f3f4;
+    font-weight: 1000;
+    font-size: 35px;
+    text-shadow: 2px 2px #d6d6d6;
+}
+
+
+.boton:hover{
+    cursor: pointer;
+    background-color: hsla(0, 0%, 100%, 0.438);
+    text-shadow: 0 0 5px #f1bfe5f4 transparent 
+
+} 
+
+
