@@ -25,7 +25,7 @@ export default function Form({countries}) {
         difficulty: 0,
         duration: "",
         seassion: "",
-        countrie: [],
+        id: [], //idCountries
       });
     
 
@@ -45,15 +45,13 @@ export default function Form({countries}) {
   
    function handleChange(event) {
 
-    if(event.target.name === "countrie"){
+    if(event.target.name === "id"){
 
-      if(!input.countrie.includes(event.target.value)){
+      if(!input.id.includes(event.target.value)){
 
-        const arr = input[event.target.name];
-        setInput({
-            ...input,
-            [event.target.name]: arr.concat(event.target.value),
-        });
+        setInput({...input, 
+          id: [...input.id, event.target.value]
+        })
       }
 
 
@@ -75,27 +73,31 @@ export default function Form({countries}) {
 
 
 
+    function reset(){       
+      setInput({
+        name: "",
+        difficulty: 0,
+        duration: "",
+        seassion: "",
+        id: []
+      });
+
+     }
   
     
 
       function handleSubmit(evento) {
-      evento.preventDefault();
+        evento.preventDefault();
+        dispatch(createActivities(input));
+        
 
+        (alert("FORMULARIO ENVIADO"))   
 
-      dispatch(createActivities(input));
-
-      console.log("input",input)
-      
-
-       if(!errores) {
-        (alert("FORMULARIO ENVIADO"))
-        evento.target.reset();
-       }      
-       
+        evento.target.reset()
+        reset()
       }
 
  
-  
 
 
 
@@ -121,7 +123,7 @@ export default function Form({countries}) {
           
 
           
-          <label htmlFor="rating">Difficulty: </label>
+          <label htmlFor="difficulty">Difficulty: </label>
           <input className={errores.Difficulty && 'danger'} type="number"  name="difficulty" value={input.difficulty} onChange={handleChange} />
           {/* {errores.Difficulty && (<p className="danger">{errores.Difficulty}</p>)} */}
 
@@ -133,11 +135,11 @@ export default function Form({countries}) {
 
 
           <p className="seassion">Seassion: </p>
-          <select name="seassion" onChange={handleChange}>
-          <option hidden>SEASSION</option>
+          <select name="seassion" defaultValue={"default"} onChange={handleChange}>
+          <option value={"default"}>SEASSION</option>
           {randomSeassion.map ((seassion, key) => {
             return ( 
-               <option key={key} id="seassion" name="seassion" value={seassion} defaultValue={""} >{seassion}</option>
+               <option key={key} id="seassion" name="seassion" value={seassion} >{seassion}</option>
             )
           })}
 
@@ -148,13 +150,12 @@ export default function Form({countries}) {
 
          {/* ################      COUNTRIES              ###################### */}
 
-          <p className="countrie">Countries: </p>
-          <select name="countrie" onChange={handleChange} >
-          <option hidden>COUNTRIES</option>
-
+          <p className="id">Countries: </p>
+          <select name="id" defaultValue="default" onChange={handleChange} >
+          <option value="default" default>COUNTRIES</option>
           {countries.map (countries => {
             return ( 
-               <option key={countries.id} id="countrie" name="countrie" value={countries.id}>{countries.name}</option>
+               <option key={countries.id} id="id" name="id" value={countries.id} >{countries.name}</option>
             )
           })}
 
@@ -173,7 +174,7 @@ export default function Form({countries}) {
         <div className="countriesList">
             <ul>     
             {
-                input.countrie?.map((c) => {
+                input.id?.map((c) => {
             
                     let name = countries?.map((country) =>{
                        return country.id === c ? country.name : null

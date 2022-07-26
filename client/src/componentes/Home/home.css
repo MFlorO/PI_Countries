@@ -1,11 +1,11 @@
-*{
+/* *{
     margin: 0;
     padding: 0;
 }
 
 
 
-.background{
+.background-img{
     opacity: 0.98;
     width: 100%; 
     height: 100%; 
@@ -27,8 +27,13 @@ body{
     margin: 0px
 }
 
-.home{
+.home-cointeiner{
     position: absolute;
     justify-content: center;
 }
+ */
+
+
+
+
 

@@ -46,12 +46,12 @@ export default function Home() {
 
 
   return (
-   <>
-    <div id="background"> 
+   <div className="home">
+    <div className="background-img"> 
     <img src={imagenDeFondo} className="imagen" alt="" />  
    </div>
 
-    <div className="home">
+    <div className="home-cointeiner">
       
       {countries.length > 0 ? (
         <div >
@@ -66,6 +66,6 @@ export default function Home() {
             //Si hay un error en la busqueda de nombres mostralo sino que aparezca loading
       )}
     </div>
-    </>
+    </div>
   );
 }

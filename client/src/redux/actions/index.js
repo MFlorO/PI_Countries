@@ -173,35 +173,34 @@ export function deleteCountriesDetail(id) {
 
 
 
-// export function createActivities(body) {
-//   return async function (dispatch) {
-//     try {
-//       await axios.post("http://localhost:3001/activities/", body);
-//       return dispatch({
-//         type: create_Activities
-//       })
-//     } catch (error) {
-//       console.log("createActivities", error)
-//     }
-//   }
-// }
-
-
 export function createActivities(body) {
   return async function (dispatch) {
-    try{
-      const newActivity = await axios.post("http://localhost:3001/activities/", body);
-      console.log("crateAcctivities",newActivity);
+    try {
+      await axios.post("http://localhost:3001/activities/", body);
       return dispatch({
-        type:create_Activities,
-      }
-      )
-
-    }catch(error){
-      console.log("crateAcctivities",error)
+        type: create_Activities
+      })
+    } catch (error) {
+      console.log("createActivities", error)
     }
+  }
 }
-}
+
+
+// export function createActivities(body) {
+//   return async function (dispatch) {
+//     try{
+//       const newActivity = await axios.post("http://localhost:3001/activities/", body);
+//       return dispatch({
+//         type:create_Activities,
+//       }
+//       )
+
+//     }catch(error){
+//       console.log("crateAcctivities",error)
+//     }
+// }
+// }
 
 
 
