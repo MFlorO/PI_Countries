@@ -25,7 +25,7 @@ export default function Form({countries}) {
         difficulty: 0,
         duration: "",
         seassion: "",
-        countries: [],
+        countrie: [],
       });
     
 
@@ -44,59 +44,54 @@ export default function Form({countries}) {
 
   
    function handleChange(event) {
-   
-   if(event.target.name === "countries" ){ 
-      //agrego el evento para countries
-  
-      if(input.countries.includes(event.target.value)  === true){
-      //Si ya marque esa opcion no la agrego dos veces
 
-         setInput({
-          ...input
-         })
+    if(event.target.name === "countrie"){
 
-  
-      } else{
-              
-        const array2 = input[event.target.name];
-     
+      if(!input.countrie.includes(event.target.value)){
+
+        const arr = input[event.target.name];
         setInput({
-              
-          ...input, 
-          [event.target.name]: array2.concat(event.target.value)
-        })
-     }
+            ...input,
+            [event.target.name]: arr.concat(event.target.value),
+        });
+      }
 
-  }else{       
+
+    }else{
         
+
       setInput({
       ...input,
       [event.target.name]: event.target.value,
       })
-    }
+    
                
     setErrores(validate ({
       ...input,
       [event.target.name]:event.target.value
      }));
      
-  }
+  }}
 
 
 
-
+  
     
 
       function handleSubmit(evento) {
       evento.preventDefault();
 
-      console.log(input)
+
       dispatch(createActivities(input));
+
+      console.log("input",input)
+      
 
        if(!errores) {
         (alert("FORMULARIO ENVIADO"))
         evento.target.reset();
        }      
+       
       }
 
  
@@ -121,17 +116,16 @@ export default function Form({countries}) {
 
           
           <label htmlFor="name">Name: </label>
-          <input className={errores.name && 'danger'} type="text" name="name" value={input.name.toLowerCase()} onChange={handleChange} />
-          {errores.name && (<p className="danger">{errores.name}</p>)}
+          <input className={errores.name && 'danger'} type="text" name="name" value={input.name} onChange={handleChange} />
+          {/* {errores.name && (<p className="danger">{errores.name}</p>)} */}
           
 
           
           <label htmlFor="rating">Difficulty: </label>
           <input className={errores.Difficulty && 'danger'} type="number"  name="difficulty" value={input.difficulty} onChange={handleChange} />
-          {errores.Difficulty && (<p className="danger">{errores.Difficulty}</p>)}
-          
+          {/* {errores.Difficulty && (<p className="danger">{errores.Difficulty}</p>)} */}
 
-          
+
           <label htmlFor="duration">Duration: </label>
           <input type="time"  name="duration" value={input.duration} onChange={handleChange} />
           
@@ -143,34 +137,32 @@ export default function Form({countries}) {
           <option hidden>SEASSION</option>
           {randomSeassion.map ((seassion, key) => {
             return ( 
-               <option key={key} id="countries" name="countries" value={seassion} defaultValue={""} >{seassion}</option>
+               <option key={key} id="seassion" name="seassion" value={seassion} defaultValue={""} >{seassion}</option>
             )
           })}
 
           </select>
 
 
-          
 
 
-         
+         {/* ################      COUNTRIES              ###################### */}
 
-          <p className="countries">Countries: </p>
-          <select name="countries" onChange={handleChange}>
+          <p className="countrie">Countries: </p>
+          <select name="countrie" onChange={handleChange} >
           <option hidden>COUNTRIES</option>
+
           {countries.map (countries => {
             return ( 
-               <option key={countries.id} id="countries" name="countries" value={countries.id}>{countries.name}</option>
+               <option key={countries.id} id="countrie" name="countrie" value={countries.id}>{countries.name}</option>
             )
           })}
 
           </select>
 
   
-          <button className="crear" type="submit" >CREATE</button>
-       
-          {/* disabled={!errores} */}
-            
+
+          <button className="crear" type="submit">CREATE</button>          
         </form>
   
 
@@ -181,14 +173,14 @@ export default function Form({countries}) {
         <div className="countriesList">
             <ul>     
             {
-                input.countries?.map((inputCountry) => {
+                input.countrie?.map((c) => {
             
                     let name = countries?.map((country) =>{
-                       return country.id === inputCountry ? country.name : null
+                       return country.id === c ? country.name : null
                     }) 
                     
                     return ( 
-                    <div key={inputCountry}>
+                    <div key={c}>
                     <li>{name}</li>
                     </div>
                 )
