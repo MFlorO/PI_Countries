@@ -12,6 +12,7 @@ router.post("/", async function (req, res) {
 
     const { id, name, difficulty, duration, seassion } = req.body
 
+    console.log(req.body)
 
     const newActivity = await Activity.create({
         name: name.toLowerCase(), //El toLowerCase() Lo uso por si el usuario escribe "en mayuscula" o "minuscula"
