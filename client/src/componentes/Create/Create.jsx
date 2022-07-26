@@ -17,7 +17,7 @@ export default function Create() {
 
     useEffect(() => {
     dispatch(getAllCountries());
-    }, []);
+    }, [dispatch]);
 
 
 

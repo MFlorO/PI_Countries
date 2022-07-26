@@ -25,7 +25,8 @@ export default function Home() {
     
   const countries = useSelector((state) => state.filterCountries);
 
-  console.log(countries)
+  
+  console.log("Home", countries)
 
 
   const dispatch = useDispatch();
@@ -38,7 +39,7 @@ export default function Home() {
 
   useEffect(() => {
     dispatch(getAllCountries());
-  }, []);
+  }, [dispatch]);
 
 
 

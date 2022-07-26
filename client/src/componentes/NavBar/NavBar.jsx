@@ -16,7 +16,7 @@ export default function NavBar() {
 
   return (
     <nav className="navBar">
-        {/* <div className={name === "Cairns" ? styles.divCains : styles.divNoCains}>  */}
+      
       <div className="search"><Search /></div>
       <div className="flexboxitems"><Link to="/"><h3>INICIO</h3></Link></div>
       <div className="flexboxitems"><Link to="/home"><h3>HOME</h3></Link></div>

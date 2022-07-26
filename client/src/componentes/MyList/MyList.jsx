@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeCountriesFavrites } from "../../redux/actions/index.js";
 import { Link } from 'react-router-dom';
+import "./myList.css"
 
 
 
@@ -17,8 +18,8 @@ export default function MyList(){
 
 
     return (
-        <div>
-          <h2>MI LISTA DE VIDEOJUEGOS</h2>
+        <div className="myList">
+          <h2>COUNTRY LIST</h2>
           <ul>
             {countriesFavourites.map(countries =>  
             <div key={countries.id}>
@@ -26,7 +27,7 @@ export default function MyList(){
                   <li>{countries.name}</li>
                </Link>
                <img src={countries.imageFlag} alt="" />
-               <button onClick={() => dispatch(removeCountriesFavrites(countries.id))}> X  </button>
+               <button onClick={() => dispatch(removeCountriesFavrites(countries.id))}> X </button>
             </div>
             )}
           </ul>

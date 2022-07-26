@@ -11,14 +11,14 @@ import "./countriesDetail.css"
 
 
 export default function CountriesDetail() {
-  const { id } = useParams();
+  const { id } = useParams();  // const iD = props.match.params.id;   --> IDEM a useParams
 
   const dispatch = useDispatch();
   const countriesDetail = useSelector((state) => state.countriesDetail);
 
-  // const iD = props.match.params.id;   --> IDEM a useParams
+ 
 
-  console.log(countriesDetail)
+
 
   useEffect(() => {
     dispatch(getCountriesDetail(id));
@@ -29,25 +29,24 @@ export default function CountriesDetail() {
       console.log("el componente se desmonto");
       //TENGO QUE DESMONTAR EL COMPONENTE
     };
-  }, [id]);
+  }, [dispatch,id]);
+
+  
 
   return (
     <div className="countries-details">
       {countriesDetail.imageFlag ? (
+
         <div>
+
           <img src={countriesDetail.imageFlag[1]} alt="Imagen del videojuego" />
           <h3>{countriesDetail.name}</h3>
           <p>Code: {countriesDetail.id}</p>
-
-          {/* <h2>{typeof countriesDetail.genres === "object"?  videogameDetail.genres.name : videogameDetail.genres}</h2>  */}
-
           <p>Continent: {countriesDetail.continent}</p>
           <p>Capital: {countriesDetail.capital}</p>
           <p>Subregion: {countriesDetail.subregion}</p>
           <p>Area: {countriesDetail.area}Km2</p>
           <p>Population: {countriesDetail.population}</p>
-
-
           
 
           <h3>ACTIVITIES:</h3>

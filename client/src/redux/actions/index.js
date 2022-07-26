@@ -282,6 +282,12 @@ export function orderPoblation(payload) {
 }
 
 
+export function orderTypeActivities(payload) {
+  return {
+    type: Order_Type_Activities,
+    payload: payload
+  };
+}
 
 
 
@@ -296,7 +302,7 @@ export const get_Countries_Detail = "GET_COUNTRIES_DETAIL";
 export const delete_Countries_Detail = "DELETE_COUNTRIES_DETAIL";
 export const create_Activities = "CREATE_ACTIVITIES"
 export const get_activities = "GET_ACTIVITIES";
-
+export const Order_Type_Activities = "ORDER_TYPE_ACTIVITIES"
 export const order_Poblation = "ORDER_POBLATION"
 export const asc_des = "ASC_DES"
 export const OrderCont = "ORDER_CONT"

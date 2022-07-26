@@ -121,7 +121,7 @@ export default function Form({countries}) {
 
           
           <label htmlFor="name">Name: </label>
-          <input className={errores.name && 'danger'} type="text" name="name" value={input.name} onChange={handleChange} />
+          <input className={errores.name && 'danger'} type="text" name="name" value={input.name.toLowerCase()} onChange={handleChange} />
           {errores.name && (<p className="danger">{errores.name}</p>)}
           
 

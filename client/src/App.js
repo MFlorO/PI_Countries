@@ -10,7 +10,7 @@ import MyList from "./componentes/MyList/MyList.jsx";
 import CountriesDetail from "./componentes/CountriesDetail/CountriesDetail.jsx"
 
 
-// import './App.css';
+import "./app.css";
 
 
 
