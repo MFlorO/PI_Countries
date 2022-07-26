@@ -30,7 +30,7 @@ router.post("/", async function (req, res) {
                    } 
                 }) 
 
-            console.log(countryFind)
+            // console.log(countryFind)
             
             if (countryFind) {
                 
