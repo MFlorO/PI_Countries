@@ -1,16 +1,13 @@
 
 
 .loading{
-    display: flex;
-    height: 100%;
-    right: 100%;
+
+    position: absolute;
+    top: 40%;
+    left: 45%
 }
 
 .loading img{
-    align-content: center;
-    position: inherit;
-    top:50%;
-    right: 47%;
-    height: 150px;
-    width: 150px;
+    height: 170px;
+    width: 170px;
 }

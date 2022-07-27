@@ -11,11 +11,13 @@
 
 
 .navBar{
-    height: 8vh;
+    position: fixed;
+    height: 8.5vh;
     width: 100vw;
     display: flex;
-    background-color: black;
     justify-content: space-between;
+    background-color: #6c8e5e65;
+    backdrop-filter: blur(10px);
 }
 
 
@@ -31,7 +33,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    color: white;
+    color: black;
 }
 
 a{
@@ -40,15 +42,14 @@ a{
 
 h3{
     font-family: 'PT Sans', sans-serif;
-    color: white;
+    color: black;
     font-size: 13px;
 }
 
 .flexboxitems1{
-    color:white;
-    margin-left: 20px;
-    margin-right: 90px;
-    color: white;
+    color:black;
+    margin-left: 90px;
+    margin-right: 130px;
 }
 
 
