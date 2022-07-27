@@ -8,12 +8,13 @@
 
 
 .filter{
-    margin-top: 70px;
-    height: 20%;
+    margin-top: 50px;
+    height: 10%;
     width: 70%;
-    display: flex;
     background-color: green;
+    display: flex;
+    align-items: center;
+    align-content: center;
     justify-content: space-around;
-    align-items: center
-    
+    gap: 60px
 }

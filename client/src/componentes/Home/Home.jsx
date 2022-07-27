@@ -7,7 +7,6 @@ import "./home.css";
 
 import { getAllCountries} from "../../redux/actions/index.js";
 import Loading from "../../Loading/Loading.jsx";
-import imagenDeFondo from "./imagenes/mundo.jpg"
 
 
 
@@ -35,8 +34,6 @@ export default function Home() {
   const maximo = countries.length / porpagina
 
 
-
-
   useEffect(() => {
     dispatch(getAllCountries());
   }, [dispatch]);
@@ -46,10 +43,7 @@ export default function Home() {
 
 
   return (
-   <div className="home">
-    {/* <div className="background-img"> 
-    <img src={imagenDeFondo} className="imagen" alt="" />  
-    </div> */}
+
 
     <div className="home-cointeiner">
       
@@ -66,7 +60,7 @@ export default function Home() {
       ) : ( countries.msg ?  <h3>{countries.msg}</h3> : <Loading />
             //Si hay un error en la busqueda de nombres mostralo sino que aparezca loading
       )}
-    </div>
+    
    </div>
   );
 }
