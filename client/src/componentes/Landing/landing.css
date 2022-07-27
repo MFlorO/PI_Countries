@@ -26,7 +26,6 @@
 
 
 
-
 @keyframes cambiar {
     0%{margin-left: 0%;}
 
@@ -82,8 +81,8 @@
 .boton:hover{
     cursor: pointer;
     background-color: hsla(0, 0%, 100%, 0.438);
-    text-shadow: 0 0 5px #f1bfe5f4 transparent 
-
+    text-shadow: 0 0 5px #f1bfe5f4 transparent;
+    /* filter: blur(0px);*/
 } 
 
 

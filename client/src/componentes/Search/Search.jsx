@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import { getCountriesName, getAllCountries} from "../../redux/actions/index.js";
 import "./search.css"
 
+import {RiSearch2Line} from "react-icons/ri"
+import {GrPowerReset} from "react-icons/gr"
 
 
 
@@ -35,19 +37,20 @@ export default function Search() {
   return (
     <div className="search">
      
-
-      <form className="form" onSubmit={handleSubmit}>
+      <form className="search-form" onSubmit={handleSubmit}>
       <input
+        className="input" 
         type="text"
         placeholder="Search county..."
         value={search}
         onChange={onSearchChange}
       />
-      <button type="submit">BUSCAR</button>
-      <button onClick={onClickReset}>RESET</button>
+      <button className="boton-search1" type="submit"><RiSearch2Line size="1.5rem" /></button>
+      <button className="boton-search2" onClick={onClickReset}><GrPowerReset  /></button>
       </form>
       
 
     </div>
   );
 }
+

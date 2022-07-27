@@ -47,25 +47,26 @@ export default function Home() {
 
   return (
    <div className="home">
-    <div className="background-img"> 
+    {/* <div className="background-img"> 
     <img src={imagenDeFondo} className="imagen" alt="" />  
-   </div>
+    </div> */}
 
     <div className="home-cointeiner">
       
       {countries.length > 0 ? (
-        <div >
-          <Filter />
-          
-         <Paginas pagina={pagina} setPagina={setPagina} maximo={maximo} /> 
-          
-          <div className="home-countries"> <Countries pagina={pagina} porpagina={porpagina} countries={countries}/></div>
+
+        <div className="home-items">
+
+        <div className="filter"><Filter /></div>
+        <div className="pagina"><Paginas pagina={pagina} setPagina={setPagina} maximo={maximo} /></div>
+        <div className="countries"><Countries pagina={pagina} porpagina={porpagina} countries={countries}/></div>
 
         </div>
+
       ) : ( countries.msg ?  <h3>{countries.msg}</h3> : <Loading />
             //Si hay un error en la busqueda de nombres mostralo sino que aparezca loading
       )}
     </div>
-    </div>
+   </div>
   );
 }

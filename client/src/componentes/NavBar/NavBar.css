@@ -2,55 +2,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,500;1,700&display=swap');
 
 
-nav{
-    color: red;
-}
-
-.navBar {
-    width: 100%;
-    max-height: 10%;
-    background-color: #191947;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+*{
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
-    opacity: 0.5;
-    backdrop-filter: blur(5px);
-
-
 }
 
-.navBar div {
-    width: 20%;
-    height: 90%;
+
+
+.navBar{
+    height: 8vh;
+    width: 100vw;
+    display: flex;
+    background-color: black;
+    justify-content: space-between;
+}
+
+
+/* .search{
+   SIGO EN EL COMPONENTE "SEARCH".
+} */
+
+
+.flexboxitems{
+    margin: 2px;
+    margin-left: 20px;
+    width: 60%;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    color: white;
 }
 
-.navBar h3 {
-    text-decoration: none;
-    width: 55%;
-    height: 80%;
-    color: rgba(255, 255, 255, 255);
-    font-family: 'Ubuntu', sans-serif;
-    align-items: center;
-    justify-content: flex-start;
+a{
+    text-decoration:none;
+}
+
+h3{
+    font-family: 'PT Sans', sans-serif;
+    color: white;
+    font-size: 13px;
+}
+
+.flexboxitems1{
+    color:white;
+    margin-left: 20px;
+    margin-right: 90px;
+    color: white;
 }
 
 
-
-.flexboxitems {
-    text-align: center;
-    padding: 1%;
-    font-size: 15px;
-    font-weight: bolder;
-}
-
-/* .a {
-    color: red;
-} */
-
-.a:active {
-    cursor: pointer;
-}

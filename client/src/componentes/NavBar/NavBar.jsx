@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Search from "../Search/Search.jsx"
 
+import {VscHome} from "react-icons/vsc"
 
 
 import "./NavBar.css"
@@ -18,12 +19,15 @@ export default function NavBar() {
     <nav className="navBar">
       
       <div className="search"><Search /></div>
-      <div className="flexboxitems"><Link to="/"><h3>INICIO</h3></Link></div>
-      <div className="flexboxitems"><Link to="/home"><h3>HOME</h3></Link></div>
-      <div className="flexboxitems"><Link to="/create"><h3>CREATE YOUR ACTIVITY</h3></Link></div>
-      <div className="myList"><Link to="/myList"><h3>MY LIST</h3></Link></div>
-      <div className="flexboxitems"><Link to="/about"><h3>ABOUT</h3></Link></div>
-      
+
+      <div className="flexboxitems">
+      <div className="flexboxitems1"><NavLink to="/"><VscHome size="2.5rem" color="white"/></NavLink></div>
+      <div className="flexboxitems2"><NavLink to="/home"><h3>HOME</h3></NavLink></div>
+      <div className="flexboxitems3"><NavLink to="/create"><h3>CREATE YOUR ACTIVITY</h3></NavLink></div>
+      <div className="myList4"><NavLink to="/myList"><h3>MY LIST</h3></NavLink></div>
+      <div className="flexboxitems5"><NavLink to="/about"><h3>ABOUT</h3></NavLink></div>
+      </div>
+        
     </nav>
   );
 }

@@ -35,5 +35,22 @@ body{
 
 
 
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
 
+
+
+
+.home-cointeiner{
+    padding: 30px;
+    padding-left: 30px ;
+    background-color: red;
+    height: 92vh;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+}
 

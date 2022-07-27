@@ -4,13 +4,15 @@ import FilterContinent from "./FilterContinent/FilterContinent.jsx";
 import FilterPoblation from "./FilterPoblation/FilterPoblation.jsx";
 import FilterActivity from "./FilterActivity/FilterActivity.jsx";
 
+import "./filter.css"
+
 
 
 
 export default function Filter() {
     return (
-        <div>
-            
+        <div className="filter">
+
             <FilterAscDesc />
             <FilterContinent />
             <FilterPoblation />
