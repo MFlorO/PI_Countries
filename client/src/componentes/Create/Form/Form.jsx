@@ -5,6 +5,7 @@ import {createActivities} from "../../../redux/actions/index.js"
 import validate from "./validate.js"
 import "./form.css"
 
+import {ImCross} from "react-icons/im"
 
 
 
@@ -112,29 +113,29 @@ export default function Form({countries}) {
          
            
         
-        <h1>CREATE A TOURIST ACTIVITY</h1>
+        <h1 className="titulo">CREATE A TOURIST ACTIVITY</h1>
   
         <form className="form-item" onSubmit={handleSubmit}>
 
           
-          <label htmlFor="name">Name: </label>
+          <label className="labels" htmlFor="name">Name: </label>
           <input className={errores.name && 'danger'} type="text" name="name" value={input.name} onChange={handleChange} />
           {/* {errores.name && (<p className="danger">{errores.name}</p>)} */}
           
 
           
-          <label htmlFor="difficulty">Difficulty: </label>
+          <label className="labels" htmlFor="difficulty">Difficulty: </label>
           <input className={errores.Difficulty && 'danger'} type="number"  name="difficulty" value={input.difficulty} onChange={handleChange} />
           {/* {errores.Difficulty && (<p className="danger">{errores.Difficulty}</p>)} */}
 
 
-          <label htmlFor="duration">Duration: </label>
-          <input type="time"  name="duration" value={input.duration} onChange={handleChange} />
+          <label className="labels" htmlFor="duration">Duration: </label>
+          <input className="input-duration" type="time"  name="duration" value={input.duration} onChange={handleChange} />
           
 
 
 
-          <p className="seassion">Seassion: </p>
+          <p className="labels" >Seassion: </p>
           <select name="seassion" defaultValue={"default"} onChange={handleChange}>
           <option value={"default"}>SEASSION</option>
           {randomSeassion.map ((seassion, key) => {
@@ -150,7 +151,7 @@ export default function Form({countries}) {
 
          {/* ################      COUNTRIES              ###################### */}
 
-          <p className="id">Countries: </p>
+          <p className="labels">Countries: </p>
           <select name="id" defaultValue="default" onChange={handleChange} >
           <option value="default" default>COUNTRIES</option>
           {countries.map (countries => {
@@ -181,8 +182,9 @@ export default function Form({countries}) {
                     }) 
                     
                     return ( 
-                    <div key={c}>
-                    <li>{name}</li>
+                    <div className="lista-container" key={c}>
+                    <li className="lista">{name}</li>
+                    <button className="boton-lista"><ImCross size="1rem"/></button>
                     </div>
                 )
     

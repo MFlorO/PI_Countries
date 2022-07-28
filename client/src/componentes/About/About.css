@@ -18,7 +18,7 @@
 }
 
 .titulo{
-    margin-top: 170px;
+    padding-top: 20px;
     margin-bottom: 40px;
     align-items: center;
     font-size: 40px;
@@ -68,7 +68,7 @@ p > a{
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-bottom: 82px;
+    margin-bottom: 106px;
 }
 
 
