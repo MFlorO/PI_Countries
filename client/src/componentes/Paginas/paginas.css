@@ -1,0 +1,66 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+
+
+.paginas{
+    height: 10px;
+    padding: 30px;
+    padding-left: 30px ;
+    /* background-color: #6590545f; */
+    display: flex;  
+    align-items: center;
+    justify-content:flex-end;
+    gap: 40px;
+}
+
+.boton-anterior{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-color: rgb(194, 44, 44);
+    background-color: transparent;
+    border: 0px;
+    top: 266px;    
+    right: 375px;
+}
+
+
+.icono-anterior{
+ cursor: pointer;
+}
+
+.boton-siguiente{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-color: rgb(194, 44, 44);
+    background-color: transparent;
+    border: 0px;
+    top: 266px;    
+    right: 225px;
+}
+
+
+
+.input-paginas{
+    width: 50px;
+    height: 25px;
+    position: absolute;
+    top: 269px;    
+    right: 320px;
+
+}
+
+.maximo {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 14px;
+    position: absolute;
+    top: 275px;    
+    right: 271px;
+}
+

@@ -1,12 +1,12 @@
 .countries-card {
 
-    background-color: rgba(245, 245, 245, 0.082);
+    background-color: #6590545f;
     backdrop-filter: blur(5px);
     border-radius: 5%;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 2px 2px 4px #6590545f;
     padding-bottom: 10px;
-    width: 350px;
-    height: 350px;
+    width: 250px;
+    height: 250px;
     text-decoration: none;
     /* transition: 0.3s;
     animation: ease-in; */
@@ -19,8 +19,8 @@
     border-radius: 8px ;
     box-shadow: 0 8px 8px 0 rgba(0,0,0,0.75) ;
     margin: 0px;
-    width: 90px;
-    height: 120px;
+    width: 50px;
+    height: 100px;
     position: center;
     justify-items: center;
 }

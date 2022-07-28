@@ -1,4 +1,7 @@
 import React,{useState} from 'react';
+import "./paginas.css"
+
+import {GrPrevious, GrNext} from "react-icons/gr"
 
 
 export default function Paginas({pagina, setPagina, maximo}){
@@ -40,11 +43,21 @@ export default function Paginas({pagina, setPagina, maximo}){
       const maximoRedondeo = Math.round(maximo)
 
     return(
-        <div>
-            <button onClick={anterior} disabled={pagina === 1 || pagina < 1} >ANTERIOR</button>
-            <input onKeyDown={onKeyDown} name="page" autoComplete='off' value={input} onChange={onInputChange}/>
-            <p> de {maximoRedondeo}</p>
-            <button onClick={siguiente} disabled={pagina === maximoRedondeo || pagina > maximoRedondeo}>SIGUIENTE</button>
+        <div className='paginas'>
+
+            <div>
+              <button className="boton-anterior" onClick={anterior} disabled={pagina === 1 || pagina < 1} >
+                <GrPrevious className="icono-anterior" size="1.5rem"/>
+              </button>
+            </div>
+
+            <div><input className="input-paginas" onKeyDown={onKeyDown} name="page" autoComplete='off' value={input} onChange={onInputChange}/></div>
+            <p className='maximo'> de {maximoRedondeo}</p>
+            <div>
+              <button className="boton-siguiente" onClick={siguiente} disabled={pagina === maximoRedondeo || pagina > maximoRedondeo}>
+                <GrNext size="1.5rem"/>
+              </button>
+            </div>
         </div>
     )
 }

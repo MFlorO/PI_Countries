@@ -8,13 +8,23 @@
 
 
 .filter{
-    margin-top: 50px;
+    margin-top: 60px;
+    padding-left: 10px;
     height: 10%;
-    width: 70%;
-    background-color: green;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.filter-conteiner{
+    padding: 30px;
+    margin-bottom: 15px;
+    border: 3px #6590545f;
+    background-color: #6590545f;
     display: flex;
     align-items: center;
     align-content: center;
     justify-content: space-around;
-    gap: 60px
 }

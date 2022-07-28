@@ -12,12 +12,12 @@ import "./filter.css"
 export default function Filter() {
     return (
         <div className="filter">
-
+            <div className="filter-conteiner">
             <FilterAscDesc />
             <FilterContinent />
             <FilterPoblation />
             <FilterActivity />
-
+            </div>
         </div>
     );
 }
