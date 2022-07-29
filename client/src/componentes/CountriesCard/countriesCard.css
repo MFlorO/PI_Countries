@@ -11,8 +11,8 @@
     backdrop-filter: blur(5px);
     border-radius: 5%;
     box-shadow: 2px 2px 4px #6590545f;
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 320px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,21 +22,54 @@
 }
 
 .countries-card-h3{
-    font-size: 20px;
+    margin-top: 20px;
+    text-align: center ;
+    font-size: 18px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .bandera{
     border-radius: 8px ;
     box-shadow: 0 8px 8px 0 rgba(0,0,0,0.75) ;
-    width: 50px;
-    height: 100px;
+    width: 250px;
+    height: 150px;
     justify-items: center;
     cursor: pointer;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .boton-fav{
     display: flex;
     flex-direction: row;
     align-content: flex-end;
+}
+
+.countries-card-h4{
+    text-align: center ;
+    font-size: 11px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+    padding-top: 8px;
+}
+
+
+.countries-card-1{
+    text-align: center ;
+    font-size: 16px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: lighter;
+    padding: 0;
+}
+
+.favb{
+    left: 250px;
+    top: 270px;
+    position: absolute;
+}
+
+.boton-fav{
+    background-color: transparent;
+    border: 0px ;
+    cursor: pointer;
 }

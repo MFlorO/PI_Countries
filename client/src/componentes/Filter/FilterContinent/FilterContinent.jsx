@@ -2,6 +2,8 @@ import React from "react";
 import { useDispatch} from "react-redux";
 import { orderContinent } from "../../../redux/actions/index.js";
 
+import "./filterContinent.css"
+
 export default function FilterContinent() {
 
   const dispatch = useDispatch();
@@ -19,9 +21,9 @@ export default function FilterContinent() {
 
 
   return (
-    <div>
+    <div className="filter-continent">
       
-      <p htmlFor="select">SEARCH BY CONTINENT</p>
+      <p className="filter-p" htmlFor="select">SEARCH BY CONTINENT</p>
       <select name="select" defaultValue={"Default"} onChange={onContinentChange}>
         <option value="Default">-</option>
         <option value="Asia">ASIA</option>

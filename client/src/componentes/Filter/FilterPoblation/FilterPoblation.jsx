@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { ASCENDENTE,DESCENDENTE } from "../constantes.js";
 import { orderPoblation } from "../../../redux/actions/index.js";
-
+import "./filterPoblation.css"
 
 
 
@@ -17,8 +17,8 @@ export default function FilterPoblation() {
 
 
     return (
-        <div>
-            <p htmlFor="select">SEARCH BY POPULATION</p>
+        <div className="filter-poblation">
+            <p className="filter-p" htmlFor="select">SEARCH BY POPULATION</p>
             <select name="select" defaultValue={"Default"} onChange={onSelectionchange}>
                 <option value="Default">-</option>
                 <option value={ASCENDENTE}>+</option>

@@ -1,6 +1,7 @@
 import React,{useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getActivities, orderTypeActivities } from "../../../redux/actions/index.js";
+import "./filterActivity.css"
 
 
 
@@ -27,9 +28,9 @@ export default function FilterActivity() {
 
   return( 
 
-  <div>
+  <div className="filter-activity">
 
-      <p htmlFor="select">SEARCH BY TYPE OF ACTIVITY</p>
+      <p className="filter-p" htmlFor="select">SEARCH BY TYPE OF ACTIVITY</p>
       <select name="select" defaultValue={"Default"} onChange={onActivityChange}>
         <option value="Default">-</option>
         {activities.map( a => {
