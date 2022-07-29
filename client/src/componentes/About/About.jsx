@@ -12,7 +12,7 @@ function About() {
     return (
         <div className="about-cointeiner">
 
-            <h1 className="titulo">ABOUT COUNTRIES</h1>
+            <h1 className="titulo-about">ABOUT COUNTRIES</h1>
             
             <h4 className="subtitulo-1">Develop by Maria Florencia Oldani for an individual project for Henry Bootcamp</h4>
 

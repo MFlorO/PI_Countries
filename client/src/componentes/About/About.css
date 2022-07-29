@@ -17,12 +17,12 @@
     align-items: center;
 }
 
-.titulo{
-    padding-top: 20px;
-    margin-bottom: 40px;
+.titulo-about{
+    margin-top: 120px;
     align-items: center;
-    font-size: 40px;
+    font-size: 45px;
     font-family: 'PT Sans', sans-serif;
+    text-shadow: 0px 0px 5px #5fad3dd9;
     color:black;
 }
 
@@ -68,7 +68,7 @@ p > a{
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-bottom: 106px;
+    margin-bottom: 136px;
 }
 
 

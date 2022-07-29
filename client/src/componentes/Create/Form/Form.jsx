@@ -113,7 +113,7 @@ export default function Form({countries}) {
          
            
         
-        <h1 className="titulo">CREATE A TOURIST ACTIVITY</h1>
+        <h1 className="titulo-form">CREATE A TOURIST ACTIVITY</h1>
   
         <form className="form-item" onSubmit={handleSubmit}>
 

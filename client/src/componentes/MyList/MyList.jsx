@@ -4,7 +4,7 @@ import { removeCountriesFavrites } from "../../redux/actions/index.js";
 import { Link } from 'react-router-dom';
 import "./myList.css"
 
-
+import {ImCross} from "react-icons/im"
 
 
 export default function MyList(){
@@ -14,23 +14,26 @@ export default function MyList(){
 
     const countriesFavourites = useSelector(state=>state.countriesFavourites);
 
+
     console.log(countriesFavourites)
 
 
     return (
-        <div className="myList">
-          <h2>COUNTRY LIST</h2>
-          <ul>
+        <div className="mylist-cointeiner">
+          <h2 className="titulo-mylist">COUNTRY LIST</h2>
+        
             {countriesFavourites.map(countries =>  
-            <div key={countries.id}>
+            <div className="fav-container" key={countries.id}>
+               <div className="fav-items">
                <Link to={`/detail/${countries.id}`}>
-                  <li>{countries.name}</li>
+                  <div className="name-fav">{countries.name}</div>
                </Link>
-               <img src={countries.imageFlag} alt="" />
-               <button onClick={() => dispatch(removeCountriesFavrites(countries.id))}> X </button>
+               <img className="imagen" src={countries.image} alt="" />
+               <button className="boton-favorito" onClick={() => dispatch(removeCountriesFavrites(countries.id))}><ImCross size="1rem"/></button>
+               </div>
             </div>
             )}
-          </ul>
+        
         </div>
       );
 }

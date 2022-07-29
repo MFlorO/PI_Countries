@@ -29,8 +29,8 @@ function App() {
       <Route path="/about" component={NavBar} />
       <Route path="/about" component={About} />
 
-      <Route path="/myList" component={NavBar} />
-      <Route path="/myList" component={MyList}/>
+      <Route path="/mylist" component={NavBar} />
+      <Route path="/mylist" component={MyList}/>
 
 
       <Route exact path="/detail/:id" component={NavBar} />

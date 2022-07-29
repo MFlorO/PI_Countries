@@ -1,26 +1,42 @@
-.countries-card {
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
 
+
+
+.countries-card-container {
     background-color: #6590545f;
     backdrop-filter: blur(5px);
     border-radius: 5%;
     box-shadow: 2px 2px 4px #6590545f;
-    padding-bottom: 10px;
     width: 250px;
     height: 250px;
-    text-decoration: none;
-    /* transition: 0.3s;
-    animation: ease-in; */
-    cursor: pointer;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+        /* transition: 0.3s;
+    animation: ease-in; */
+}
 
+.countries-card-h3{
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .bandera{
     border-radius: 8px ;
     box-shadow: 0 8px 8px 0 rgba(0,0,0,0.75) ;
-    margin: 0px;
     width: 50px;
     height: 100px;
-    position: center;
     justify-items: center;
+    cursor: pointer;
+}
+
+.boton-fav{
+    display: flex;
+    flex-direction: row;
+    align-content: flex-end;
 }

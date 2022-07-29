@@ -53,11 +53,11 @@ export default function Home() {
 
         <div className="filter"><Filter /></div>
         <div className="pagina"><Paginas pagina={pagina} setPagina={setPagina} maximo={maximo} /></div>
-        <div className="countries"><Countries pagina={pagina} porpagina={porpagina} countries={countries}/></div>
+        <div className="countries-container"><Countries pagina={pagina} porpagina={porpagina} countries={countries}/></div>
 
         </div>
 
-      ) : ( countries.msg ?  <h3>{countries.msg}</h3> : <Loading />
+      ) : ( countries.msg ?  <div className="error-search-home"><h3 className="errores-name-home">{countries.msg}</h3></div> : <Loading />
             //Si hay un error en la busqueda de nombres mostralo sino que aparezca loading
       )}
     

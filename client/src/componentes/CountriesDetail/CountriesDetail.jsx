@@ -37,22 +37,23 @@ export default function CountriesDetail() {
     <div className="countries-details">
       {countriesDetail.imageFlag ? (
 
-        <div>
+        <div className="countriesdetail-container">
 
-          <img src={countriesDetail.imageFlag[1]} alt="Imagen del videojuego" />
-          <h3>{countriesDetail.name}</h3>
-          <p>Code: {countriesDetail.id}</p>
-          <p>Continent: {countriesDetail.continent}</p>
-          <p>Capital: {countriesDetail.capital}</p>
-          <p>Subregion: {countriesDetail.subregion}</p>
-          <p>Area: {countriesDetail.area}Km2</p>
-          <p>Population: {countriesDetail.population}</p>
+          <h1 className="cd-h1">{countriesDetail.name}</h1>
+          <img className="cd-image" src={countriesDetail.imageFlag[1]} alt="Imagen del videojuego" />
+          <p className="cd-2">Code: {countriesDetail.id}</p>
+          <p className="cd-2">Continent: {countriesDetail.continent}</p>
+          <p className="cd-2">Capital: {countriesDetail.capital}</p>
+          <p className="cd-2">Subregion: {countriesDetail.subregion}</p>
+          <p className="cd-2">Area: {countriesDetail.area}Km2</p>
+          <p className="cd3">Population: {countriesDetail.population}</p>
           
-
-          <h3>ACTIVITIES:</h3>
+          <h3 className="activity-h3">ACTIVITIES:</h3>
+          
+          <div className="activity-container">
           {countriesDetail.activities.map((a) => (
-            <div key={a.id}>
-              <ActivityCard
+            <div  key={a.id}>
+              <ActivityCard 
                 name={a.name}
                 difficulty={a.difficulty}
                 seassion={a.seassion}
@@ -60,7 +61,7 @@ export default function CountriesDetail() {
               />
             </div>
           ))}
-
+          </div>
      
 
         </div>

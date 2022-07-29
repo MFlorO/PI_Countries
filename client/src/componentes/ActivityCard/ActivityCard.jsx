@@ -1,18 +1,18 @@
 import React from "react";
 
+import "./activityCard.css"
 
 
-export default function ActivityCard({ id, name, difficulty, seassion, duration }) {
+
+export default function ActivityCard({ name, difficulty, seassion, duration }) {
   return (
-    <div>
-     <section>
-      
-      <h4>Name: {name}</h4>
-      <p>Difficulty: {difficulty}</p>
-      <p>Seassion: {seassion}</p>
-      <p>Duration: {duration}Hs.</p>
+    <div className="activity-items">
 
-     </section>
+         <h4 className="activity-name">Name: {name}</h4>
+         <p className="activity-p">Difficulty: {difficulty}</p>
+         <p className="activity-p">Duration: {duration}Hs.</p>
+         <p className="activity-p">Seassion: {seassion}</p>
+
     </div>
   );
 }
