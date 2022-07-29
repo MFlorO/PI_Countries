@@ -86,13 +86,32 @@ export default function rootReducer(state = initialState, action) {
                
 
         case Order_Type_Activities:
-            const activitiesFilter = action.payload === "Default" ? state.countriesAll : state.countriesAll.filter(el => el.activities.name === action.payload)
-            console.log(action.payload)
+
+            let newArray = [];
+
+          
+
+            // for (let i = 0; i < state.countriesAll.length; i++) {
+            //     for (let j = 0; j < state.countriesAll[i].activities.length; j++) {
+            //         if (state.countriesAll[i].activities[j].id === action.payload) {
+            //             newArray.push(state.countriesAll[i].id)
+            //         }
+            //     }
+            // }
+
+
+
+
+
+            const activitiesFilter2 = action.payload === "Default" ? state.countriesAll : state.countriesAll.filter(el => newArray.includes(el.id))
             return{
             ...state,
-            filterCountries: activitiesFilter   
+            filterCountries: activitiesFilter2
             }
 
+            
+
+      
 
         case asc_des:
 

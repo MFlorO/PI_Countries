@@ -18,7 +18,8 @@
 }
 
 .titulo-about{
-    margin-top: 120px;
+    margin-top: 170px;
+    margin-bottom: 40px;
     align-items: center;
     font-size: 45px;
     font-family: 'PT Sans', sans-serif;
@@ -61,14 +62,14 @@ p > a{
     color: black;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 20px;
-    margin-bottom: 45px;
+    margin-bottom: 70px;
 }
 
 .logos-items{
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-bottom: 200px;
+    margin-bottom: 256px;
 }
 
 

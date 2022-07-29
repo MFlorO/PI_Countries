@@ -98,7 +98,13 @@ export default function Form({countries}) {
         reset()
       }
 
- 
+
+      const removeCountry = (event) =>{
+        setInput(
+          ...input.id.filter(country => country !== event.target.name)
+        )
+    }
+
 
 
 
@@ -184,7 +190,7 @@ export default function Form({countries}) {
                     return ( 
                     <div className="lista-container" key={c}>
                     <li className="lista">{name}</li>
-                    <button className="boton-lista"><ImCross size="1rem"/></button>
+                    <button className="boton-lista" onClick={removeCountry}><ImCross size="1rem"/></button>
                     </div>
                 )
     

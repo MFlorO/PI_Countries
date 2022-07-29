@@ -16,7 +16,7 @@ export default function FilterActivity() {
     dispatch(getActivities());
   }, [dispatch]);
 
-  console.log("getActivities", activities)
+  console.log("activities", activities)
 
 
   function onActivityChange(event) {
@@ -34,7 +34,7 @@ export default function FilterActivity() {
       <select name="select" defaultValue={"Default"} onChange={onActivityChange}>
         <option value="Default">-</option>
         {activities.map( a => {
-            return <option key={a.id} value={a.name}>{a.name.toUpperCase()}</option>
+            return <option key={a.id} value={a.id}>{a.name.toUpperCase()}</option>
         })}
       </select> 
 

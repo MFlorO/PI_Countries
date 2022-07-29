@@ -76,10 +76,6 @@
  align-self: flex-end;
  border: 0px; 
  background-color: transparent;
+ cursor: pointer;
 }
 
-.boton-favorito:hover{
-position: fixed;
-cursor: pointer;
-width: 30px;
-}
