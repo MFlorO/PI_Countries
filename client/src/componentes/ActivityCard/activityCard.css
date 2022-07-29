@@ -15,11 +15,13 @@
 } 
 
 .activity-name{
+    margin-top: 6px;
     display: block;
     font-size: 18px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin-bottom: 8px;
-    border-bottom: 2px solid #6590545f
+    border-bottom: 2px solid #818484b7;
+    color: #2b8b8b
 }
 
 .activity-p{

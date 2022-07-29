@@ -8,6 +8,8 @@ import "./home.css";
 import { getAllCountries} from "../../redux/actions/index.js";
 import Loading from "../../Loading/Loading.jsx";
 
+import background from "./video2.mp4"
+
 
 
 
@@ -46,6 +48,9 @@ export default function Home() {
 
 
     <div className="home-cointeiner">
+      <video className="video-home" autoPlay loop muted>
+        <source src={background} type="video/mp4"/>
+      </video>
       
       {countries.length > 0 ? (
 

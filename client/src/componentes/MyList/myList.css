@@ -24,9 +24,9 @@
     top: 150px;
     margin-bottom: 50px;
     align-items: center;
-    font-size: 35px;
+    font-size: 45px;
     font-family: 'PT Sans', sans-serif;
-    text-shadow: 0px 0px 5px #5fad3dd9;
+    text-shadow: 0px 0px 5px #5aa5a5ed;
     color:black;
 }
 
@@ -37,14 +37,14 @@
     margin-left: 20px;
     align-items: center;
     align-content: center;
-    background-color: #6590545f;
+    background-color: #818484b7;
     border-radius: 5% 5% 0% 0%;
-    box-shadow: 2px 2px 4px #6590545f;
-    backdrop-filter: blur(6px);
+    box-shadow: 4px 4px 6px #82a3a3cf ;
+    backdrop-filter: blur(10px);
 }
 
 .fav-items{
-    height: 200px; 
+    height: 220px; 
     width: 300px;
     display: flex;
     flex-direction: column;
@@ -70,10 +70,9 @@
 
 
 
-.boton-favorito{
+.boton-cruz{
  width: 20px;
  display: flex;
- order:3;
  align-self: flex-end;
  border: 0px; 
  background-color: transparent;

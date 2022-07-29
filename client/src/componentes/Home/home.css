@@ -11,12 +11,20 @@
     height: 100vh;
     padding: 30px;
     padding-left: 30px ;
-    background: url("https://youtu.be/fOW8Y09GVek");
-    background-size: cover;
+    /* background-size: cover; */
     display: flex;
     flex-direction: column;
     align-items: center;
     align-content: center;
+}
+
+.video-home{
+    position: absolute;
+    height: 200vh;
+    width: 100vw;
+    z-index: -1;
+    object-fit: cover;
+    overflow-x: hidden;
 }
 
 .countries-container{
@@ -30,7 +38,7 @@
 
 .error-search-home{
     position: absolute;
-    background-color: #6590545f;
+    background-color: #818484eb;
     top:40%;
     width: 250px;
     height: 250px;
@@ -38,7 +46,7 @@
     display: flex;
     align-items: center;
     border-radius: 5% ;
-    box-shadow: 2px 2px 4px #6590545f;
+    box-shadow: 2px 2px 4px #82a3a3;
     backdrop-filter: blur(6px);
 }
 

@@ -7,18 +7,29 @@
 
 
 .countries-card-container {
-    background-color: #6590545f;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
     border-radius: 5%;
-    box-shadow: 2px 2px 4px #6590545f;
+    background-color: #818484b7;
+    box-shadow: 4px 4px 6px #82a3a3cf ;
     width: 300px;
     height: 320px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-        /* transition: 0.3s;
-    animation: ease-in; */
+
+    transition: 0.3s;
+    animation: ease-in;
+}
+
+.countries-card-container:hover{
+    transition-delay: 0s;
+    box-shadow: 0 0 7px #82a3a3cf,
+    0 0 10px #82a3a3cf,
+    0 0 20px #82a3a3cf,
+    0 0 30px #82a3a3cf,
+    0 0 40px #82a3a3cf;
+    transform: translateY(4px);
 }
 
 .countries-card-h3{

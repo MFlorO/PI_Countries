@@ -53,7 +53,8 @@
     position: absolute;
     top: 269px;    
     right: 320px;
-
+    box-shadow: 2px 2px 4px #82a3a3cf ;
+    border: 0px
 }
 
 .maximo {

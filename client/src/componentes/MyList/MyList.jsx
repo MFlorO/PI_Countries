@@ -29,7 +29,7 @@ export default function MyList(){
                   <div className="name-fav">{countries.name}</div>
                </Link>
                <img className="imagen" src={countries.image} alt="" />
-               <button className="boton-favorito" onClick={() => dispatch(removeCountriesFavrites(countries.id))}><ImCross size="1rem"/></button>
+               <button className="boton-cruz" onClick={() => dispatch(removeCountriesFavrites(countries.id))}><ImCross size="1rem"/></button>
                </div>
             </div>
             )}
