@@ -11,7 +11,6 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-
 }
 
 
@@ -36,7 +35,7 @@
 
 .input:focus{
     outline: none; 
-    box-shadow: 0px 0px 8px #619292cf;
+    box-shadow: 0px 2px 8px #619292ef;
 }
 
 
@@ -47,8 +46,8 @@
 }
 
 .boton-search1{
-    top: 12px;
-    left: 6rem;
+    top: 6px;
+    left: 2.8rem;
     border: 2px  #398181;
     background-color: #398181f8;
     height: 50px;
@@ -61,8 +60,8 @@
 
 
 .boton-search2{
-    top: 30px;
-    left: 27rem;
+    top: 20px;
+    left: 23rem;
     height: 20px;
     width: 20px;
     background-color: transparent;
@@ -71,7 +70,49 @@
 }
 
 
-/* 
-Verde: #5fad3dd9 */
 
 
+
+
+
+
+                   /* RESPONSIVEEEEEEEEE */
+
+/* TABLET */
+@media screen and (max-width: 760px){
+
+    .search{
+        margin-top: 10px;
+        margin-left: 50px;
+        width: 20%;
+
+    }
+    
+    .search-form{
+        height: 40px;
+    }   
+    
+    .input{
+        height: 60%;
+        width: 13rem;
+        font-size: 10px;
+    }
+    
+    
+    
+    .boton-search1{
+        top: 10px;
+        left: 2.2rem;
+        height: 35px;
+        width: 35px;
+    }
+    
+    .boton-search2{
+        top: 20px;
+        left: 14rem;
+        height: 10px;
+        width: 10px;
+    } 
+
+    
+}

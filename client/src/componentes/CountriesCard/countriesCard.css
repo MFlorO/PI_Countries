@@ -50,11 +50,6 @@
     margin-bottom: 5px;
 }
 
-.boton-fav{
-    display: flex;
-    flex-direction: row;
-    align-content: flex-end;
-}
 
 .countries-card-h4{
     text-align: center ;
@@ -83,4 +78,58 @@
     background-color: transparent;
     border: 0px ;
     cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-end;
 }
+
+
+
+
+
+
+                   /* RESPONSIVEEEEEEEEE */
+
+/* TABLET */
+
+@media screen and (max-width: 760px){ 
+    .countries-card-container{
+        width: 200px;
+        height: 150px;
+    }
+    .countries-card-h3{
+        margin-top: 13px;
+        font-size: 12px;
+    }
+    
+    .bandera{
+        width: 100px;
+        height: 50px;
+    }
+
+    .boton-fav{
+        display: flex;
+    }
+    
+    .countries-card-h4{
+        font-size: 8px;
+        padding-top: 2px;
+    }
+    
+    
+    .countries-card-1{
+        font-size: 10px;
+    }
+
+    .favb{
+        left: 150px;
+        top: 110px;
+    }
+  
+    
+}
+
+
+@media screen and (max-width: 600px) {
+
+  }

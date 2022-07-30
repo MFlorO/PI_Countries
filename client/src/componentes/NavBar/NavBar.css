@@ -59,4 +59,39 @@ a{
     margin-right: 130px;
 }
 
+.flexboxitems1:hover{
+    box-shadow: 0 5px 40px #60a7a7d9;
+    border-radius: 90%;
+}
 
+
+
+
+                   /* RESPONSIVEEEEEEEEE */
+
+/* TABLET */
+@media screen and (max-width: 760px){
+    .navBar{
+        height: 8.5vh;
+        width: 100vw;
+    }
+
+    .flexboxitems{
+        width: 60%;
+    }
+    
+    .nav-h3{
+        font-size: 8px;
+    }
+    
+    .flexboxitems1{
+        margin-left: 50px;
+        margin-right: 70px;
+    }
+    
+}
+
+
+@media screen and (max-width: 600px) {
+    
+  }

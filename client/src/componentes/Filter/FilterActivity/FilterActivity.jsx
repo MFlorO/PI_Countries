@@ -1,6 +1,6 @@
 import React,{useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getActivities, orderTypeActivities } from "../../../redux/actions/index.js";
+import { getActivities, orderTypeActivities, getAllCountries } from "../../../redux/actions/index.js";
 import "./filterActivity.css"
 
 
@@ -8,15 +8,17 @@ import "./filterActivity.css"
 export default function FilterActivity() {
 
   const activities = useSelector((state) => state.activities);
-
+  const countries = useSelector((state) => state.countriesAll);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getActivities());
+    dispatch(getAllCountries());
   }, [dispatch]);
 
-  console.log("activities", activities)
+  console.log("activities-filter", activities)
+  console.log("countries-filter", countries)
 
 
   function onActivityChange(event) {
@@ -24,7 +26,11 @@ export default function FilterActivity() {
     dispatch(orderTypeActivities(event.target.value));
   }
 
-  
+
+
+
+
+
 
   return( 
 
@@ -34,7 +40,7 @@ export default function FilterActivity() {
       <select name="select" defaultValue={"Default"} onChange={onActivityChange}>
         <option value="Default">-</option>
         {activities.map( a => {
-            return <option key={a.id} value={a.id}>{a.name.toUpperCase()}</option>
+            return <option key={a.id} value={a.countries}>{a.name.toUpperCase()}</option>
         })}
       </select> 
 

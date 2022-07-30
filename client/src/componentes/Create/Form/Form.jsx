@@ -28,7 +28,6 @@ export default function Form({countries}) {
         seassion: "",
         id: [], //idCountries
       });
-    
 
 
    //ESTADO DE LOS ERRORES DE LA FUNCION VALIDATE
@@ -86,11 +85,12 @@ export default function Form({countries}) {
      }
   
     
+   
 
       function handleSubmit(evento) {
         evento.preventDefault();
+
         dispatch(createActivities(input));
-        
 
         (alert("FORMULARIO ENVIADO"))   
 
@@ -126,13 +126,13 @@ export default function Form({countries}) {
           
           <label className="labels" htmlFor="name">Name: </label>
           <input className={errores.name && 'danger'} type="text" name="name" value={input.name} onChange={handleChange} />
-          {/* {errores.name && (<p className="danger">{errores.name}</p>)} */}
+          {errores.name && (<p className="danger">{errores.name}</p>)}
           
 
           
           <label className="labels" htmlFor="difficulty">Difficulty: </label>
-          <input className={errores.Difficulty && 'danger'} type="number"  name="difficulty" value={input.difficulty} onChange={handleChange} />
-          {/* {errores.Difficulty && (<p className="danger">{errores.Difficulty}</p>)} */}
+          <input className={errores.difficulty && 'danger'} type="number"  name="difficulty" value={input.difficulty} onChange={handleChange} />
+          {errores.difficulty && (<p className="danger">{errores.difficulty}</p>)}
 
 
           <label className="labels" htmlFor="duration">Duration: </label>
@@ -170,7 +170,8 @@ export default function Form({countries}) {
 
   
 
-          <button className="crear" type="submit">CREATE</button>          
+          <button className="crear" type="submit" >CREATE</button>          
+          
         </form>
   
 

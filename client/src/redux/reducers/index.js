@@ -85,31 +85,41 @@ export default function rootReducer(state = initialState, action) {
             }
                
 
+
+
         case Order_Type_Activities:
+
+            // let newArray = ["COL","ARG"];
 
             let newArray = [];
 
-          
+            let countriesAll2 = [...state.countriesAll]
+                      
 
-            // for (let i = 0; i < state.countriesAll.length; i++) {
-            //     for (let j = 0; j < state.countriesAll[i].activities.length; j++) {
-            //         if (state.countriesAll[i].activities[j].id === action.payload) {
-            //             newArray.push(state.countriesAll[i].id)
-            //         }
-            //     }
-            // }
-
-
-
-
-
-            const activitiesFilter2 = action.payload === "Default" ? state.countriesAll : state.countriesAll.filter(el => newArray.includes(el.id))
-            return{
-            ...state,
-            filterCountries: activitiesFilter2
+            for (let i = 0; i < countriesAll2.length; i++) {
+                for (let j = 0; j < countriesAll2[i].activities.length; j++) {
+                    if (countriesAll2[i].activities[j].countries.includes(action.payload) ) {
+                        newArray.push(countriesAll2[i].activities[j].countries)
+                        console.log("map",countriesAll2[i].id)
+                        console.log("newArray", newArray)
+                    }
+                } //NO ME LEE APARTIR DEL [i]
             }
 
+
+            console.log("newArray", newArray)
             
+
+            const activitiesFilter = action.payload === "Default" ? countriesAll2 : countriesAll2.filter(el => newArray.includes(el.id))
+
+
+            return{
+            ...state,
+            filterCountries: activitiesFilter
+            }
+
+        
+        
 
       
 

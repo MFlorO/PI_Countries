@@ -6,15 +6,16 @@
     let errores = {};
   
     if(!input.name){
-      errores.name = "No hay informacion del nombre"
+      errores.name = "No name information"
+    }else if(!typeof input.name === "string"){   
+      errores.name = "Error in name format"
     }
-
     if(!input.difficulty){
-      errores.difficulty = "No hay informacion del difficulty"
+      errores.difficulty = "There is not information on the difficulty"
     }else if(!typeof input.rating === "number"){   
-    errores.difficulty = "El campo difficulty no es un numero"
+    errores.difficulty = "The difficulty is not a number"
     }else if (input.difficulty > 5 || input.difficulty < 0){
-      errores.difficulty = "El campo difficulty no esta dentro del rango aceptable"
+      errores.difficulty = "The difficulty field is not within the acceptable range."
     }
 
     return errores

@@ -36,3 +36,47 @@
     box-shadow: 0 5px 40px #82a3a3cf;
 
 }
+
+
+.boton-search3{
+    position: absolute;
+    cursor: pointer;
+    top: 5rem;
+    left: 22rem;
+    height: 20px;
+    width: 50px;
+    color:black;
+    border: 3px solid #398181b3;
+    background-color: #398181e6;
+    font-family: 'PT Sans', sans-serif
+}
+
+
+
+
+
+                   /* RESPONSIVEEEEEEEEE */
+
+/* TABLET */
+@media screen and (max-width: 760px){
+
+    .filter{
+        margin-top: 850px;
+        padding-left: 80px;
+        height: 3%;
+        width: 80%;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+    }
+    
+    .filter-conteiner{
+        /* padding: 100px;
+        margin-bottom: 150px; */
+        gap: 10px;
+    }
+    
+
+    
+}

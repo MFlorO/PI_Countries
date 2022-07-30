@@ -27,7 +27,6 @@ export default function Home() {
   const countries = useSelector((state) => state.filterCountries);
 
   
-  console.log("Home-countries", countries)
 
 
   const dispatch = useDispatch();

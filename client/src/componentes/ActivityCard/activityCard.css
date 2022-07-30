@@ -28,3 +28,33 @@
     font-size: 13px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+
+
+
+
+
+
+                   /* RESPONSIVEEEEEEEEE */
+
+/* TABLET */
+@media screen and (max-width: 760px){
+
+    .activity-items{
+        height: 80px;
+        width: 140px;
+
+    } 
+    
+    .activity-name{
+        margin-top: 6px;
+        font-size: 10px;
+        margin-bottom: 8px;
+    }
+    
+    .activity-p{
+        font-size: 8px;
+    }
+
+
+}

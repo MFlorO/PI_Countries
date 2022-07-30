@@ -61,6 +61,9 @@
     border-bottom: 3px solid black;
 }
 
+.name-fav:hover{
+    text-shadow: 0px 0px 5px #5aa5a5ed;
+}
 
 .imagen{
     padding-top: 1px;

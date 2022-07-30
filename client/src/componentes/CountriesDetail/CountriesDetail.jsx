@@ -46,7 +46,7 @@ export default function CountriesDetail() {
           <p className="cd-2">Capital: {countriesDetail.capital}</p>
           <p className="cd-2">Subregion: {countriesDetail.subregion}</p>
           <p className="cd-2">Area: {countriesDetail.area}Km2</p>
-          <p className="cd3">Population: {countriesDetail.population}</p>
+          <p className="cd-3">Population: {countriesDetail.population}</p>
           
           <h3 className="activity-h3">ACTIVITIES:</h3>
           

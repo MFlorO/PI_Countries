@@ -1,6 +1,5 @@
 
 .home-countries{
-
         margin-top: 50px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -8,7 +7,23 @@
         grid-column-gap: 30px;
         grid-row-gap: 50px;
         justify-items: center;
-
-      
-    
 }
+
+
+
+
+                   /* RESPONSIVEEEEEEEEE */
+
+/* TABLET */
+@media screen and (max-width: 760px){
+        .home-countries{
+                margin-top: 500px;
+                /* display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                grid-column-gap: 30px;
+                grid-row-gap: 50px;
+                justify-items: center; */
+        }
+        
+    }
