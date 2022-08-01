@@ -84,7 +84,9 @@ export default function rootReducer(state = initialState, action) {
              filterCountries: continetFilter    
             }
                
+        
 
+            
 
 
         case Order_Type_Activities:
@@ -93,26 +95,23 @@ export default function rootReducer(state = initialState, action) {
 
             let newArray = [];
 
-            let countriesAll2 = [...state.countriesAll]
-                      
+            let countriesAll2 = state.countriesAll
+
 
             for (let i = 0; i < countriesAll2.length; i++) {
-                for (let j = 0; j < countriesAll2[i].activities.length; j++) {
-                    if (countriesAll2[i].activities[j].countries.includes(action.payload) ) {
-                        newArray.push(countriesAll2[i].activities[j].countries)
-                        console.log("map",countriesAll2[i].id)
-                        console.log("newArray", newArray)
-                    }
-                } //NO ME LEE APARTIR DEL [i]
+                if(countriesAll2[i].activities.length > 0){
+                    for (let j = 0; j < countriesAll2[i].activities.length; j++) {
+                        if (countriesAll2[i].activities[j].id == action.payload) {
+                            newArray.push(countriesAll2[i].id)
+                        }
+                    } 
+                }
             }
 
-
-            console.log("newArray", newArray)
             
+            const activitiesFilter = action.payload === "Default" ? state.countriesAll : state.countriesAll.filter(el => newArray.includes(el.id))
 
-            const activitiesFilter = action.payload === "Default" ? countriesAll2 : countriesAll2.filter(el => newArray.includes(el.id))
-
-
+            
             return{
             ...state,
             filterCountries: activitiesFilter

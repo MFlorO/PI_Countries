@@ -10,7 +10,7 @@
 
 .slider ul{
     display: flex;
-    animation: cambiar 30s infinite linear;
+    animation: cambiar 25s infinite linear;
     width: 400%;
 } 
 
@@ -21,6 +21,7 @@
 .slider li img{
     width: 100%;
     height: 100%; 
+    background: cover;
 } 
 
 
@@ -55,7 +56,7 @@
     align-items: center;
     align-content: center;
     top: 30%;
-    right: 28%;
+    right: 20%;
 } 
 
 

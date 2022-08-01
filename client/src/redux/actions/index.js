@@ -283,7 +283,7 @@ export function orderPoblation(payload) {
 
 export function orderTypeActivities(payload) {
   
-  console.log("payload", payload)
+  console.log("payload", payload) //id de la actividad
 
   return {
     type: Order_Type_Activities,

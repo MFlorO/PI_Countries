@@ -4,6 +4,8 @@ import {getAllCountries } from "../../redux/actions/index.js";
 import Form from "./Form/Form.jsx"
 import Loading from "../../Loading/Loading.jsx"
 
+import "./create.css"
+
 
 
 
