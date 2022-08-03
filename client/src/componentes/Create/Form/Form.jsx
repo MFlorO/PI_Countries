@@ -5,7 +5,8 @@ import {createActivities} from "../../../redux/actions/index.js"
 import validate from "./validate.js"
 import "./form.css"
 
-import {ImCross} from "react-icons/im"
+import {ImCross } from "react-icons/im"
+import {BiError} from "react-icons/bi"
 
 
 
@@ -34,13 +35,15 @@ export default function Form({countries}) {
    const [errores, setErrores] = useState({});
    
 
+   const [disabledB, setDisabledB] = useState(true);
+
 
 
    const randomSeassion = ['Summer', "Autunm" , 'Winter', 'Spring']
         
 
 
-
+console.log(typeof input.name)
 
   
    function handleChange(event) {
@@ -54,6 +57,8 @@ export default function Form({countries}) {
         })
       }
 
+      setDisabledB(false)
+       
 
     }else{
         
@@ -63,17 +68,25 @@ export default function Form({countries}) {
       [event.target.name]: event.target.value,
       })
     
-               
-    setErrores(validate ({
-      ...input,
-      [event.target.name]:event.target.value
-     }));
-     
+      
+      setErrores(validate ({
+        ...input,
+        [event.target.name]:event.target.value
+       }));
+
+
+
+       if(errores){
+        setDisabledB(true);
+       }else{
+        setDisabledB(false)
+       }     
+       
   }}
 
 
 
-    function reset(){       
+    function resetForm(){       
       setInput({
         name: "",
         difficulty: 0,
@@ -88,22 +101,24 @@ export default function Form({countries}) {
    
 
       function handleSubmit(evento) {
-        evento.preventDefault();
+          evento.preventDefault();
 
-        dispatch(createActivities(input));
+          dispatch(createActivities(input));
+        
+          (alert("FORMULARIO ENVIADO"))   
 
-        (alert("FORMULARIO ENVIADO"))   
-
-        evento.target.reset()
-        reset()
+          evento.target.reset()   //Necesito ambos reset porque sino no me resetea los checks. Y van abajo de todo porque sino rompe
+          resetForm()
       }
 
+
+      
 
       const removeCountry = (event) =>{
         setInput(
           ...input.id.filter(country => country !== event.target.name)
         )
-    }
+     }
 
 
 
@@ -131,13 +146,13 @@ export default function Form({countries}) {
 
           
           <label className="labels" htmlFor="difficulty">Difficulty: </label>
-          <input className={errores.difficulty && 'danger'} type="number"  name="difficulty" value={input.difficulty} onChange={handleChange} />
+          <input className={errores.difficulty && "danger"} type="number"  name="difficulty" value={input.difficulty} onChange={handleChange} />
           {errores.difficulty && (<p className="danger">{errores.difficulty}</p>)}
 
 
           <label className="labels" htmlFor="duration">Duration: </label>
           <input className="input-duration" type="time"  name="duration" value={input.duration} onChange={handleChange} />
-          
+          {errores.duration && (<p className="danger">{errores.duration}</p>)}
 
 
 
@@ -149,13 +164,10 @@ export default function Form({countries}) {
                <option key={key} id="seassion" name="seassion" value={seassion} >{seassion}</option>
             )
           })}
-
           </select>
+          {errores.seassion && (<p className="danger">{errores.seassion}</p>)}
 
 
-
-
-         {/* ################      COUNTRIES              ###################### */}
 
           <p className="labels">Countries: </p>
           <select name="id" defaultValue="default" onChange={handleChange} >
@@ -168,10 +180,16 @@ export default function Form({countries}) {
 
           </select>
 
-  
-
-          <button className="crear" type="submit" >CREATE</button>          
+          <br />
           
+          {errores.name || errores.difficulty  ? (<p className="danger"><BiError size="0.8rem"/> Error: Plis, complete the form correctly</p>) : null}
+          
+
+          <button className="crear" disabled={disabledB} type="submit">CREATE</button> 
+          {/* {disabledB === "false"? (<p className="true">Form sended correctly</p>) : null}      */}
+          
+
+
         </form>
   
 

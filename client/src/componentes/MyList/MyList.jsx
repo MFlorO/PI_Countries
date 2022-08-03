@@ -21,18 +21,23 @@ export default function MyList(){
     return (
         <div className="mylist-cointeiner">
           <h2 className="titulo-mylist">COUNTRY LIST</h2>
-        
-            {countriesFavourites.map(countries =>  
+
+          {countriesFavourites.length > 0 ? 
+          
+            countriesFavourites.map(countries =>  
+             
             <div className="fav-container" key={countries.id}>
                <div className="fav-items">
+               <div className="name-fav">{countries.name}</div>
                <Link to={`/detail/${countries.id}`}>
-                  <div className="name-fav">{countries.name}</div>
-               </Link>
                <img className="imagen" src={countries.image} alt="" />
+               </Link>
                <button className="boton-cruz" onClick={() => dispatch(removeCountriesFavrites(countries.id))}><ImCross size="1rem"/></button>
                </div>
-            </div>
-            )}
+            </div>  
+            )  
+            
+            : <div className="vacio-div-mylist"><p className="vacio-mylist">They have nothing on your list. Add !</p></div> }
         
         </div>
       );

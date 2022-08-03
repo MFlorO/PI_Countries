@@ -22,7 +22,8 @@ export default function CountriesCard({ id, name, image, continent, population})
 
   return (
     
-  <div className="countries-card-container">
+    <div className="countries-card-container">
+      
       <h3 className="countries-card-h3">{name}</h3>
       <Link to={`/detail/${id}`}><img className="bandera"src={image} alt="" /></Link>
       <h4 className="countries-card-h4">continent:</h4>
@@ -31,6 +32,6 @@ export default function CountriesCard({ id, name, image, continent, population})
       <p className="countries-card-1">{population}</p>
       <div className="favb"><button className="boton-fav" onClick={() => onChangeClick()  }><RiHeartAddFill size="2rem" /></button></div>
 
-  </div>
+    </div>
   );
 }
