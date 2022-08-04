@@ -4,7 +4,7 @@ const { conn, Activity } = require('../../src/db.js');
 
 
 
-describe('Ability Model', () => {
+describe('Activity Model', () => {
   beforeAll(async () => {
     await conn.sync({ force: true });
   });
