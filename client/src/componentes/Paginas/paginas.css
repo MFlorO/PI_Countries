@@ -8,24 +8,23 @@
 
 
 .paginas{
-    height: 10px;
-    padding: 30px;
-    padding-left: 30px ;
+    height: 20px;
+    width: 75vw;
+    margin-top: 10px;
+    padding-top: 70px;
+    padding-bottom: 20px;
     display: flex;  
     align-items: center;
+    align-content: center;
     justify-content:flex-end;
-    gap: 40px;
+    gap: 10px;
 }
 
 .boton-anterior{
-    position: absolute;
     width: 35px;
     height: 35px;
-    background-color: rgb(194, 44, 44);
     background-color: transparent;
     border: 0px;
-    top: 266px;    
-    right: 375px;
     cursor: pointer
 }
 
@@ -35,14 +34,10 @@
 }
 
 .boton-siguiente{
-    position: absolute;
     width: 35px;
     height: 35px;
-    background-color: rgb(194, 44, 44);
     background-color: transparent;
     border: 0px;
-    top: 266px;    
-    right: 225px;
     cursor: pointer
 }
 
@@ -51,9 +46,6 @@
 .input-paginas{
     width: 50px;
     height: 25px;
-    position: absolute;
-    top: 269px;    
-    right: 320px;
     box-shadow: 2px 2px 4px #82a3a3cf ;
     border: 0px
 }
@@ -66,9 +58,6 @@
 .maximo {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 14px;
-    position: absolute;
-    top: 275px;    
-    right: 271px;
 }
 
 

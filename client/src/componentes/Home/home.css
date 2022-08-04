@@ -8,7 +8,8 @@
 
 
 .home-cointeiner{
-    height: 100vh;
+    height: 120vh;
+    /* width: 98vw; */
     padding: 30px;
     padding-left: 30px ;
     display: flex;
@@ -19,11 +20,10 @@
 
 .video-home{
     position: absolute;
-    height: 200vh;
-    width: 100vw;
+    height: 210vh;
+    width: 99.7vw;
     z-index: -1;
     object-fit: cover;
-    overflow-x: hidden;
 }
 
 .countries-container{
@@ -48,6 +48,8 @@
     box-shadow: 2px 2px 4px #82a3a3;
     backdrop-filter: blur(6px);
 }
+
+
 
 .errores-name-home{
     font-size: 20px;
