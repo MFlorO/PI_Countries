@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon -L",
-    "test": "mocha -w ./tests/**/*.spec.js"
+    "test": "jest --verbose --detectOpenHandles"
   },
   "author": "Henry",
   "license": "ISC",
@@ -25,6 +25,7 @@
     "sequelize": "^6.3.5"
   },
   "devDependencies": {
+    "jest": "^27.5.1",
     "chai": "^4.2.0",
     "mocha": "^8.2.1",
     "nodemon": "^2.0.6",
