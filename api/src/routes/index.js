@@ -1,5 +1,4 @@
 const { Router } = require('express');
-// Importar todos los routers;
 const router = Router();
 
 
@@ -8,15 +7,17 @@ const activityPost = require("./activityPost")
 const countryId = require("./countryId")
 const getActivity = require("./getActivity")
 
-const activityUpdate = require("./activityUpdate")
-const activityDelete = require("./activityDelete")
-const activityId = require("./activityId")
+
+
+// const activityUpdate = require("./otrasRutas/activityUpdate")
+// const activityDelete = require("./otrasRutas/activityDelete")
+// const activityId = require("./otrasRutas/activityId")
 
 
 
 
 // Obtener por ID
-router.use("/activities", activityId);
+// router.use("/activities", activityId);
 
 
 // Obtener por ID
@@ -35,12 +36,12 @@ router.use("/activities", getActivity);
 router.use("/activities", activityPost);
 
 
-//Update
-router.use("/activities", activityUpdate);
+// Update activity
+// router.use("/activities", activityUpdate);
 
 
-//Delete
-router.use("/activities", activityDelete);
+// Delete activity
+// router.use("/activities", activityDelete);
 
 
 

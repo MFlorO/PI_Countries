@@ -1,6 +1,6 @@
 
 const { Router } = require('express');
-const { Activity } = require("../db.js")
+const { Activity } = require("../../db.js")
 
 
 const router = Router();
