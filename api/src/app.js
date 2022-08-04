@@ -6,7 +6,7 @@ const routes = require('./routes/index.js');
 
 require('./db.js');
 
-const server = express();
+const server = express(); 
 
 server.name = 'API';
 
@@ -22,7 +22,17 @@ server.use((req, res, next) => {
   next();
 });
 
-server.use('/', routes);
+
+
+
+
+//#############   MODULARIZO LAS RUTAS   #############//
+
+server.use('/', routes); // -> routes/index.js 
+
+
+
+
 
 // Error catching endware.
 server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
@@ -32,4 +42,8 @@ server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
   res.status(status).send(message);
 });
 
-module.exports = server;
+
+
+
+
+module.exports = server; // -> index.js para hacer la conexion de express al puerto
