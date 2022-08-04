@@ -8,8 +8,8 @@ module.exports = (sequelize) => {
   
   sequelize.define('activity', {  
     id:{ //Atributo
-        type:DataTypes.INTEGER, //Tipo de dato
-        autoIncrement:true, //Contrains
+        type: DataTypes.INTEGER, //Tipo de dato
+        autoIncrement: true, //Contrains
         primaryKey: true,
     },
     name: {
