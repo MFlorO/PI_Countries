@@ -10,7 +10,7 @@
 
 .slider ul{
     display: flex;
-    animation: cambiar 25s infinite linear;
+    animation: cambiar 20s infinite linear;
     width: 400%;
 } 
 

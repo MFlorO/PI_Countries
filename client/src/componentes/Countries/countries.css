@@ -1,29 +1,25 @@
-
-.home-countries{
-        margin-top: 50px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-        grid-column-gap: 30px;
-        grid-row-gap: 50px;
-        justify-items: center;
+.home-countries {
+        margin-top: 40px;
+        width: 80vw;
+        height: 200vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 5px 20px
 }
 
 
 
 
-                   /* RESPONSIVEEEEEEEEE */
+/* RESPONSIVEEEEEEEEE */
 
 /* TABLET */
-@media screen and (max-width: 760px){
-        .home-countries{
-                margin-top: 500px;
-                /* display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: repeat(3, 1fr);
-                grid-column-gap: 30px;
-                grid-row-gap: 50px;
-                justify-items: center; */
+@media screen and (max-width: 760px) {
+        .home-countries {
+                margin-top: 20px;
+                /* width: 80vw;
+                height: 200vh;
+                gap: 5px 20px  */
         }
-        
-    }
+
+}
