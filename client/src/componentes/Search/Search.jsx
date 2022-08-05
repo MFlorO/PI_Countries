@@ -41,7 +41,7 @@ export default function Search() {
       <input
         className="input" 
         type="text"
-        placeholder="Search county..."
+        placeholder="Search country..."
         value={search}
         onChange={onSearchChange}
       />

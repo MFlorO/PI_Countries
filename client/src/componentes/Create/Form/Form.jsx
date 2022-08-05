@@ -156,9 +156,9 @@ console.log(typeof input.name)
 
 
 
-          <p className="labels" >Seassion: </p>
+          <p className="labels">Seasion: </p>
           <select name="seassion" defaultValue={"default"} onChange={handleChange}>
-          <option value={"default"}>SEASSION</option>
+          <option value={"default"}>SEASION</option>
           {randomSeassion.map ((seassion, key) => {
             return ( 
                <option key={key} id="seassion" name="seassion" value={seassion} >{seassion}</option>
