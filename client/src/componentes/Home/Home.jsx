@@ -15,25 +15,23 @@ import background from "./video2.mp4"
 
 
 export default function Home() {
+  const dispatch = useDispatch();
 
-    const [pagina, setPagina] = useState(1);
+  const [pagina, setPagina] = useState(1);
+  const [porpagina, setPorpagina] = useState(10);
 
+   const countries = useSelector((state) => state.filterCountries);
 
-    const [porpagina, setPorpagina] = useState(9);
-
-
-
-    
-  const countries = useSelector((state) => state.filterCountries);
 
   console.log(" Home ", countries)
 
 
-  const dispatch = useDispatch();
-
 
   const maximo = countries.length / porpagina
 
+
+
+  
 
   useEffect(() => {
     dispatch(getAllCountries());

@@ -8,17 +8,33 @@ export default function Countries({countries, pagina, porpagina}) {
 
 
 
+   function filterCountriesPagina() {
+    if(pagina === 1){
+    
+      return countries.slice( 0 , porpagina - 1)     // 9 en la primer hoja 
+    } else {
 
-  function filterCountriesPagina() {
-  if(pagina === 1){
-    return countries.slice((pagina - 1 )* porpagina,(pagina - 1)*porpagina  + porpagina)
-  }else{
-    return countries.slice((pagina - 1 )* porpagina,(pagina - 1)*porpagina + porpagina + 1 )
-  }
-  
-} 
+     return countries.slice( ((pagina - 1 )* porpagina + 9) - porpagina , ((pagina - 1 )* porpagina + 9)) //10 en la primer hoja
+    } 
+ } 
+                              
+ //[0,8]
+ //[9,18]
+ //[19,28]
+ //[29,38]
 
+
+  console.log("pagina",pagina)
+
+  console.log("cantidad de pasies por pagina",filterCountriesPagina())
   
+
+
+
+
+
+
+
   return (
     
     <div className="home-countries" >
