@@ -1,7 +1,6 @@
 const { Router } = require('express');
 const router = Router();
 
-
 const getCountry = require("./getCountry.js")
 const activityPost = require("./activityPost")
 const countryId = require("./countryId")

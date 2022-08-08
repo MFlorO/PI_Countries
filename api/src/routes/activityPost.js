@@ -1,9 +1,9 @@
 
 const { Router } = require('express');
 const { Country , Activity } = require("../db.js")
-
-
 const router = Router();
+
+
 
 
 
@@ -11,7 +11,7 @@ const router = Router();
 router.post("/", async function (req, res) {
 
     const { id, name, difficulty, duration, seassion } = req.body
-
+         //id de country
     
 
     const newActivity = await Activity.create({
@@ -21,8 +21,11 @@ router.post("/", async function (req, res) {
         seassion
     })
 
-    try {
 
+
+    try {
+          
+                            // id = ["DNK","CCK","ARG"]
         id.map(async i => { //El id lo mapeo porque puedo agregar varios "country" a una misma "activity"
             
             const countryFind = await Country.findOne({
@@ -31,14 +34,12 @@ router.post("/", async function (req, res) {
                    } 
                 }) 
 
-            // console.log(countryFind)
             
             if (countryFind) {
-                
                 countryFind.addActivity([newActivity]) //Aca uno 
-
             }
         })
+
 
         res.json({ msg: "Activity created with exit" })
 
@@ -46,6 +47,9 @@ router.post("/", async function (req, res) {
         res.status(400).send(error)
     }
 })
+
+
+
 
 
 

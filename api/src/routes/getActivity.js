@@ -8,13 +8,9 @@ const router = Router();
 
 
 
-
-
 router.get("/", async function (req, res) {
 
     try {
-        
-
             const activitiesDB = await Activity.findAll({
                 include: {
                     model: Country,
@@ -23,18 +19,15 @@ router.get("/", async function (req, res) {
                 },
             })
 
-
-
             res.json(activitiesDB)
-
-        
 
     } catch (error) {
 
         res.status(404).json(error)
-    
+    }})
 
-}})
+
+
 
 
 module.exports = router;

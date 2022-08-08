@@ -3,15 +3,14 @@ const { Country, Activity } = require("../db.js")
 const axios = require('axios');
 const { Op } = require('sequelize');
 
-
 const router = Router();
+
 
 
 
 async function crearRegistro() {
 
     const allCountries = await axios.get(`https://restcountries.com/v3/all`)
-
 
     const countriesMap = await allCountries.data.map(c => {
         return {
@@ -26,10 +25,10 @@ async function crearRegistro() {
         }
     })
 
-
     return countriesMap
-
 }
+
+
 
 
 

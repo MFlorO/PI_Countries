@@ -3,17 +3,19 @@ const { Router } = require('express');
 
 const { Country, Activity } = require("../db.js")
 
-
-
 const router = Router();
+
+
+
+
 
 
 router.get("/:id", async function (req, res) {
 
     const { id } = req.params;
 
-    try {
 
+    try {
 
         const countryBD = await Country.findOne({
             where: { id:id.toUpperCase() }, //El toUpperCase() Lo uso por si escribo "CFK" o "cfk"
@@ -27,12 +29,11 @@ router.get("/:id", async function (req, res) {
         res.json(countryBD)
 
 
-
     } catch (error) {
         res.status(404).send("Not recived id")
     }
-
 })
+
 
 
 
