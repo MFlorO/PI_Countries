@@ -23,7 +23,6 @@ router.get("/:id", async function (req, res) {
                 through: { attributes: [] }
             }
         })
-        console.log(activitiesBD)
         
         res.json(activitiesBD)
         

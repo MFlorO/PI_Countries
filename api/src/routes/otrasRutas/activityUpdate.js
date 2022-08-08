@@ -1,11 +1,9 @@
-
 const { Router } = require('express');
-
 const { Country, Activity } = require("../db.js")
 
-
-
 const router = Router();
+
+
 
 
 
@@ -24,7 +22,7 @@ try {
             seassion: seassion
         },
             {
-                where: { id: id }
+                where: { id: id }  //id igual a activityId?
             }
         );
 
@@ -41,24 +39,24 @@ try {
 
             // await activity.setCountrys([countryFind])
 
-            await activity.addCountry([countryFind]) //Me agrega los country pero no me setea si ya hay uno antes
-                    
+            await activity.addCountry([countryFind]) //Me agrega los country pero no me setea si ya hay uno antes      
         })
 
 
-      // ######### ACA ME AGREGA PAIS ##########
+         // ######### HASTA ACA ME AGREGA PAIS ##########
 
 
         res.send("Modified Activity");
 
+
     } else {
+
         res.status(404).send("Not recived data")
     }
-} catch (error) {
+
+  } catch (error) {
     res.send(error);
-}
-
-
+  }
 })
 
 
