@@ -37,21 +37,22 @@ async function crearRegistro() {
 router.get("/", async function (req, res) {
 
     const { name } = req.query;
-    const dbLength = await Country.count();  //".count()" --> ME dice si hay datos en esa tabla "Country"
+
+
+    const dbLength = await Country.count();  //".count()" --> Me dice si hay datos en esa tabla "Country"
 
     if (!dbLength) {  
-
         const countries = await crearRegistro() //LLamo a la funcion
         // console.log(countries)
-        await Country.bulkCreate(countries); // ACA CREO POR PRIMERA VEZ MI BD con la llamda en la api
-
-      
+        await Country.bulkCreate(countries); // ACA creo múltiples registros en la tabla POR PRIMERA VEZ EN BD
     }
 
 
-    try {
-        if (name) {
 
+
+    try {
+
+        if (name) {
 
             const country = await Country.findAll({
                 include: {
@@ -61,7 +62,7 @@ router.get("/", async function (req, res) {
                 },
                 where: {
                     name: {
-                        [Op.iLike]: `%${name}%`
+                        [Op.iLike]: `%${name}%`    //Argentina -> rge ,  
                     }
                 }
             })
@@ -86,14 +87,10 @@ router.get("/", async function (req, res) {
                 }
             })
 
-            //Recorro mi base de datos con los country que cree que me traje de la api externa
-
             res.json(countryDB)
-
         }
 
     } catch (error) {
-
         res.status(404).json(error)
     }
 
