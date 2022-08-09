@@ -26,13 +26,13 @@ export default function rootReducer(state = initialState, action) {
                 createActivities: action.payload
             }
 
+
         case add_Countries_Favorites:
             return {
                 ...state,
-                //   moviesFavourites: [state.moviesFavourites.concat(action.payload)]
                 countriesFavourites: [...state.countriesFavourites, action.payload]
-
             }
+
 
         case remove_Countries_Favrites:
             return {
@@ -56,11 +56,13 @@ export default function rootReducer(state = initialState, action) {
                 filterCountries: action.payload
             }
 
+
         case get_Countries_Detail:
             return {
                 ...state,
                 countriesDetail: action.payload
             }
+
 
         case delete_Countries_Detail:
             return {
@@ -76,7 +78,14 @@ export default function rootReducer(state = initialState, action) {
             };
 
 
+
+
+
+
         
+        //         ##################       FILTROS         #################
+
+
         case OrderCont:
            const continetFilter = action.payload === "Default" ? state.countriesAll : state.countriesAll.filter(el => el.continent[0] === action.payload)
             return{
@@ -86,14 +95,10 @@ export default function rootReducer(state = initialState, action) {
                
         
 
-            
-
 
         case Order_Type_Activities:
 
-            // let newArray = ["COL","ARG"];
-
-            let newArray = [];
+            let newArray = []; // let newArray = ["COL","ARG"];
 
             let countriesAll2 = state.countriesAll
 
@@ -103,6 +108,7 @@ export default function rootReducer(state = initialState, action) {
                     for (let j = 0; j < countriesAll2[i].activities.length; j++) {
                         if (countriesAll2[i].activities[j].id == action.payload) {
                             newArray.push(countriesAll2[i].id)
+                            console.log("newArray",newArray)
                         }
                     } 
                 }
@@ -145,6 +151,9 @@ export default function rootReducer(state = initialState, action) {
 
 
 
+
+
+
             case order_Poblation:
                 let poblationOrder =  [...state.countriesAll]
 
@@ -167,6 +176,9 @@ export default function rootReducer(state = initialState, action) {
                 }
 
 
+
+
+                
         default:
             return state;
     }

@@ -21,7 +21,7 @@ export default function FilterAscDesc() {
     return (
         <div className="filter-asc">
             <p className="filter-p" htmlFor="select">ASCE/DES</p>
-            <select name="select" defaultValue={"Default"} onChange={onSelectionchange}>
+            <select className="filter-select" name="select" defaultValue={"Default"} onChange={onSelectionchange}>
                 <option value="Default">-</option>
                 <option value={ASCENDENTE}>A-Z</option>
                 <option value={DESCENDENTE}>Z-A</option>

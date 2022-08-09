@@ -29,7 +29,7 @@ export default function Filter() {
             <FilterContinent />
             <FilterPoblation />
             <FilterActivity />
-            <button className="boton-search3" onClick={onClickReset}>RESET</button>
+            <button className="boton-reset-filter" onClick={onClickReset}>RESET</button>
             </div>
         </div>
     );

@@ -3,44 +3,12 @@ import axios from "axios"
 
 
 
-export function addCountriesFavorites(payload) {
-  return {
-    type: add_Countries_Favorites,
-    payload
-  };
-}
 
-
-export function removeCountriesFavrites(id) {
-  return {
-    type: remove_Countries_Favrites,
-    payload: id
-  };
-}
-
-
-//CON ASYNC 
-// export function getAllCountries() {
-//   return async function (dispatch) {
-//     try {
-//       let response = await axios.get(`http://localhost:3001/countries/`)
-
-//       return dispatch({
-//         type: get_All_Countries,
-//         payload: response.data
-//       });
-
-//     } catch (error) {
-//       console.log("getAllCountries", error)
-//     }
-
-//   };
-// }
-
-// CON AXIOS.
+//         ##################       get_All_Countries         #################
 
 export function getAllCountries() {
   return function (dispatch) {
+    try{
     axios.get(`http://localhost:3001/countries/`)
       .then(response => {
         dispatch({
@@ -48,49 +16,24 @@ export function getAllCountries() {
           payload: response.data
         });
       })
+    }catch(error){
+      console.log("getAllCountries",error)
+    }
   };
 }
 
 
 
-// export function getAllCountries() {
-//   return function(dispatch) { //LLAMADA ASINCRONICA --> NO SE CUANDO VA A SUCEDER
-//     return fetch(`http://localhost:3001/countries`)
-//       .then(response => response.json())
-//       .then(json => {
-//         dispatch({ 
-//             type: get_All_Countries,
-//             payload: json, //Objeto que recibo en mi request
-//           });
-//       });
-//   };
-// }
+//         ##################       get_Countries_Name         #################
 
-// export function getCountriesName(name) {
-//   return function(dispatch) { //LLAMADA ASINCRONICA --> NO SE CUANDO VA A SUCEDER
-//     return fetch(`http://localhost:3001/countries?name=${name}`)
-//       .then(response => response.json())
-//       .then(json => {
-//         dispatch({ 
-//             type: get_Countries_Name,
-//             payload: json, //Objeto que recibo en mi request
-//           });
-//       });
-//   };
-// }
-
-
-//CON ASYNC
 export function getCountriesName(name) {
   return async function (dispatch) {
     try {
       let response = await axios.get(`http://localhost:3001/countries?name=${name}`)
-
       return dispatch({
         type: get_Countries_Name,
         payload: response.data
       });
-
     } catch (error) {
       console.log("getCountriesName", error)
     }
@@ -98,80 +41,28 @@ export function getCountriesName(name) {
 }
 
 
-//CON AXIOS
 
-// export function getCountriesName(name) {
-//   return function (dispatch) {
-//     axios.get(`http://localhost:3001/countries?name=${name}`)
-//       .then(response => {
-//         dispatch({
-//           type: get_Countries_Name,
-//           payload: response.data
-//         });
-//       })
-//   };
-// }
-
-
-
-
-// export function getCountriesDetail(id) {
-//   return function (dispatch) {
-//     try{
-//       axios.get(`http://localhost:3001/countries/${id}`)
-//       .then(response => {
-//         dispatch({
-//           type: get_Countries_Detail ,
-//           payload: response.data
-//         });
-//       })
-//     }catch(error){
-//       console.log("getCountriesDetail",error)
-//     }
-//   };
-// }
-
+//         ##################       get_Countries_Detail         #################
 
 export function getCountriesDetail(id) {
-  return async function (dispatch) {
-    try {
-      let response = await axios.get(`http://localhost:3001/countries/${id}`)
-      return dispatch({
-        type: get_Countries_Detail,
-        payload: response.data
+  return function (dispatch) {
+    try{
+      axios.get(`http://localhost:3001/countries/${id}`)
+      .then(response => {
+        dispatch({
+          type: get_Countries_Detail ,
+          payload: response.data
+        });
       })
-    } catch (error) {
-      console.log("getCountriesDetail", error)
+    }catch(error){
+      console.log("getCountriesDetail",error)
     }
-  }
-}
-
-
-
-
-// export function getCountriesDetail(id) {
-//   return function (dispatch) {
-//     axios.get(`http://localhost:3001/countries/${id}`)
-//       .then(response => {
-//         dispatch({
-//           type: get_Countries_Detail,
-//           payload: response.data
-//         });
-//       })
-//   };
-// }
-
-
-export function deleteCountriesDetail(id) {
-  return {
-    type: delete_Countries_Detail,
-    payload: id
   };
-  
 }
 
 
 
+//         ##################       create_Activities         #################
 
 export function createActivities(body) {
   return async function (dispatch) {
@@ -187,75 +78,62 @@ export function createActivities(body) {
 }
 
 
-// export function createActivities(body) {
-//   return async function (dispatch) {
-//     try{
-//       const newActivity = await axios.post("http://localhost:3001/activities/", body);
-//       return dispatch({
-//         type:create_Activities,
-//       }
-//       )
 
-//     }catch(error){
-//       console.log("crateAcctivities",error)
-//     }
-// }
-// }
-
-
-
-
-
-
-// export const createActivities = (payload) => {
-//   return dispatch => {
-//       try {
-//           return fetch(`http://localhost:3001/activities/`, {
-//               method: 'POST',
-//               headers: {
-//                   'Accept': 'application/json',
-//                   'Content-Type': 'application/json'
-//               },
-//               body: JSON.stringify(payload)
-//           })
-//               .then((response) => {
-//                   dispatch({
-//                       type: create_Activities
-//                   })
-//               })
-//       } catch (e) {
-//           console.log("postActivity " + e)
-//       }
-//   }
-// }
-
-
-
-
-
-
+//         ##################       get_activities         #################
 
 export function getActivities() {
-  return async function (dispatch) {
-    try {
-      let response = await axios.get(`http://localhost:3001/activities/`)
-      return dispatch({
-        type: get_activities,
-        payload: response.data,
+  return function (dispatch) {
+    try{
+      axios.get(`http://localhost:3001/activities/`)
+      .then(response => {
+        dispatch({
+          type: get_activities ,
+          payload: response.data
+        });
       })
-    } catch (error) {
-      console.log("getActivities", error)
+    }catch(error){
+      console.log("getActivities",error)
     }
-  }
+  };
 }
 
 
 
+//         ##################       add_Countries_Favorites         #################
+
+export function addCountriesFavorites(payload) {
+  return {
+    type: add_Countries_Favorites,
+    payload
+  };
+}
 
 
 
+//         ##################       remove_Countries_Favorites         #################
+
+export function removeCountriesFavrites(id) {
+  return {
+    type: remove_Countries_Favrites,
+    payload: id
+  };
+}
 
 
+
+//         ##################       delete_Countries_Detail         #################
+
+export function deleteCountriesDetail(id) {
+  return {
+    type: delete_Countries_Detail,
+    payload: id
+  };
+  
+}
+
+
+
+//         ##################       OrderCont         #################
 
 export function orderContinent(payload) {
   return {
@@ -265,6 +143,9 @@ export function orderContinent(payload) {
 }
 
 
+
+//         ##################       asc_des         #################
+
 export function AscDes(payload) {
   return {
     type: asc_des,
@@ -273,6 +154,9 @@ export function AscDes(payload) {
 }
 
 
+
+//         ##################       orderPoblation         #################
+
 export function orderPoblation(payload) {
   return {
     type: order_Poblation,
@@ -280,6 +164,9 @@ export function orderPoblation(payload) {
   };
 }
 
+
+
+//         ##################       Order_Type_Activities         #################
 
 export function orderTypeActivities(payload) {
   
@@ -290,6 +177,9 @@ export function orderTypeActivities(payload) {
     payload : payload
   };
 }
+
+
+
 
 
 

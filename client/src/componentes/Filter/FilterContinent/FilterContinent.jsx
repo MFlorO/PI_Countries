@@ -24,7 +24,7 @@ export default function FilterContinent() {
     <div className="filter-continent">
       
       <p className="filter-p" htmlFor="select">SEARCH BY CONTINENT</p>
-      <select name="select" defaultValue={"Default"} onChange={onContinentChange}>
+      <select className="filter-select"  name="select" defaultValue={"Default"} onChange={onContinentChange}>
         <option value="Default">-</option>
         <option value="Asia">ASIA</option>
         <option value="North America">NORTH AMERICA</option>

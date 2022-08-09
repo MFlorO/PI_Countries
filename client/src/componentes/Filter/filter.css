@@ -19,7 +19,7 @@
 }
 
 .filter-conteiner{
-    padding: 30px;
+    padding: 40px;
     margin-bottom: 15px;
     background-color: #818484b7;
     box-shadow: 4px 4px 6px #82a3a3cf ;
@@ -29,19 +29,19 @@
     justify-content: space-around;
     backdrop-filter: blur(10px);
     font-weight: bolder;
+    border-radius: 10px;
     gap: 30px;
 }
 
 .filter-conteiner:hover{
-    box-shadow: 0 5px 40px #82a3a3cf;
-
+    box-shadow: 0px 0px 10px 10px #82a3a3cf;
 }
 
 
-.boton-search3{
+.boton-reset-filter{
     position: absolute;
     cursor: pointer;
-    top: 5rem;
+    top: 6rem;
     left: 22rem;
     height: 20px;
     width: 50px;

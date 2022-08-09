@@ -9,14 +9,14 @@ export default function FilterActivity() {
 
   const activities = useSelector((state) => state.activities);
 
-
   const dispatch = useDispatch();
+
 
   useEffect(() => {
     dispatch(getActivities());
   }, [dispatch]);
 
-
+  
 
 
   function onActivityChange(event) {
@@ -30,18 +30,18 @@ export default function FilterActivity() {
 
   return( 
 
-  <div className="filter-activity">
+   <div className="filter-activity">
 
       <p className="filter-p" htmlFor="select">SEARCH BY TYPE OF ACTIVITY</p>
-      <select name="select" defaultValue={"Default"} onChange={onActivityChange}>
+
+      <select className="filter-select" name="select" defaultValue={"Default"} onChange={onActivityChange}>
         <option value="Default">-</option>
         {activities.map( a => {
             return <option key={a.id} value={a.id}>{a.name.toUpperCase()}</option>
         })}
       </select> 
 
-
-  </div>
+   </div>
 
   )
 }
