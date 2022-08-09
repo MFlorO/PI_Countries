@@ -17,6 +17,8 @@ export default function Search() {
   const dispatch = useDispatch();
   
 
+  
+
   function onSearchChange(event) {
     setSearch(event.target.value);
   }
@@ -25,14 +27,15 @@ export default function Search() {
     event.preventDefault();
     dispatch(getCountriesName(search))
     setSearch("")
-    
-
-
   }
 
   function onClickReset(){
     dispatch(getAllCountries())
   }
+
+
+
+
 
   return (
     <div className="search">
@@ -48,9 +51,9 @@ export default function Search() {
       <button className="boton-search1" type="submit"><RiSearch2Line size="1.5rem" /></button>
       <button className="boton-search2" onClick={onClickReset}><GrPowerReset  /></button>
       </form>
-      
 
     </div>
+
   );
 }
 

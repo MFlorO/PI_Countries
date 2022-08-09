@@ -123,12 +123,11 @@ export function removeCountriesFavrites(id) {
 
 //         ##################       delete_Countries_Detail         #################
 
-export function deleteCountriesDetail(id) {
+export function deleteCountriesDetail(id) {  //--> Lo utilizo para desmontar el componente de detalle
   return {
     type: delete_Countries_Detail,
     payload: id
   };
-  
 }
 
 

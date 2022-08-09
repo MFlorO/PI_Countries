@@ -14,6 +14,7 @@ import imagen4 from "./imagenes/7.jpg"
 export default function Landing() {
   return (
     <>
+
     <div className="slider">
       <ul className="ul">
         <li className="li">
@@ -28,9 +29,6 @@ export default function Landing() {
         <li className="li">
           <img src={imagen4} alt="" />
         </li>
-        {/* <li className="li">
-          <img src={imagen5} alt="" />
-        </li> */}
       </ul>
     </div>
 

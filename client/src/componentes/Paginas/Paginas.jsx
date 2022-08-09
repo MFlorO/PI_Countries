@@ -4,12 +4,17 @@ import "./paginas.css"
 import {GrPrevious, GrNext} from "react-icons/gr"
 
 
+
+
+
+
+
 export default function Paginas({pagina, setPagina, maximo}){
 
   const [input, setInput] = useState(1);
 
     function siguiente(){
-        setInput(parseInt(input) + 1) //Al parseInt lo agrego porque cuando escribo la pagina a la que quiero ir en el imput y le doy siguiente, me agrega string porque no lo toma como numero
+        setInput(parseInt(input) + 1) //Al parseInt lo agrego porque cuando escribo la pagina a la que quiero ir en el input y le doy siguiente, me agrega string porque no lo toma como numero
         setPagina(parseInt(pagina) + 1)  
      }
     
@@ -44,6 +49,8 @@ export default function Paginas({pagina, setPagina, maximo}){
       }
     
      
+
+      
 
     return(
         <div className='paginas'>

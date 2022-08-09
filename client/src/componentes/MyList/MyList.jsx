@@ -15,7 +15,7 @@ export default function MyList(){
     const countriesFavourites = useSelector(state=>state.countriesFavourites);
 
 
-    console.log(countriesFavourites)
+    console.log("countriesFavourites",countriesFavourites)
 
 
     return (
