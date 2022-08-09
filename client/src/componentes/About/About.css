@@ -19,7 +19,7 @@
 
 .titulo-about{
     margin-top: 170px;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
     align-items: center;
     font-size: 45px;
     font-family: 'PT Sans', sans-serif;
@@ -51,7 +51,7 @@ p > a{
 
 .logos{
     margin-top: 40px;
-    margin-bottom: 44px;
+    margin-bottom: 40px;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -62,14 +62,14 @@ p > a{
     color: black;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 20px;
-    margin-bottom: 70px;
+    margin-bottom: 35px;
 }
 
 .logos-items{
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-bottom: 45px;
+    margin-bottom: 60px;
 }
 
 
