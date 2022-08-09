@@ -72,7 +72,7 @@ router.get("/", async function (req, res) {
 
             } else {
 
-                res.send(404).json({ msg: "There is not country with that name" })
+                res.json({ msg: "There is not country with that name" })
             }
 
 

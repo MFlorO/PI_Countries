@@ -5,7 +5,7 @@ const request = require("supertest")
 
 
 
-describe('activities Post', () => {
+describe('Activity Post', () => {
 
     beforeAll(async () => {
         await conn.sync({ force: true });
