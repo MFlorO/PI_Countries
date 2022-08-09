@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { Country, Activity } = require("../db.js")
+const { Country, Activity } = require("../../db.js")
 
 const router = Router();
 
@@ -10,10 +10,10 @@ const router = Router();
 
 router.put("/", async function (req, res) {
 
-const { activityId, countryId, id, name, difficulty, duration, seassion } = req.body;
+const { activityId, countryId, name, difficulty, duration, seassion } = req.body;
 
 try {
-    if (activityId || countryId || id || name || difficulty || duration || seassion) {
+    if (activityId || countryId || name || difficulty || duration || seassion) {
 
         await Activity.update({
             name: name.toLowerCase(),
@@ -22,7 +22,7 @@ try {
             seassion: seassion
         },
             {
-                where: { id: id }  //id igual a activityId?
+                where: { id: activityId }  
             }
         );
 
@@ -37,9 +37,9 @@ try {
             const countryFind = await Country.findByPk(c.toUpperCase())
 
 
-            // await activity.setCountrys([countryFind])
+            await activity.setCountries([countryFind]) //Me agrega los country seteando los valores  
 
-            await activity.addCountry([countryFind]) //Me agrega los country pero no me setea si ya hay uno antes      
+            // await activity.addCountry([countryFind]) //Me agrega los country pero no me setea si ya hay uno antes      
         })
 
 
@@ -50,7 +50,6 @@ try {
 
 
     } else {
-
         res.status(404).send("Not recived data")
     }
 

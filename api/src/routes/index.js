@@ -11,6 +11,7 @@ const getActivity = require("./getActivity")
 // const activityUpdate = require("./otrasRutas/activityUpdate")
 // const activityDelete = require("./otrasRutas/activityDelete")
 // const activityId = require("./otrasRutas/activityId")
+// const activityTruncate = require("./otrasRutas/activityTruncate")
 
 
 
@@ -41,6 +42,9 @@ router.use("/activities", activityPost);
 
 // Delete activity
 // router.use("/activities", activityDelete);
+
+// Truncate activity
+// router.use("/activities", activityTruncate);
 
 
 

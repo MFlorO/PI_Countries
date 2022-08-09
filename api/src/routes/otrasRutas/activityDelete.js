@@ -8,6 +8,9 @@ const router = Router();
 
 
 
+//######### DESTROY #########
+//Elimina los registros uno por uno que cumplan con la condicion de "where"
+
 
 
 router.delete("/:id", async function (req, res) {
@@ -22,7 +25,7 @@ router.delete("/:id", async function (req, res) {
                 }
             );
 
-            res.json(Activity);
+            res.json({msg: "Activity deleted with exit"});
 
         } else {
             res.status(404).json({msg:"Not recived id"})
@@ -31,6 +34,9 @@ router.delete("/:id", async function (req, res) {
     res.send({msg:"The data cannot be deleted"});
  }
 })
+
+
+
 
 
 

@@ -1,7 +1,7 @@
 
 const { Router } = require('express');
 
-const { Activity, Country } = require("../db.js")
+const { Activity, Country } = require("../../db.js")
 
 
 
