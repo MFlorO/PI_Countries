@@ -27,7 +27,7 @@ export default function CountriesDetail() {
     return () => {
       dispatch(deleteCountriesDetail(id));
       console.log("el componente se desmonto");
-      //TENGO QUE DESMONTAR EL COMPONENTE
+      //TENGO QUE DESMONTAR EL COMPONENTE SINO ME QUEDA AHI COLGADO
     };
   }, [dispatch,id]);
 

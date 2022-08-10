@@ -21,7 +21,7 @@ export default function Form({countries}) {
 
 
 
-    //ESTADO DEL COMPONENTE.
+  //         ##################       ESTADO DEL COMPONENTE         #################
     const [input, setInput] = useState({
         name: "",
         difficulty: 0,
@@ -31,21 +31,24 @@ export default function Form({countries}) {
       });
 
 
-   //ESTADO DE LOS ERRORES DE LA FUNCION VALIDATE
+//         ##################       ESTADO DE LA FUNCION VALIDATE         #################
    const [errores, setErrores] = useState({});
    
 
+//         ##################       ESTADO DEL BOTON ENVIAR         #################
    const [disabledB, setDisabledB] = useState(true);
 
 
 
-   const randomSeassion = ['Summer', "Autunm" , 'Winter', 'Spring']
-        
 
-
-console.log(typeof input.name)
 
   
+   const randomSeassion = ['Summer', "Autunm" , 'Winter', 'Spring']
+
+
+
+
+
    function handleChange(event) {
 
     if(event.target.name === "id"){
@@ -59,31 +62,26 @@ console.log(typeof input.name)
 
       setDisabledB(false)
        
-
     }else{
         
-
       setInput({
       ...input,
       [event.target.name]: event.target.value,
       })
     
-      
       setErrores(validate ({
         ...input,
         [event.target.name]:event.target.value
        }));
-
-
 
        if(errores){
         setDisabledB(true);
        }else{
         setDisabledB(false)
        }     
-       
   }}
 
+  
 
 
     function resetForm(){       
@@ -94,7 +92,6 @@ console.log(typeof input.name)
         seassion: "",
         id: []
       });
-
      }
   
     
@@ -107,7 +104,7 @@ console.log(typeof input.name)
         
           (alert("FORMULARIO ENVIADO"))   
 
-          evento.target.reset()   //Necesito ambos reset porque sino no me resetea los checks. Y van abajo de todo porque sino rompe
+          evento.target.reset() //Necesito ambos reset porque sino no me resetea los checks. Y van abajo de todo porque sino rompe
           resetForm()
       }
 
@@ -120,10 +117,7 @@ console.log(typeof input.name)
         )
      }
 
-
-
-
-
+ 
 
 
     return (
@@ -177,25 +171,27 @@ console.log(typeof input.name)
                <option key={countries.id} id="id" name="id" value={countries.id} >{countries.name}</option>
             )
           })}
-
           </select>
 
-          <br />
           
           {errores.name || errores.difficulty  ? (<p className="danger"><BiError size="0.8rem"/> Error: Plis, complete the form correctly</p>) : null}
           
 
-          <button className="crear" disabled={disabledB} type="submit">CREATE</button> 
-          {/* {disabledB === "false"? (<p className="true">Form sended correctly</p>) : null}      */}
+          <button className="crear" disabled={disabledB} type="submit" >CREATE</button> 
+        
+        
+         
           
 
-
         </form>
-  
 
 
+        
+
+
+
   
-        {/* COUNTRIES LIST */}
+        {/* //         ##################       COUNTRY LIST         ################# */}
 
         <div className="countriesList">
             <ul>     
