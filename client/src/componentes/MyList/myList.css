@@ -43,7 +43,7 @@
 }
 
 .fav-items{
-    height: 220px; 
+    height: 230px; 
     width: 300px;
     display: flex;
     flex-direction: column;

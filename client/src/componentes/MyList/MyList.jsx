@@ -32,7 +32,7 @@ export default function MyList(){
                <Link to={`/detail/${countries.id}`}>
                <img className="imagen" src={countries.image} alt="" />
                </Link>
-               <button className="boton-cruz" onClick={() => dispatch(removeCountriesFavrites(countries.id))}><ImCross size="1rem"/></button>
+               <button title="Delete" className="boton-cruz" onClick={() => dispatch(removeCountriesFavrites(countries.id))}><ImCross size="1rem"/></button>
                </div>
             </div>  
             )  

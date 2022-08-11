@@ -30,7 +30,7 @@ export default function CountriesCard({ id, name, image, continent, population})
       <h3 className="countries-card-1">{continent}</h3>
       <h4 className="countries-card-h4">population:</h4>
       <p className="countries-card-1">{population}</p>
-      <div className="favb"><button className="boton-fav" onClick={() => onChangeClick()  }><RiHeartAddFill size="2rem" /></button></div>
+      <div title="AddFav" className="favb"><button className="boton-fav" onClick={() => onChangeClick()  }><RiHeartAddFill size="2rem" /></button></div>
 
     </div>
   );

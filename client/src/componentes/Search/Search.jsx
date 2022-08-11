@@ -48,7 +48,7 @@ export default function Search() {
         value={search}
         onChange={onSearchChange}
       />
-      <button className="boton-search1" type="submit"><RiSearch2Line size="1.5rem" /></button>
+      <button title="Search" className="boton-search1" type="submit"><RiSearch2Line size="1.5rem" /></button>
       <button className="boton-search2" onClick={onClickReset}><GrPowerReset  /></button>
       </form>
 
