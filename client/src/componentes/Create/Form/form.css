@@ -77,12 +77,7 @@
 
 
 input:focus{
-  outline-color: #34b3b3; 
-  box-shadow: 0px 2px 8px #619292ef;
-}
-
-input:active{
-  outline-color: #34b3b3; 
+  outline-color: #398181; 
   box-shadow: 0px 2px 8px #619292ef;
 }
 
