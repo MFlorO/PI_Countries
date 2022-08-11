@@ -44,11 +44,13 @@
     top: 6rem;
     left: 22rem;
     height: 20px;
-    width: 50px;
+    width: 80px;
     color:black;
     border: 3px solid #398181b3;
     background-color: #398181e6;
-    font-family: 'PT Sans', sans-serif
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 600;
+    border-radius: 10px;
 }
 
 

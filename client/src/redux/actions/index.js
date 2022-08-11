@@ -99,6 +99,25 @@ export function getActivities() {
 
 
 
+
+//         ##################       delete_activities         #################
+
+export function deleteActivities(id) {
+  return async function (dispatch) {
+    try {
+      await axios.delete(`http://localhost:3001/activities/${id}`);
+      return dispatch({
+        type: delete_activities
+      })
+    } catch (error) {
+      console.log("deleteActivities", error)
+    }
+  }
+}
+
+
+
+
 //         ##################       add_Countries_Favorites         #################
 
 export function addCountriesFavorites(payload) {
@@ -193,10 +212,11 @@ export const get_Countries_Detail = "GET_COUNTRIES_DETAIL";
 export const delete_Countries_Detail = "DELETE_COUNTRIES_DETAIL";
 export const create_Activities = "CREATE_ACTIVITIES"
 export const get_activities = "GET_ACTIVITIES";
-export const Order_Type_Activities = "ORDER_TYPE_ACTIVITIES"
-export const order_Poblation = "ORDER_POBLATION"
-export const asc_des = "ASC_DES"
-export const OrderCont = "ORDER_CONT"
+export const Order_Type_Activities = "ORDER_TYPE_ACTIVITIES";
+export const order_Poblation = "ORDER_POBLATION";
+export const asc_des = "ASC_DES";
+export const OrderCont = "ORDER_CONT";
+export const delete_activities = "DELETE_ACTIVITIES";
 
 
 

@@ -77,9 +77,15 @@
 
 
 input:focus{
-  outline: none; 
+  outline-color: #34b3b3; 
   box-shadow: 0px 2px 8px #619292ef;
 }
+
+input:active{
+  outline-color: #34b3b3; 
+  box-shadow: 0px 2px 8px #619292ef;
+}
+
 
 
 input.danger {
@@ -88,18 +94,11 @@ input.danger {
 }
 
 p.danger {
-  margin: 3px;
+  margin:1px;
   color: red;
   font-size: 10px;
 }
 
-
-
-p.true{
-  color:green;
-  font-size: 30px;
-  position: absolute;
-}
 
 
 .crear{

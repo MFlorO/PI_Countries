@@ -48,12 +48,18 @@ export default function CountriesDetail() {
           <p className="cd-2">Area: {countriesDetail.area}Km2</p>
           <p className="cd-3">Population: {countriesDetail.population}</p>
           
-          <h3 className="activity-h3">ACTIVITIES:</h3>
+        
           
+      {countriesDetail.activities.length > 0 ?
+          <>
+          <h3 className="activity-h3">ACTIVITIES:</h3>
+
           <div className="activity-container">
           {countriesDetail.activities.map((a) => (
             <div  key={a.id}>
               <ActivityCard 
+                idc={id}
+                id={a.id}
                 name={a.name}
                 difficulty={a.difficulty}
                 seassion={a.seassion}
@@ -62,7 +68,11 @@ export default function CountriesDetail() {
             </div>
           ))}
           </div>
-     
+          </> 
+          
+          : <div className="vacio-div-cdetail">The Country not have any activities</div>}
+
+          
 
         </div>
       ) : (

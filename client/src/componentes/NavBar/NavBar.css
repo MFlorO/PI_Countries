@@ -13,7 +13,7 @@
 .navBar{
     position: absolute;
     height: 8.5vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     background-color: #818484b7;

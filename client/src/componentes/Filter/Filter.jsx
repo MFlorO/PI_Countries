@@ -18,6 +18,7 @@ export default function Filter() {
 
     function onClickReset(){
         dispatch(getAllCountries())
+        window.location.reload() //refresca la pagina despues de borrar
       }
 
      
@@ -29,7 +30,7 @@ export default function Filter() {
             <FilterContinent />
             <FilterPoblation />
             <FilterActivity />
-            <button className="boton-reset-filter" onClick={onClickReset}>RESET</button>
+            <button className="boton-reset-filter" onClick={onClickReset}>REFRESH</button>
             </div>
         </div>
     );
