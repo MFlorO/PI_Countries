@@ -79,6 +79,13 @@
 }
 
 
+.botton-volver-atras{
+    position: absolute;
+    top: 39rem;
+    left: 23rem;
+    cursor: pointer
+} 
+
 
                    /* RESPONSIVEEEEEEEEE */
 

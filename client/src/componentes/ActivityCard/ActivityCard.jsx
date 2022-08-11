@@ -13,9 +13,11 @@ export default function ActivityCard({ idc, id, name, difficulty, seassion, dura
   // console.log(id)
 
   function HandleDelete(){
-    dispatch(deleteActivities(id))
-    alert(`Actividad "${name.toUpperCase()}" Eliminada`)
-    window.location.reload() //refresca la pagina despues de borrar
+    let confirm = window.confirm(`Are you sure you want to delete "${name.toUpperCase()}" ?`)
+    if(confirm){
+      dispatch(deleteActivities(id));
+      window.location.reload() //refresca la pagina despues de borrar
+    }
   }
 
 

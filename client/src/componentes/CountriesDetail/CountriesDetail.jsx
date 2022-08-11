@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getCountriesDetail, deleteCountriesDetail } from "../../redux/actions/index.js";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import Loading from "../../Loading/Loading.jsx";
 import ActivityCard from "../ActivityCard/ActivityCard.jsx";
+
+import {AiFillCaretLeft} from "react-icons/ai"
 
 import "./countriesDetail.css"
 
@@ -14,6 +16,9 @@ export default function CountriesDetail() {
   const { id } = useParams();  // const iD = props.match.params.id;   --> IDEM a useParams
 
   const dispatch = useDispatch();
+  const history = useHistory();
+
+
   const countriesDetail = useSelector((state) => state.countriesDetail);
 
  
@@ -32,6 +37,14 @@ export default function CountriesDetail() {
   }, [dispatch,id]);
 
   
+
+  
+    function volverAtras(){ //boton volver atras
+       history.goBack()
+    }
+
+
+
 
   return (
     <div className="countries-details">
@@ -71,6 +84,9 @@ export default function CountriesDetail() {
           </> 
           
           : <div className="vacio-div-cdetail">The Country not have any activities</div>}
+
+
+          <button className="botton-volver-atras" onClick={volverAtras}> <AiFillCaretLeft size="2rem" /></button>
 
           
 

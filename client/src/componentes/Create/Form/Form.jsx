@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import { useDispatch} from "react-redux";
-
+import {useHistory} from "react-router-dom";
 import {createActivities} from "../../../redux/actions/index.js"
 import validate from "./validate.js"
 import "./form.css"
@@ -18,6 +18,7 @@ import {BiError} from "react-icons/bi"
 export default function Form({countries}) {
 
     const dispatch = useDispatch();
+    const history = useHistory();
 
 
 
@@ -106,6 +107,8 @@ export default function Form({countries}) {
 
           evento.target.reset() //Necesito ambos reset porque sino no me resetea los checks. Y van abajo de todo porque sino rompe
           resetForm()
+
+          history.push("/home")
       }
 
 
