@@ -5,11 +5,10 @@ const getCountry = require("./getCountry.js")
 const activityPost = require("./activityPost")
 const countryId = require("./countryId")
 const getActivity = require("./getActivity")
-
+const activityDelete = require("./activityDelete")
 
 
 // const activityUpdate = require("./otrasRutas/activityUpdate")
-// const activityDelete = require("./otrasRutas/activityDelete")
 // const activityId = require("./otrasRutas/activityId")
 // const activityTruncate = require("./otrasRutas/activityTruncate")
 
@@ -41,7 +40,7 @@ router.use("/activities", activityPost);
 
 
 // Delete activity
-// router.use("/activities", activityDelete);
+router.use("/activities", activityDelete);
 
 // Truncate activity
 // router.use("/activities", activityTruncate);
