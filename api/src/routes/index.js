@@ -9,14 +9,11 @@ const activityDelete = require("./activityDelete")
 
 
 // const activityUpdate = require("./otrasRutas/activityUpdate")
-// const activityId = require("./otrasRutas/activityId")
 // const activityTruncate = require("./otrasRutas/activityTruncate")
 
 
 
 
-// Obtener por ID
-// router.use("/activities", activityId);
 
 
 // Obtener por ID

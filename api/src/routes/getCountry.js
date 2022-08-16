@@ -15,7 +15,7 @@ async function crearRegistro() {
     const countriesMap = await allCountries.data.map(c => {
         return {
             id: c.cca3,
-            name: c.name.official,
+            name: c.name.common,
             imageFlag: c.flags,
             continent: c.continents,
             capital: c.capital ? c.capital : ["Not have capital"],
