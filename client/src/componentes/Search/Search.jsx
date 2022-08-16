@@ -20,7 +20,7 @@ export default function Search() {
   
 
   function onSearchChange(event) {
-    setSearch(event.target.value);
+    setSearch(event.target.value.trim()); //Para evitar "    arg" y que me saque los espacios
   }
 
   function handleSubmit(event){
