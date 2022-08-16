@@ -26,9 +26,9 @@ export default function Filter() {
     return (
         <div className="filter">
             <div className="filter-conteiner">
-            <FilterAscDesc />
             <FilterContinent />
             <FilterPoblation />
+            <FilterAscDesc />
             <FilterActivity />
             <button className="boton-reset-filter" onClick={onClickReset}>REFRESH</button>
             </div>

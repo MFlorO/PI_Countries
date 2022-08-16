@@ -6,16 +6,12 @@ import "./countries.css"
 
 export default function Countries({countries, pagina, porpagina}) {
 
-
+  
 
    function filterCountriesPagina() {
-    if(pagina === 1){
+  
+     return countries.slice( ((pagina - 1 )* porpagina )  , (((pagina - 1 )* porpagina)+ porpagina)) 
     
-      return countries.slice( 0 , porpagina - 1)     // 9 en la primer hoja 
-    } else {
-
-     return countries.slice( ((pagina - 1 )* porpagina + 9) - porpagina , ((pagina - 1 )* porpagina + 9)) //10 en la primer hoja
-    } 
  } 
                               
  //[0,8]

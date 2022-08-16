@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import "./myList.css"
 
 import {ImCross} from "react-icons/im"
+import NavBar from "../NavBar/NavBar.jsx";
 
 
 export default function MyList(){
@@ -19,6 +20,10 @@ export default function MyList(){
 
 
     return (
+       <>
+
+       <NavBar />
+       
         <div className="mylist-cointeiner">
           <h2 className="titulo-mylist">COUNTRY LIST</h2>
 
@@ -40,6 +45,8 @@ export default function MyList(){
             : <div className="vacio-div-mylist"><p className="vacio-mylist">They have nothing on your list. Add !</p></div> }
         
         </div>
+
+       </>
       );
 }
 

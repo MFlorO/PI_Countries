@@ -91,7 +91,7 @@ export default function rootReducer(state = initialState, action) {
 
 
         case OrderCont:
-           const continetFilter = action.payload === "Default" ? state.countriesAll : state.filterCountries.filter(el => el.continent[0] === action.payload)
+           const continetFilter = action.payload === "Default" ? state.countriesAll : state.countriesAll.filter(el => el.continent[0] === action.payload)
             return{
               ...state,
              filterCountries: continetFilter    

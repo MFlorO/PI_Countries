@@ -32,10 +32,10 @@ export default function Landing() {
       </ul>
     </div>
 
-        <h1 className="title">Welcome to Countries</h1>
+        <h1 className="title-landing">Welcome to Countries</h1>
 
         <Link to="/home">
-          <button className="boton">INGRESAR</button>
+          <button className="boton-landing">GET IN</button>
         </Link> 
 
     

@@ -29,7 +29,7 @@ export default function CountriesCard({ id, name, image, continent, population})
       <h4 className="countries-card-h4">continent:</h4>
       <h3 className="countries-card-1">{continent}</h3>
       <h4 className="countries-card-h4">population:</h4>
-      <p className="countries-card-1">{population}</p>
+      <p className="countries-card-1"> {new Intl.NumberFormat().format(population)}</p> 
       <div title="AddFav" className="favb"><button className="boton-fav" onClick={() => onChangeClick()  }><RiHeartAddFill size="2rem" /></button></div>
 
     </div>

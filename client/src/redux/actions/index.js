@@ -8,7 +8,7 @@ import axios from "axios"
 
 export function getAllCountries() {
   return function (dispatch) {
-    try{
+   
     axios.get(`http://localhost:3001/countries/`)
       .then(response => {
         dispatch({
@@ -16,9 +16,9 @@ export function getAllCountries() {
           payload: response.data
         });
       })
-    }catch(error){
+    .catch(error => {
       console.log("getAllCountries",error)
-    }
+    })
   };
 }
 
@@ -46,7 +46,7 @@ export function getCountriesName(name) {
 
 export function getCountriesDetail(id) {
   return function (dispatch) {
-    try{
+    
       axios.get(`http://localhost:3001/countries/${id}`)
       .then(response => {
         dispatch({
@@ -54,11 +54,12 @@ export function getCountriesDetail(id) {
           payload: response.data
         });
       })
-    }catch(error){
+    .catch(error => {
       console.log("getCountriesDetail",error)
-    }
+    })
   };
 }
+
 
 
 
@@ -83,17 +84,18 @@ export function createActivities(body) {
 
 export function getActivities() {
   return function (dispatch) {
-    try{
       axios.get(`http://localhost:3001/activities/`)
+
       .then(response => {
         dispatch({
           type: get_activities ,
           payload: response.data
         });
       })
-    }catch(error){
+
+    .catch(error =>{
       console.log("getActivities",error)
-    }
+    })
   };
 }
 

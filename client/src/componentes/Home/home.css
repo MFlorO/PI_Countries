@@ -9,9 +9,6 @@
 
 .home-cointeiner{
     height: 120vh;
-    /* width: 98vw; */
-    padding: 30px;
-    padding-left: 30px ;
     display: flex;
     flex-direction: column;
     align-items: center;

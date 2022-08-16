@@ -5,6 +5,7 @@ import "./About.css"
 import { SiRedux, SiPostgresql, SiSequelize } from "react-icons/si"
 import { FaReact, FaNode } from "react-icons/fa"
 import { IoLogoJavascript } from "react-icons/io"
+import NavBar from "../NavBar/NavBar.jsx";
 
 
 
@@ -12,9 +13,11 @@ function About() {
     return (
         <div className="about-cointeiner">
 
+            <NavBar />
+
             <h1 className="titulo-about">ABOUT COUNTRIES</h1>
             
-            <h4 className="subtitulo-1">Develop by Maria Florencia Oldani for an individual project for Henry Bootcamp</h4>
+            <h4 className="subtitulo-1">Developed by Maria Florencia Oldani for an individual project for Henry Bootcamp</h4>
 
             <p className="subtitulo-2">This project was done through the use of an external API that obtains information about countries: {<a href="https://restcountries.com/">Restcountries</a>}</p>
             <p className="subtitulo-2">Then through a controlled form I create tourist activities and relate them to these countries</p>

@@ -21,8 +21,8 @@ export default function FilterPoblation() {
             <p className="filter-p" htmlFor="select">SEARCH BY POPULATION</p>
             <select className="filter-select"  name="select" defaultValue={"Default"} onChange={onSelectionchange}>
                 <option value="Default">-</option>
-                <option value={ASCENDENTE}>+</option>
-                <option value={DESCENDENTE}>-</option>
+                <option value={ASCENDENTE}>Most</option>
+                <option value={DESCENDENTE}>Less</option>
             </select>
         </div>
     );

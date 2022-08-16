@@ -5,6 +5,7 @@ import Form from "./Form/Form.jsx"
 import Loading from "../../Loading/Loading.jsx"
 
 import "./create.css"
+import NavBar from "../NavBar/NavBar.jsx";
 
 
 
@@ -25,6 +26,8 @@ export default function Create() {
 
     return (
       <div className="create">
+        <NavBar />
+        
         {countries.length > 0 ? <Form countries={countries} /> : <Loading />}
       </div>
     );

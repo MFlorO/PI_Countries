@@ -23,7 +23,7 @@ export default function Paginas({pagina, setPagina, maximo}){
         setInput(parseInt(input) - 1)
     }
 
-    const maximoRedondeo = Math.round(maximo) + 1
+    const maximoRedondeo = Math.round(maximo) 
     
 
     function onKeyDown (event){
