@@ -1,6 +1,6 @@
 import React from 'react'
 import NavBar from '../componentes/NavBar/NavBar'
-import error from "./404_2.webp"
+import error from "./404_2.jpg"
 
 import "./Error.css"
 

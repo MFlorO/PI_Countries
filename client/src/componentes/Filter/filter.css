@@ -19,7 +19,8 @@
 }
 
 .filter-conteiner{
-    padding: 40px;
+    padding: 50px;
+    margin-top: 25px;
     margin-bottom: 15px;
     background-color: #818484b7;
     box-shadow: 4px 4px 6px #82a3a3cf ;
@@ -41,7 +42,7 @@
 .boton-reset-filter{
     position: absolute;
     cursor: pointer;
-    top: 6rem;
+    top: 7rem;
     left: 22rem;
     height: 20px;
     width: 80px;
