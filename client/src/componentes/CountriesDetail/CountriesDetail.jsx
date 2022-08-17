@@ -61,8 +61,8 @@ export default function CountriesDetail() {
           <p className="cd-2">Code: {countriesDetail.id}</p>
           <p className="cd-2">Continent: {countriesDetail.continent}</p>
           <p className="cd-2">Capital: {countriesDetail.capital}</p>
-          <p className="cd-2">Subregion: {countriesDetail.subregion}</p>
-          <p className="cd-2">Area: {countriesDetail.area}Km2</p>
+          <p className="cd-2">Subregion: {countriesDetail.subregion.length > 0 ? countriesDetail.subregion : "Not have" }</p>
+          <p className="cd-2">Area: {countriesDetail.area} Km2</p>
           <p className="cd-3">Population: {new Intl.NumberFormat().format(countriesDetail.population)}</p>
           
         

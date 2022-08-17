@@ -5,7 +5,6 @@ import {createActivities} from "../../../redux/actions/index.js"
 import validate from "./validate.js"
 import "./form.css"
 
-import {ImCross } from "react-icons/im"
 import {BiError} from "react-icons/bi"
 
 
@@ -114,11 +113,6 @@ export default function Form({countries}) {
 
       
 
-      const removeCountry = (event) =>{
-        setInput(
-          ...input.id.filter(country => country !== event.target.name)
-        )
-     }
 
  
 
@@ -208,7 +202,6 @@ export default function Form({countries}) {
                     return ( 
                     <div className="lista-container" key={c}>
                     <li className="lista">{name}</li>
-                    <button className="boton-lista" onClick={removeCountry}><ImCross size="1rem"/></button>
                     </div>
                 )
     

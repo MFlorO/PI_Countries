@@ -64,7 +64,7 @@ export default function rootReducer(state = initialState, action) {
             }
 
 
-        case delete_Countries_Detail:
+        case delete_Countries_Detail:   //Limpia el componente --> useEffect
             return {
                 ...state,
                 countriesDetail: []
