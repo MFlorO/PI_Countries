@@ -6,6 +6,8 @@ import validate from "./validate.js"
 import "./form.css"
 
 import {BiError} from "react-icons/bi"
+import swal from 'sweetalert';
+
 
 
 
@@ -102,7 +104,11 @@ export default function Form({countries}) {
 
           dispatch(createActivities(input));
         
-          (alert("FORMULARIO ENVIADO"))   
+          swal({
+            title: "Good job!",
+            text: "You created a new activity!",
+            icon: "success",
+          });
 
           evento.target.reset() //Necesito ambos reset porque sino no me resetea los checks. Y van abajo de todo porque sino rompe
           resetForm()

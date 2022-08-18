@@ -73,25 +73,64 @@ a{
 @media screen and (max-width: 760px){
     .navBar{
         height: 8.5vh;
-        width: 100vw;
     }
 
     .flexboxitems{
-        width: 60%;
+        width: 80%;
     }
     
     .nav-h3{
-        font-size: 8px;
+        font-size: 12px;
     }
     
     .flexboxitems1{
-        margin-left: 50px;
-        margin-right: 70px;
+        margin-left: 90px;
+        margin-right: 20px;
     }
     
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 460px) {
+    .navBar{
+        height: 9vh;
+        width: 120%;
+    }
+
+    .flexboxitems{
+        width: 70%;
+    }
+    
+    .nav-h3{
+        font-size: 9px;
+    }
+    
+    .flexboxitems1{
+        margin-left: 40px;
+        margin-right: 10px;
+    }
+    
+  }
+
+
+  
+@media screen and (max-width: 360px) {
+    .navBar{
+        height: 9vh;
+        width: 100%;
+    }
+
+    .flexboxitems{
+        width: 80%;
+    }
+    
+    .nav-h3{
+        font-size: 9px;
+    }
+    
+    .flexboxitems1{
+        margin-left: 40px;
+        margin-right: 10px;
+    }
     
   }

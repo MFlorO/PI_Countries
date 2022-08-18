@@ -75,7 +75,6 @@ export default function CountriesDetail() {
           {countriesDetail.activities.map((a) => (
             <div  key={a.id}>
               <ActivityCard 
-                idc={id}
                 id={a.id}
                 name={a.name}
                 difficulty={a.difficulty}

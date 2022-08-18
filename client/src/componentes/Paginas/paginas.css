@@ -72,11 +72,24 @@
 @media screen and (max-width: 760px){
     .paginas{
         margin-right: 40px ;
+        margin-top: 20px;
     }
     
-    .input-paginas{
-        width: 30px;
-        height: 15px;
-        top: 277px;      
+}
+
+@media screen and (max-width: 460px){
+    .paginas{
+        margin-right: 130px ;
+        margin-top: 20px;
     }
+    
+}
+
+
+@media screen and (max-width: 360px){
+    .paginas{
+        margin-left: 200px ;
+        margin-top: 20px;
+    }
+    
 }

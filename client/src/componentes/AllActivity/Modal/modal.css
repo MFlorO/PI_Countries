@@ -6,10 +6,12 @@
 }
 
 .form-allActivity{
+    position: absolute;
+    background-color: white;
+    border: solid 3px #3E8484;
+    top: 7rem;
     width: 50vw;
-    height: 50vh;
-    margin-top: 80px;
-    margin-left: 130px;
+    height: 80vh;
     flex-direction: column;
     align-items: center;
     align-content: center;

@@ -4,6 +4,7 @@ import NavBar from "../NavBar/NavBar.jsx";
 import {useHistory} from "react-router-dom";
 import { getActivities, deleteActivities, truncateActivities } from "../../redux/actions/index.js";
 import "./allActivity.css"
+import swal from 'sweetalert'
 import Modal from './Modal/Modal.jsx';
 
 
@@ -71,10 +72,31 @@ function AllActivity() {
       }
 
       function HandleTruncate(){
-        let confirm = window.confirm(`Are you sure you want to delete ALLWAYS ACTIVITY?`)
-        if(confirm){
-          dispatch(truncateActivities());
-          window.location.reload() //refresca la pagina despues de borrar
+
+        if(activities.length > 0){
+        swal({
+          title: "Are you sure?",
+          text: "Once deleted, you will not be able to recover the activities!",
+          icon: "warning",
+          buttons: true,
+          dangerMode: true,
+        })
+        .then((willDelete) => {
+          if (willDelete) {
+            swal("Poof! You have deleted all activities", {
+              icon: "success",
+            });
+            dispatch(truncateActivities());
+            window.location.reload() //refresca la pagina despues de borrar
+          } else {
+            swal("Your activities is safe!");
+
+          }
+        });
+        } else{
+
+          swal("Not exist any activity!");
+
         }
       }
 
@@ -86,42 +108,43 @@ function AllActivity() {
 
       <NavBar />
 
-      <div>
-        <h1>TODAS LAS ACTIVIDADES</h1>
-        <button onClick={goForm}>Create new activity</button>
+      <div className="allactivity-conteiner-2">
+        <h1 className='allactivity-h1'>TODAS LAS ACTIVIDADES</h1>
+        <button className="boton-aform" onClick={goForm}>Create new activity</button>
 
-            <thead >
-                <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Duration</th>
-                    <th>Seassion</th>
-                    <th>Countries</th>
+        <div>
+            <thead className='lista-allactivity'>
+                <tr className='lista-items-1'>
+                    <th className='lista-items-1-1-1'>Id</th>
+                    <th className='lista-items-1-1'>Name</th>
+                    <th className='lista-items-1-1'>Duration</th>
+                    <th className='lista-items-1-1'>Seassion</th>
+                    <th className='lista-items-1-1'>Countries</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody className='lista-allactivity'> 
                 {activities.map( a => (
-                    <tr>
-                        <td>{a.id}</td>
-                        <td>{a.name}</td>
-                        <td>{a.duration}</td>
-                        <td>{a.seassion}</td>
+                    <tr className='lista-items-1'>
+                        <td className='lista-items-1-1-1'>{a.id}</td>
+                        <td className='lista-items-1-1'>{a.name}</td>
+                        <td className='lista-items-1-1'>{a.duration}</td>
+                        <td className='lista-items-1-1'>{a.seassion}</td>
                         {a.countries.map((e) => {
-                            return <td key={e.id}>{e.name}</td>
+                            return <td className='lista-items-1-1' key={e.id}>{e.name}</td>
                             
                         })} 
                         
                         <td>
-                            <button onClick={mostrarModal}>EDIT</button>                       
+                            <button className="edit-allActivity" onClick={mostrarModal}>EDIT</button>                       
                         </td>
                         <td>
-                            <button onClick={() => HandleDelete(a.id)}>DELETE</button>
+                            <button className="delete-allActivity" onClick={() => HandleDelete(a.id)}>DELETE</button>
                         </td>
                     </tr>
                 ))}
             </tbody>
-            <button onClick={HandleTruncate}>DELETE ALLWAYS ACTIVITIES</button>
-      
+            <button className="truncateAllActivity" onClick={HandleTruncate}>DELETE ALLWAYS ACTIVITIES</button>
+          </div>
       </div>
 
 

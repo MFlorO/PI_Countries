@@ -116,3 +116,41 @@
 
     
 }
+
+
+
+@media screen and (max-width: 460px) {
+    
+    .search{
+        margin-top: 10px;
+        margin-left: 65px;
+        width: 10%;
+
+    }
+    
+    .search-form{
+        height: 40px;
+    }   
+    
+    .input{
+        height: 60%;
+        width: 8rem;
+        font-size: 10px;
+        text-align: center;
+    }
+
+         
+    .boton-search1{
+        top: 10px;
+        left: 3rem;
+        height: 35px;
+        width: 35px;
+    }
+
+    .boton-search2{
+        top: 20px;
+        left: 10.5rem;
+        height: 8px;
+        width: 8px;
+    } 
+  }
