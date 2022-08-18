@@ -1,6 +1,6 @@
 
 const { Router } = require('express');
-const { Activity } = require("../../db.js")
+const { Activity } = require("../db.js")
 const router = Router();
 
 
@@ -27,20 +27,20 @@ router.delete("/", async function (req, res) {
 })
 
 
-router.delete("/", async function (req, res) {
+// router.delete("/", async function (req, res) {
 
-    try{
-        await Activity.truncate({
-            cascade: true 
-        }
-      );
+//     try{
+//         await Activity.truncate({
+//             cascade: true 
+//         }
+//       );
 
-      res.send("Activities truncadas");
-    }
-    catch(error){
-        res.send(error);
-    }
-})
+//       res.send("Activities truncadas");
+//     }
+//     catch(error){
+//         res.send(error);
+//     }
+// })
 
 
 

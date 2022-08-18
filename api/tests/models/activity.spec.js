@@ -21,13 +21,13 @@ describe('Activity Model', () => {
   
 
     it('should create the Activity if all required properties are ok', async () => {
-        const ability = await Activity.create({
+        const activity = await Activity.create({
           name: 'Rafting',
         });
-        expect(ability.toJSON()).toHaveProperty('name','Rafting');
-        expect(ability.toJSON()).toHaveProperty('duration', null);
-        expect(ability.toJSON()).toHaveProperty('seassion',null);
-        expect(ability.toJSON()).toHaveProperty('difficulty',null);
+        expect(activity.toJSON()).toHaveProperty('name','Rafting');
+        expect(activity.toJSON()).toHaveProperty('duration', null);
+        expect(activity.toJSON()).toHaveProperty('seassion',null);
+        expect(activity.toJSON()).toHaveProperty('difficulty',null);
       });
 
 

@@ -8,8 +8,8 @@ const getActivity = require("./getActivity")
 const activityDelete = require("./activityDelete")
 
 
-// const activityUpdate = require("./otrasRutas/activityUpdate")
-// const activityTruncate = require("./otrasRutas/activityTruncate")
+const activityUpdate = require("./activityUpdate")
+const activityTruncate = require("./activityTruncate")
 
 
 
@@ -33,14 +33,14 @@ router.use("/activities", activityPost);
 
 
 // Update activity
-// router.use("/activities", activityUpdate);
+router.use("/activities", activityUpdate);
 
 
 // Delete activity
 router.use("/activities", activityDelete);
 
 // Truncate activity
-// router.use("/activities", activityTruncate);
+router.use("/activities", activityTruncate);
 
 
 

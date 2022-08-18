@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { Country, Activity } = require("../../db.js")
+const { Country, Activity } = require("../db.js")
 
 const router = Router();
 
@@ -10,10 +10,10 @@ const router = Router();
 
 router.put("/", async function (req, res) {
 
-const { activityId, countryId, name, difficulty, duration, seassion } = req.body;
+const { activityId, id, name, difficulty, duration, seassion } = req.body;
 
 try {
-    if (activityId || countryId || name || difficulty || duration || seassion) {
+    if (activityId || id || name || difficulty || duration || seassion) {
 
         await Activity.update({
             name: name.toLowerCase(),
@@ -32,7 +32,7 @@ try {
         const activity = await Activity.findByPk(activityId);       
 
 
-        countryId.map(async c => {
+        id.map(async c => {
 
             const countryFind = await Country.findByPk(c.toUpperCase())
 
