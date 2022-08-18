@@ -1,7 +1,7 @@
 import { DESCENDENTE } from "../../componentes/Filter/constantes.js";
 
 
-import { add_Countries_Favorites, remove_Countries_Favrites, OrderCont, get_All_Countries, get_Countries_Name, get_Countries_Detail, delete_Countries_Detail, create_Activities, get_activities, asc_des, order_Poblation, Order_Type_Activities, delete_activities } from "../actions/index.js"
+import { add_Countries_Favorites, remove_Countries_Favrites, OrderCont, get_All_Countries, get_Countries_Name, get_Countries_Detail, delete_Countries_Detail, create_Activities, get_activities, asc_des, order_Poblation, Order_Type_Activities, delete_activities, truncate_activities, update_activities } from "../actions/index.js"
 
 
 const initialState = {
@@ -79,6 +79,17 @@ export default function rootReducer(state = initialState, action) {
 
 
         case delete_activities:
+            return{
+                ...state
+            }
+
+        
+        case truncate_activities:
+            return{
+                ...state
+            }
+
+        case update_activities:
             return{
                 ...state
             }

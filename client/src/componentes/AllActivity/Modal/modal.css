@@ -1,0 +1,25 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.form-allActivity{
+    width: 50vw;
+    height: 50vh;
+    margin-top: 80px;
+    margin-left: 130px;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+.items-form-allActivity{
+    width:  30rem;
+    height: 21rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}

@@ -118,6 +118,40 @@ export function deleteActivities(id) {
 }
 
 
+//         ##################       truncate_activities         #################
+
+export function truncateActivities(id) {
+  return async function (dispatch) {
+    try {
+      await axios.delete(`http://localhost:3001/activities/`);
+      return dispatch({
+        type: truncate_activities
+      })
+    } catch (error) {
+      console.log("deleteActivities", error)
+    }
+  }
+}
+
+
+
+// #################### update_activities ########################
+
+
+export function updateActivities() {
+  return async function (dispatch) {
+    try {
+      await axios.update(`http://localhost:3001/activities/`);
+      return dispatch({
+        type: update_activities
+      })
+    } catch (error) {
+      console.log("update_activities", error)
+    }
+  }
+}
+
+
 
 
 //         ##################       add_Countries_Favorites         #################
@@ -219,6 +253,8 @@ export const order_Poblation = "ORDER_POBLATION";
 export const asc_des = "ASC_DES";
 export const OrderCont = "ORDER_CONT";
 export const delete_activities = "DELETE_ACTIVITIES";
+export const update_activities = "UPDATE_ACTIVITIES";
+export const truncate_activities = "TRUNCATE_ACTIVITIES"
 
 
 
