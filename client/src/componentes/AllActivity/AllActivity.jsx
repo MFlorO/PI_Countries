@@ -16,22 +16,24 @@ function AllActivity() {
     const history = useHistory();
     const dispatch = useDispatch();
 
+    
+    const activities = useSelector((state) => state.activities);
+
+
     const [modal, setModal] = useState(false)
 
     const [input, setInput] = useState({
-        activityId: 0,
-        name: "",
-        difficulty: 0,
-        duration: "",
-        seassion: "",
-        id: [], //idCountries
+        activityId: activities.id,
+        name: activities.name,
+        difficulty: activities.difficulty,
+        duration: activities.duration,
+        seassion: activities.seassion,
+        id: activities.countries, //idCountries
       },);
 
 
 
 
-
-    const activities = useSelector((state) => state.activities);
 
 
 
