@@ -54,45 +54,56 @@ export default function CountriesDetail() {
       
       {countriesDetail.imageFlag ? (
 
-        <div className="countriesdetail-container">
+      <div className="countriesdetail-container">
 
-          <h1 className="cd-h1">{countriesDetail.name}</h1>
+        
+
+        <div className="cd-items"> 
           <img className="cd-image" src={countriesDetail.imageFlag[1]} alt="Imagen del videojuego" />
+        </div>
+
+        <div className="cd-container">
+
+          <div className="cd-items-2">
+          <h1 className="cd-h1">{countriesDetail.name}</h1>
           <p className="cd-2">Code: {countriesDetail.id}</p>
           <p className="cd-2">Continent: {countriesDetail.continent}</p>
           <p className="cd-2">Capital: {countriesDetail.capital}</p>
           <p className="cd-2">Subregion: {countriesDetail.subregion.length > 0 ? countriesDetail.subregion : "Not have" }</p>
           <p className="cd-2">Area: {countriesDetail.area} Km2</p>
           <p className="cd-3">Population: {new Intl.NumberFormat().format(countriesDetail.population)}</p>
-          
-        
-          
-      {countriesDetail.activities.length > 0 ?
-          <>
-          <h3 className="activity-h3">ACTIVITIES:</h3>
-
-          <div className="activity-container">
-          {countriesDetail.activities.map((a) => (
-            <div  key={a.id}>
-              <ActivityCard 
-                id={a.id}
-                name={a.name}
-                difficulty={a.difficulty}
-                seassion={a.seassion}
-                duration={a.duration}
-              />
-            </div>
-          ))}
           </div>
-          </> 
+
+        
+
+
+        <div className="cd-items-3">  
+
+                {countriesDetail.activities.length > 0 ?
+             <>
+                   <h3 className="activity-h3">ACTIVITIES:</h3>
+
+                   <div className="activity-container">
+                    {countriesDetail.activities.map((a) => (
+                       <div  key={a.id}>
+                       <ActivityCard 
+                       id={a.id}
+                       name={a.name}
+                       difficulty={a.difficulty}
+                       seassion={a.seassion}
+                       duration={a.duration}  />
+                       </div>
+                   ))}
+                   </div>
+             </> 
           
-          : <div className="vacio-div-cdetail">The Country not have any activities</div>}
+                : <div className="vacio-div-cdetail">The Country not have any activities</div>}
+        </div>
+        </div>
 
 
-          <button className="botton-volver-atras" onClick={volverAtras}> <AiFillCaretLeft size="2rem" /></button>
-
-          
-
+        <button className="botton-volver-atras" onClick={volverAtras}> <AiFillCaretLeft size="2rem" /></button>
+        
         </div>
       ) : (
         <Loading />

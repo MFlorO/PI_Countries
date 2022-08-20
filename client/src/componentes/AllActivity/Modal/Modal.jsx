@@ -1,27 +1,27 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import {  getAllCountries, updateActivities } from "../../../redux/actions/index.js";
 import "./modal.css"
 
 
+
+
+
+
+
+
+
 function Modal({ocultarModal, input, setInput}) {
 
     const dispatch = useDispatch();
-    const countries = useSelector((state) => state.countries);
+    const countries = useSelector((state) => state.countriesAll);
 
     
-    // const [input, setInput] = useState({
-    //     activityId: activities.id,
-    //     name: "",
-    //     difficulty: 0,
-    //     duration: "",
-    //     seassion: "",
-    //     id: [], //idCountries
-    //   },);
 
 
     useEffect(() => {
-      dispatch(getAllCountries());
+      dispatch(getAllCountries);
+      dispatch(updateActivities);
     }, [dispatch]);
   
     
@@ -51,61 +51,65 @@ function Modal({ocultarModal, input, setInput}) {
 
 
 
+    console.log("countries",countries)
+    console.log("input",input)
 
 
   return (
     
 <div className='form-allActivity'> 
+
 <form className='items-form-allActivity'>
 
 
-<label  htmlFor="name">Id: </label>
-<input type="text" name="id" value={input.activityId} />
+<label className="labels-all-a" htmlFor="name">Id: </label>
+<input className="input-all-a" type="text" name="id" value={input.id} />
 
           
-<label  htmlFor="name">Name: </label>
-<input type="text" name="name" value={input.name} onChange={handleChange} />
+<label className="labels-all-a" htmlFor="name">Name: </label>
+<input className="input-all-a" type="text" name="name" value={input.name} onChange={handleChange} />
 
 
 
-<label htmlFor="difficulty">Difficulty: </label>
-<input type="number"  name="difficulty" value={input.difficulty} onChange={handleChange} />
+<label className="labels-all-a" htmlFor="difficulty">Difficulty: </label>
+<input className="input-all-a" type="number"  name="difficulty" value={input.difficulty} onChange={handleChange} />
 
 
-<label htmlFor="duration">Duration: </label>
-<input className="input-duration" type="time"  name="duration" value={input.duration} onChange={handleChange} />
+<label className="labels-all-a" htmlFor="duration">Duration: </label>
+<input className="input-all-a-duration" type="time"  name="duration" value={input.duration} onChange={handleChange} />
 
 
 
-<p >Seasion: </p>
-<select name="seassion" defaultValue={"default"} onChange={handleChange}>
-<option value={"default"}>SEASION</option>
+<p className="labels-all-a">Seasion: </p>
+<select className="input-all-a-seassion" name="seassion" defaultValue={"default"} onChange={handleChange}>
+<option className="input-all-a-seassion-1" value={"default"} hidden>{input.seassion}</option>
 {randomSeassion.map ((seassion, key) => {
   return ( 
-     <option key={key} id="seassion" name="seassion" value={seassion} >{seassion}</option>
+     <option className="input-all-a-seassion-1" key={key} id="seassion" name="seassion" value={seassion}>{seassion}</option>
   )
 })}
 </select>
 
 
 
-{/* <p >Countries: </p>
-<select name="id" defaultValue="default" onChange={handleChange} >
-<option value="default" default>COUNTRIES</option>
+<p className="labels-all-a">Countries: </p>
+<select className="input-all-a-seassion"name="id" defaultValue={"default"} onChange={handleChange} >
+<option className="input-all-a-seassion-1" value={"default"} hidden>{input.countries.name}</option>
 {countries.map (countries => {
   return ( 
-     <option key={countries.id} id="id" name="id" value={countries.id} >{countries.name}</option>
+     <option className="input-all-a-seassion-1" key={countries.id} id="id" name="id" value={countries.id}>{countries.name}</option>
   )
 })}
-</select> */}
+</select>
 
-<button  onClick={dispatch(updateActivities)} >EDITAR</button> 
-<button  onClick={ocultarModal}>CANCELAR</button>  
-
-
+<div className='botones-all-a'>
+<button  className="button-all-a-editar" onClick={dispatch(updateActivities)} >EDITAR</button> 
+<button className="button-all-a-cancelar" onClick={ocultarModal}>CANCELAR</button>  
+</div>
 
 
 </form>
+
 </div>
   )
 }

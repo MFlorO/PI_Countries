@@ -10,24 +10,34 @@
     flex-direction: column;
     align-items: center;
     align-content: center;
+    height: 95vh;
+    background-image: url("../Landing/imagenes/create2.jpg");
+    background-size: cover;
+    
 }
 
 
 .allactivity-conteiner-2{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 252, 252, 0.91);;
     display: flex ;
     flex-direction: column;
     align-items: center;
 }
 
 .allactivity-h1{
-    font-size: 40px;
+    font-size: 32px;
     font-family: 'PT Sans', sans-serif;
-    margin-top: 130px;
-    margin-bottom: 50px;
+    margin-top: 120px;
+    margin-bottom: 70px;
     margin-left: 50px;
 }
 
 .boton-aform{
+    position: absolute;
+    top: 5rem;
+    right: 2rem;
     border: 3px solid  #398181;
     background-color: white;
     height: 40px;
@@ -68,19 +78,19 @@
 .edit-allActivity{
     border: 2px solid #198754;
     background-color: white;
-    height: 20px;
+    height: 23px;
     width: 50px;
-    font-size: 10px;
+    font-size: 13px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bolder ;
-    margin-left: 50px;
+    margin-left: 30px;
     color: #198754;
 }
 
 
 .edit-allActivity:hover{
     box-shadow: 0px 0px 8px #145829f8;
-    border: 5px solid #198754;
+    border: 2px solid #198754;
     background-color: #198754;
     font-weight: bolder ;
     text-shadow: 0px 0px 0px;
@@ -91,9 +101,9 @@
   .delete-allActivity{
     border: 2px solid #d82c2cf8;
     background-color: white;
-    height: 20px;
+    height: 23px;
     width: 60px;
-    font-size: 10px;
+    font-size: 13px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bolder ;
     margin-left: 10px;
@@ -113,15 +123,16 @@
 
     
 .truncateAllActivity{
+  position: absolute;
+  top: 40rem;
+  left: 28rem ;
   border: 2px solid #E80B0B;
   background-color: #E80B0B;
   height: 40px;
-  width: 700px;
+  width: 680px;
   font-size: 15px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-weight: bolder ;
-  margin-top: 200px;
-  margin-left: 50px;
   color:white;
 }
 

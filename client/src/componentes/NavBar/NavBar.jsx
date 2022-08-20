@@ -1,18 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Search from "../Search/Search.jsx"
+import "./NavBar.css"
+
 
 import {VscHome} from "react-icons/vsc"
-
-
-import "./NavBar.css"
 
 
 
 
 export default function NavBar() {
-
-
 
 
   return (
