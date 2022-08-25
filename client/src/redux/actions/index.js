@@ -141,7 +141,7 @@ export function truncateActivities(id) {
 export function updateActivities() {
   return async function (dispatch) {
     try {
-      await axios.update(`http://localhost:3001/activities/`);
+      await axios.put(`http://localhost:3001/activities/`);
       return dispatch({
         type: update_activities
       })

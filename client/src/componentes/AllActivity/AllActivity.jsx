@@ -21,6 +21,8 @@ function AllActivity() {
 
   const [modal, setModal] = useState(false);
 
+  
+
   const [input, setInput] = useState({
     activityId: activities.id,
     name: activities.name,
@@ -33,7 +35,14 @@ function AllActivity() {
 
   useEffect(() => {
     dispatch(getActivities());
+
   }, [dispatch]);
+
+
+
+  console.log("input",input)
+  console.log("id-countries",input.countries)
+  console.log("activities.countries",activities.countries)
 
 
 
@@ -46,9 +55,7 @@ function AllActivity() {
 
 
 
-  const mostrarModal = (registro) => {
-    console.log("event", registro);
-
+  const HandleOpenModal = (registro) => {
     setModal(true);
     setInput(registro);
   };
@@ -56,7 +63,7 @@ function AllActivity() {
 
 
 
-  function ocultarModal() {
+  function HandleCloseModal() {
     setModal(false);
   }
 
@@ -154,7 +161,7 @@ function AllActivity() {
                 })}
 
                 <td>
-                  <button className="edit-allActivity" onClick={() => mostrarModal(a)}>EDIT</button>
+                  <button className="edit-allActivity" onClick={() => HandleOpenModal(a)}>EDIT</button>
                   {" "}
                   <button className="delete-allActivity" onClick={() => HandleDelete(a.id)}>DELETE</button>
                 </td>
@@ -169,7 +176,7 @@ function AllActivity() {
 
       {modal && (
         <Modal
-          ocultarModal={ocultarModal}
+        HandleCloseModal={HandleCloseModal}
           input={input}
           setInput={setInput}
         />

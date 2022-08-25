@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import {  getAllCountries, updateActivities } from "../../../redux/actions/index.js";
+import {useHistory} from "react-router-dom";
 import "./modal.css"
 
 
@@ -10,9 +11,8 @@ import "./modal.css"
 
 
 
-
-function Modal({ocultarModal, input, setInput}) {
-
+function Modal({HandleCloseModal, input, setInput}) {
+    const history = useHistory();
     const dispatch = useDispatch();
     const countries = useSelector((state) => state.countriesAll);
 
@@ -51,15 +51,22 @@ function Modal({ocultarModal, input, setInput}) {
 
 
 
-    console.log("countries",countries)
-    console.log("input",input)
+    function handleSubmit(evento){
+      evento.preventDefault();
+
+      dispatch(updateActivities(input));
+    }
+
+    
+  console.log("countries",countries)
+
 
 
   return (
     
 <div className='form-allActivity'> 
 
-<form className='items-form-allActivity'>
+<form className='items-form-allActivity' onSubmit={handleSubmit}>
 
 
 <label className="labels-all-a" htmlFor="name">Id: </label>
@@ -93,8 +100,8 @@ function Modal({ocultarModal, input, setInput}) {
 
 
 <p className="labels-all-a">Countries: </p>
-<select className="input-all-a-seassion"name="id" defaultValue={"default"} onChange={handleChange} >
-<option className="input-all-a-seassion-1" value={"default"} hidden>{input.countries.name}</option>
+<select className="input-all-a-seassion"name="id" defaultValue={"default"} onChange={handleChange}>
+<option className="input-all-a-seassion-1" value={"default"} hidden>COUNTRIES</option>
 {countries.map (countries => {
   return ( 
      <option className="input-all-a-seassion-1" key={countries.id} id="id" name="id" value={countries.id}>{countries.name}</option>
@@ -102,9 +109,29 @@ function Modal({ocultarModal, input, setInput}) {
 })}
 </select>
 
+{/* <div className="countriesList">
+            <ul>     
+            {
+                input.id?.map((c) => {
+            
+                    let name = countries?.map((country) =>{
+                       return country.id === c ? country.name : null
+                    }) 
+                    
+                    return ( 
+                    <div className="lista-container" key={c}>
+                    <li className="lista">{name}</li>
+                    </div>
+                )
+    
+                })
+            }
+            </ul>
+</div>  */}
+
 <div className='botones-all-a'>
-<button  className="button-all-a-editar" onClick={dispatch(updateActivities)} >EDITAR</button> 
-<button className="button-all-a-cancelar" onClick={ocultarModal}>CANCELAR</button>  
+<button className="button-all-a-editar" type="submit">EDITAR</button> 
+<button className="button-all-a-cancelar" onClick={HandleCloseModal}>CANCELAR</button>  
 </div>
 
 
