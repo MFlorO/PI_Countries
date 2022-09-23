@@ -29,6 +29,7 @@
 
 .form-item{
   margin-top: -60px;
+  padding-top: 1rem;
   width:  30rem;
   height: 21rem;
   display: flex;
@@ -102,7 +103,7 @@ p.danger {
   background-color: #398181f8;
   height: 50px;
   width: 100px;
-  right: 44rem;
+  left: 50rem;
   top: 40rem;
   text-shadow: 0px 0px 4px white;
   font-size: 25px;
@@ -127,6 +128,7 @@ p.danger {
     position: absolute;
     border: 2px  #656c6cf8;
     background-color: #656c6cf8;
+    box-shadow: 0px 0px 8px none;
     height: 50px;
     width: 100px;
     right: 44rem;

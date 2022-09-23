@@ -6,7 +6,7 @@ import validate from "./validate.js"
 import "./form.css"
 
 import {BiError} from "react-icons/bi"
-import swal from 'sweetalert';
+import Swal from "sweetalert2";
 
 
 
@@ -104,11 +104,14 @@ export default function Form({countries}) {
 
           dispatch(createActivities(input));
         
-          swal({
+          Swal.fire({
+            icon: "success",
             title: "Good job!",
             text: "You created a new activity!",
-            icon: "success",
-          });
+            showConfirmButton: true,
+            color: "black",
+            confirmButtonColor: "#5aa5a5ed",
+        });
 
           evento.target.reset() //Necesito ambos reset porque sino no me resetea los checks. Y van abajo de todo porque sino rompe
           resetForm()
@@ -171,7 +174,7 @@ export default function Form({countries}) {
           <option value="default" default>COUNTRIES</option>
           {countries.map (countries => {
             return ( 
-               <option key={countries.id} id="id" name="id" value={countries.id} >{countries.name}</option>
+               <option key={countries.id} id="id" name="id" value={countries.id}>{countries.name}</option>
             )
           })}
           </select>
@@ -180,7 +183,7 @@ export default function Form({countries}) {
           {errores.name || errores.difficulty  ? (<p className="danger"><BiError size="0.8rem"/> Error: Plis, complete the form correctly</p>) : null}
           
 
-          <button className="crear" disabled={disabledB} type="submit" >CREATE</button> 
+          <button className="crear" disabled={disabledB} type="submit">CREATE</button> 
         
         
          

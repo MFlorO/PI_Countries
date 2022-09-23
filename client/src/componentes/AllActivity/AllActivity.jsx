@@ -23,14 +23,25 @@ function AllActivity() {
 
   
 
+   const idCountry = activities.countries?.map( a => {
+    return a && a.id;
+   })
+
+
+
   const [input, setInput] = useState({
     activityId: activities.id,
     name: activities.name,
     difficulty: activities.difficulty,
     duration: activities.duration,
     seassion: activities.seassion,
-    id: activities.countries, //idCountries
+    id: idCountry, //idCountries
   });
+
+
+
+
+
 
 
   useEffect(() => {
@@ -40,9 +51,7 @@ function AllActivity() {
 
 
 
-  console.log("input",input)
-  console.log("id-countries",input.countries)
-  console.log("activities.countries",activities.countries)
+
 
 
 
@@ -82,7 +91,7 @@ function AllActivity() {
           icon: "success",
         });
         dispatch(deleteActivities(id));
-        window.location.reload(); //refresca la pagina despues de borrar
+        window.location.reload(); //refresca la pagina despues de borrar. Buena practica????
       } else {
         swal("Your activities is safe!");
       }

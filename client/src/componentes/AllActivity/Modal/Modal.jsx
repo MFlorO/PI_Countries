@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import {  getAllCountries, updateActivities } from "../../../redux/actions/index.js";
-import {useHistory} from "react-router-dom";
+// import {useHistory} from "react-router-dom";
 import "./modal.css"
 
 
@@ -12,12 +12,9 @@ import "./modal.css"
 
 
 function Modal({HandleCloseModal, input, setInput}) {
-    const history = useHistory();
+    // const history = useHistory();
     const dispatch = useDispatch();
     const countries = useSelector((state) => state.countriesAll);
-
-    
-
 
     useEffect(() => {
       dispatch(getAllCountries);
@@ -58,7 +55,7 @@ function Modal({HandleCloseModal, input, setInput}) {
     }
 
     
-  console.log("countries",countries)
+  
 
 
 
@@ -70,7 +67,7 @@ function Modal({HandleCloseModal, input, setInput}) {
 
 
 <label className="labels-all-a" htmlFor="name">Id: </label>
-<input className="input-all-a" type="text" name="id" value={input.id} />
+<input className="input-all-a" type="text" name="activityId" value={input.activityId} />
 
           
 <label className="labels-all-a" htmlFor="name">Name: </label>
@@ -130,7 +127,7 @@ function Modal({HandleCloseModal, input, setInput}) {
 </div>  */}
 
 <div className='botones-all-a'>
-<button className="button-all-a-editar" type="submit">EDITAR</button> 
+<button className="button-all-a-editar" type="submit" onClick={updateActivities}>EDITAR</button> 
 <button className="button-all-a-cancelar" onClick={HandleCloseModal}>CANCELAR</button>  
 </div>
 

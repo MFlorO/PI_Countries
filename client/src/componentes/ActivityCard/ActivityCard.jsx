@@ -1,6 +1,6 @@
 import React from "react";
 import "./activityCard.css"
-import {deleteActivities} from "../../redux/actions/index.js"
+
 
 
 

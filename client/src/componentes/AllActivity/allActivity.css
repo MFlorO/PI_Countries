@@ -13,7 +13,6 @@
     height: 95vh;
     background-image: url("../Landing/imagenes/create2.jpg");
     background-size: cover;
-    
 }
 
 
@@ -31,7 +30,7 @@
     font-family: 'PT Sans', sans-serif;
     margin-top: 120px;
     margin-bottom: 70px;
-    margin-left: 50px;
+    margin-left: -7rem;
 }
 
 .boton-aform{
@@ -64,7 +63,7 @@
   .lista-items-1{
     display: flex;
     align-items: flex-start;
-    margin-left: 60px;
+    margin-left: -8rem;
     margin-top: 20px;
   }
 
