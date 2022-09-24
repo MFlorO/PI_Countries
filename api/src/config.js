@@ -4,7 +4,7 @@ const DB_HOST= process.env.DB_HOST || "localhost"
 const DB_PORT= process.env.DB_PORT || 5432
 const DB_NAME= process.env.DB_NAME || "countries"
 
-const PORT= process.env.DB_PORT || 3001
+const PORT= process.env.PORT || 3001
 
 
 module.exports = {
